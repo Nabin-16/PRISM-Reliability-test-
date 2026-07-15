@@ -1,0 +1,6 @@
+
+*.pyc
+__pycache__/
+!data/processed/*.json
+results/**/*.json
+**/__init__.py
