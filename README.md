@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 ```bash
-conda activate < your env name >
+conda activate "your env name"
 pip install -r requirements.txt
 ```
 
