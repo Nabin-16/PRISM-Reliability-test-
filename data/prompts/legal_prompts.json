@@ -1,0 +1,3707 @@
+[
+  {
+    "id": "leg_0000",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "descriptive",
+      "C": "arbitrary",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Aspirin\" for inflammation medicine.\nA) fanciful\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Aspirin\" for inflammation medicine.\nA) fanciful\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Aspirin\" for inflammation medicine.\nA) fanciful\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Aspirin\" for inflammation medicine.?\nA) fanciful\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0001",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "descriptive",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Moodle\" for an internet search engine.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Moodle\" for an internet search engine.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Moodle\" for an internet search engine.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Moodle\" for an internet search engine.?\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0002",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "suggestive",
+      "C": "fanciful",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Trim\" for nail clippers.\nA) descriptive\nB) suggestive\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Trim\" for nail clippers.\nA) descriptive\nB) suggestive\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Trim\" for nail clippers.\nA) descriptive\nB) suggestive\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Trim\" for nail clippers.?\nA) descriptive\nB) suggestive\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0003",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "suggestive",
+      "C": "fanciful",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Cheetah\" for a web browser.\nA) generic\nB) suggestive\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cheetah\" for a web browser.\nA) generic\nB) suggestive\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cheetah\" for a web browser.\nA) generic\nB) suggestive\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Cheetah\" for a web browser.?\nA) generic\nB) suggestive\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0004",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Sun\" for computers.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sun\" for computers.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sun\" for computers.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Sun\" for computers.?\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0005",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Shell\" for gas stations.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Shell\" for gas stations.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Shell\" for gas stations.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Shell\" for gas stations.?\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0006",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Fresh\" for car deodorizer.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fresh\" for car deodorizer.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fresh\" for car deodorizer.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Fresh\" for car deodorizer.?\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0007",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "suggestive",
+      "B": "descriptive",
+      "C": "arbitrary",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Monitor\" for a digital display.\nA) suggestive\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Monitor\" for a digital display.\nA) suggestive\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Monitor\" for a digital display.\nA) suggestive\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Monitor\" for a digital display.?\nA) suggestive\nB) descriptive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0008",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "suggestive",
+      "B": "descriptive",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Coach\" for luxury accessories.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coach\" for luxury accessories.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coach\" for luxury accessories.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Coach\" for luxury accessories.?\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0009",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Airbus\" for an airplane manufacturer.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Airbus\" for an airplane manufacturer.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Airbus\" for an airplane manufacturer.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Airbus\" for an airplane manufacturer.?\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0010",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "generic",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Speedy\" for a bus service.\nA) descriptive\nB) generic\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Speedy\" for a bus service.\nA) descriptive\nB) generic\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Speedy\" for a bus service.\nA) descriptive\nB) generic\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Speedy\" for a bus service.?\nA) descriptive\nB) generic\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0011",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "generic",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Old Crow\" for whiskey.\nA) generic\nB) suggestive\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Old Crow\" for whiskey.\nA) generic\nB) suggestive\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Old Crow\" for whiskey.\nA) generic\nB) suggestive\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Old Crow\" for whiskey.?\nA) generic\nB) suggestive\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0012",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "arbitrary",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Party Time!\" for an event planning service.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Party Time!\" for an event planning service.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Party Time!\" for an event planning service.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Party Time!\" for an event planning service.?\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0013",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "descriptive",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Gun\" for a firearm.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Gun\" for a firearm.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Gun\" for a firearm.\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Gun\" for a firearm.?\nA) descriptive\nB) generic\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0014",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Antilds\" for plant seeds.\nA) fanciful\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Antilds\" for plant seeds.\nA) fanciful\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Antilds\" for plant seeds.\nA) fanciful\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Antilds\" for plant seeds.?\nA) fanciful\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0015",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "fanciful",
+      "C": "arbitrary",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Bright\" for desk lamps.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Bright\" for desk lamps.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Bright\" for desk lamps.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Bright\" for desk lamps.?\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0016",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Sahara\" for an ice cream seller.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sahara\" for an ice cream seller.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sahara\" for an ice cream seller.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Sahara\" for an ice cream seller.?\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0017",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "suggestive",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Quick Green\" for grass seed.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Quick Green\" for grass seed.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Quick Green\" for grass seed.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Quick Green\" for grass seed.?\nA) suggestive\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0018",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "descriptive",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Equine Technologies\" for horse hoof pads.\nA) descriptive\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Equine Technologies\" for horse hoof pads.\nA) descriptive\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Equine Technologies\" for horse hoof pads.\nA) descriptive\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Equine Technologies\" for horse hoof pads.?\nA) descriptive\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0019",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Heullga\" for a line of waterbottles.\nA) generic\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Heullga\" for a line of waterbottles.\nA) generic\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Heullga\" for a line of waterbottles.\nA) generic\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Heullga\" for a line of waterbottles.?\nA) generic\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0020",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Car\" for a line of automobiles.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Car\" for a line of automobiles.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Car\" for a line of automobiles.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Car\" for a line of automobiles.?\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0021",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Dove\" for chocolate.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Dove\" for chocolate.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Dove\" for chocolate.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Dove\" for chocolate.?\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0022",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Orange Crush\" for fruit flavored soda.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Orange Crush\" for fruit flavored soda.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Orange Crush\" for fruit flavored soda.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Orange Crush\" for fruit flavored soda.?\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0023",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "suggestive",
+      "B": "descriptive",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Apple\" for a computer manufacturer.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Apple\" for a computer manufacturer.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Apple\" for a computer manufacturer.\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Apple\" for a computer manufacturer.?\nA) suggestive\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0024",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Popcorn\" for microwavable snacks.\nA) fanciful\nB) generic\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Popcorn\" for microwavable snacks.\nA) fanciful\nB) generic\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Popcorn\" for microwavable snacks.\nA) fanciful\nB) generic\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Popcorn\" for microwavable snacks.?\nA) fanciful\nB) generic\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0025",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Membles\" for a literature oriented magazine.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Membles\" for a literature oriented magazine.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Membles\" for a literature oriented magazine.\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Membles\" for a literature oriented magazine.?\nA) descriptive\nB) arbitrary\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0026",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "arbitrary",
+      "C": "generic",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Shark\" for a custom t-shirt maker.\nA) fanciful\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Shark\" for a custom t-shirt maker.\nA) fanciful\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Shark\" for a custom t-shirt maker.\nA) fanciful\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Shark\" for a custom t-shirt maker.?\nA) fanciful\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0027",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "arbitrary",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Jaguar\" for cars.\nA) arbitrary\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Jaguar\" for cars.\nA) arbitrary\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Jaguar\" for cars.\nA) arbitrary\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Jaguar\" for cars.?\nA) arbitrary\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0028",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "arbitrary",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Fruit\" for apples.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fruit\" for apples.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fruit\" for apples.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Fruit\" for apples.?\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0029",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "descriptive",
+      "B": "suggestive",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Amazon\" for an online shopping service.\nA) descriptive\nB) suggestive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Amazon\" for an online shopping service.\nA) descriptive\nB) suggestive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Amazon\" for an online shopping service.\nA) descriptive\nB) suggestive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Amazon\" for an online shopping service.?\nA) descriptive\nB) suggestive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0030",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Telephone\" for a portable device you can use to call people.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Telephone\" for a portable device you can use to call people.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Telephone\" for a portable device you can use to call people.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Telephone\" for a portable device you can use to call people.?\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0031",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "generic",
+      "B": "fanciful",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Diamond\" for precious stones.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Diamond\" for precious stones.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Diamond\" for precious stones.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Diamond\" for precious stones.?\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0032",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Holiday Inn\" for hotel services.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Holiday Inn\" for hotel services.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Holiday Inn\" for hotel services.\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Holiday Inn\" for hotel services.?\nA) generic\nB) descriptive\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0033",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "generic",
+      "B": "fanciful",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Soft\" for pillows.\nA) generic\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Soft\" for pillows.\nA) generic\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Soft\" for pillows.\nA) generic\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Soft\" for pillows.?\nA) generic\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0034",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \u201cBalto\u201d for a television streaming service.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cBalto\u201d for a television streaming service.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cBalto\u201d for a television streaming service.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \u201cBalto\u201d for a television streaming service.?\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0035",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "suggestive",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Vit\" for a video conferencing service.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Vit\" for a video conferencing service.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Vit\" for a video conferencing service.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Vit\" for a video conferencing service.?\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0036",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "fanciful",
+      "B": "suggestive",
+      "C": "arbitrary",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Lotus\" for software.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Lotus\" for software.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Lotus\" for software.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Lotus\" for software.?\nA) fanciful\nB) suggestive\nC) arbitrary\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0037",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "descriptive",
+      "B": "generic",
+      "C": "fanciful",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \u201cSalt\u201d for packages of sodium chloride.\nA) descriptive\nB) generic\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cSalt\u201d for packages of sodium chloride.\nA) descriptive\nB) generic\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cSalt\u201d for packages of sodium chloride.\nA) descriptive\nB) generic\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \u201cSalt\u201d for packages of sodium chloride.?\nA) descriptive\nB) generic\nC) fanciful\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0038",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "suggestive",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Penguin Appliances\" for air conditioning manufacturer.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Penguin Appliances\" for air conditioning manufacturer.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Penguin Appliances\" for air conditioning manufacturer.\nA) suggestive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Penguin Appliances\" for air conditioning manufacturer.?\nA) suggestive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0039",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "suggestive",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Mask\" for cloth that you wear on your face to filter air.\nA) suggestive\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Mask\" for cloth that you wear on your face to filter air.\nA) suggestive\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Mask\" for cloth that you wear on your face to filter air.\nA) suggestive\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Mask\" for cloth that you wear on your face to filter air.?\nA) suggestive\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0040",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "generic",
+      "B": "fanciful",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"CarMax\" for a used car dealership.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"CarMax\" for a used car dealership.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"CarMax\" for a used car dealership.\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"CarMax\" for a used car dealership.?\nA) generic\nB) fanciful\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0041",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Chicken of the Sea\" for canned fish.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Chicken of the Sea\" for canned fish.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Chicken of the Sea\" for canned fish.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Chicken of the Sea\" for canned fish.?\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0042",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "descriptive",
+      "B": "fanciful",
+      "C": "suggestive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Coppertone\" for suntan oil.\nA) descriptive\nB) fanciful\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coppertone\" for suntan oil.\nA) descriptive\nB) fanciful\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coppertone\" for suntan oil.\nA) descriptive\nB) fanciful\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Coppertone\" for suntan oil.?\nA) descriptive\nB) fanciful\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0043",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "arbitrary",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Whirlpool\" for an oven.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Whirlpool\" for an oven.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Whirlpool\" for an oven.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Whirlpool\" for an oven.?\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0044",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "suggestive",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \u201cSharp\u201d for a television.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cSharp\u201d for a television.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \u201cSharp\u201d for a television.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \u201cSharp\u201d for a television.?\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0045",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "arbitrary",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Kold and Kreamy\" for milkshakes.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kold and Kreamy\" for milkshakes.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kold and Kreamy\" for milkshakes.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Kold and Kreamy\" for milkshakes.?\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0046",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "arbitrary",
+      "B": "fanciful",
+      "C": "generic",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Cheetah\" for a brand of wallets.\nA) arbitrary\nB) fanciful\nC) generic\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cheetah\" for a brand of wallets.\nA) arbitrary\nB) fanciful\nC) generic\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cheetah\" for a brand of wallets.\nA) arbitrary\nB) fanciful\nC) generic\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Cheetah\" for a brand of wallets.?\nA) arbitrary\nB) fanciful\nC) generic\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0047",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "suggestive",
+      "B": "arbitrary",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Oxygen\" for a line of pillows.\nA) suggestive\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Oxygen\" for a line of pillows.\nA) suggestive\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Oxygen\" for a line of pillows.\nA) suggestive\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Oxygen\" for a line of pillows.?\nA) suggestive\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0048",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "descriptive",
+      "B": "fanciful",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Kalp\" for a consulting services company.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kalp\" for a consulting services company.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kalp\" for a consulting services company.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Kalp\" for a consulting services company.?\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0049",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Yoddles\" for a chocolate candy.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Yoddles\" for a chocolate candy.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Yoddles\" for a chocolate candy.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Yoddles\" for a chocolate candy.?\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0050",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "fanciful",
+      "C": "arbitrary",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Compact\" for wallets.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Compact\" for wallets.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Compact\" for wallets.\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Compact\" for wallets.?\nA) descriptive\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0051",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Nekmit\" for a line of wedding rings.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Nekmit\" for a line of wedding rings.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Nekmit\" for a line of wedding rings.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Nekmit\" for a line of wedding rings.?\nA) descriptive\nB) arbitrary\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0052",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "descriptive",
+      "C": "fanciful",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"International Business Machines\" for a computer manufacturer.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"International Business Machines\" for a computer manufacturer.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"International Business Machines\" for a computer manufacturer.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"International Business Machines\" for a computer manufacturer.?\nA) arbitrary\nB) descriptive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0053",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "suggestive",
+      "B": "arbitrary",
+      "C": "generic",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Food\" for a restaurant.\nA) suggestive\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Food\" for a restaurant.\nA) suggestive\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Food\" for a restaurant.\nA) suggestive\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Food\" for a restaurant.?\nA) suggestive\nB) arbitrary\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0054",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "generic",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Cutlery\" for eating utencils.\nA) generic\nB) suggestive\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cutlery\" for eating utencils.\nA) generic\nB) suggestive\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cutlery\" for eating utencils.\nA) generic\nB) suggestive\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Cutlery\" for eating utencils.?\nA) generic\nB) suggestive\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0055",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Netflix\" for an online streaming service.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Netflix\" for an online streaming service.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Netflix\" for an online streaming service.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Netflix\" for an online streaming service.?\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0056",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "arbitrary",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Microsoft\" for small computers.\nA) arbitrary\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Microsoft\" for small computers.\nA) arbitrary\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Microsoft\" for small computers.\nA) arbitrary\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Microsoft\" for small computers.?\nA) arbitrary\nB) generic\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0057",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "arbitrary",
+      "B": "suggestive",
+      "C": "fanciful",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Yuteal\" for cleaning wipes.\nA) arbitrary\nB) suggestive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Yuteal\" for cleaning wipes.\nA) arbitrary\nB) suggestive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Yuteal\" for cleaning wipes.\nA) arbitrary\nB) suggestive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Yuteal\" for cleaning wipes.?\nA) arbitrary\nB) suggestive\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0058",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Fever\" for washing detergent.\nA) fanciful\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fever\" for washing detergent.\nA) fanciful\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Fever\" for washing detergent.\nA) fanciful\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Fever\" for washing detergent.?\nA) fanciful\nB) generic\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0059",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "fanciful",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Greyhound\" for a high speed bus service.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Greyhound\" for a high speed bus service.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Greyhound\" for a high speed bus service.\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Greyhound\" for a high speed bus service.?\nA) fanciful\nB) descriptive\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0060",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "fanciful",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Wohold\" for gasoline.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Wohold\" for gasoline.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Wohold\" for gasoline.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Wohold\" for gasoline.?\nA) arbitrary\nB) fanciful\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0061",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"H2O\" for bottled water.\nA) fanciful\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"H2O\" for bottled water.\nA) fanciful\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"H2O\" for bottled water.\nA) fanciful\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"H2O\" for bottled water.?\nA) fanciful\nB) generic\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0062",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "fanciful",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Whatpor\" for an online shopping service.\nA) generic\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Whatpor\" for an online shopping service.\nA) generic\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Whatpor\" for an online shopping service.\nA) generic\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Whatpor\" for an online shopping service.?\nA) generic\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0063",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "fanciful",
+      "C": "suggestive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Madak\" for a printing company.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Madak\" for a printing company.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Madak\" for a printing company.\nA) arbitrary\nB) fanciful\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Madak\" for a printing company.?\nA) arbitrary\nB) fanciful\nC) suggestive\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0064",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Penguin\" for a bus service.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Penguin\" for a bus service.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Penguin\" for a bus service.\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Penguin\" for a bus service.?\nA) generic\nB) arbitrary\nC) fanciful\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0065",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "arbitrary",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"TidePool\" for treehouse manufacturing company.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"TidePool\" for treehouse manufacturing company.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"TidePool\" for treehouse manufacturing company.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"TidePool\" for treehouse manufacturing company.?\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0066",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "suggestive",
+      "B": "fanciful",
+      "C": "generic",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Reloto\" for soda.\nA) suggestive\nB) fanciful\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Reloto\" for soda.\nA) suggestive\nB) fanciful\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Reloto\" for soda.\nA) suggestive\nB) fanciful\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Reloto\" for soda.?\nA) suggestive\nB) fanciful\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0067",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "arbitrary",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Camel\" for cigarettes.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Camel\" for cigarettes.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Camel\" for cigarettes.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Camel\" for cigarettes.?\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0068",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "suggestive",
+      "B": "fanciful",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Lanbe\" for custom wallets.\nA) suggestive\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Lanbe\" for custom wallets.\nA) suggestive\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Lanbe\" for custom wallets.\nA) suggestive\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Lanbe\" for custom wallets.?\nA) suggestive\nB) fanciful\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0069",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "suggestive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Imprion\" for a line of sports drinks.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Imprion\" for a line of sports drinks.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Imprion\" for a line of sports drinks.\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Imprion\" for a line of sports drinks.?\nA) fanciful\nB) generic\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0070",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "arbitrary",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Oamp\" for baseball bats.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Oamp\" for baseball bats.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Oamp\" for baseball bats.\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Oamp\" for baseball bats.?\nA) arbitrary\nB) generic\nC) descriptive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0071",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "arbitrary",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Cables\" for electronic wires.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cables\" for electronic wires.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cables\" for electronic wires.\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Cables\" for electronic wires.?\nA) fanciful\nB) arbitrary\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0072",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "generic",
+      "B": "fanciful",
+      "C": "arbitrary",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Pictures\" for a photography service.\nA) generic\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Pictures\" for a photography service.\nA) generic\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Pictures\" for a photography service.\nA) generic\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Pictures\" for a photography service.?\nA) generic\nB) fanciful\nC) arbitrary\nD) suggestive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0073",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "generic",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"QuickClean\" for towels.\nA) descriptive\nB) arbitrary\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"QuickClean\" for towels.\nA) descriptive\nB) arbitrary\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"QuickClean\" for towels.\nA) descriptive\nB) arbitrary\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"QuickClean\" for towels.?\nA) descriptive\nB) arbitrary\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0074",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "arbitrary",
+      "B": "descriptive",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Citibank\" for urban financial services.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Citibank\" for urban financial services.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Citibank\" for urban financial services.\nA) arbitrary\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Citibank\" for urban financial services.?\nA) arbitrary\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0075",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "fanciful",
+      "B": "suggestive",
+      "C": "generic",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Ceath\" for waterguns.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Ceath\" for waterguns.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Ceath\" for waterguns.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Ceath\" for waterguns.?\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0076",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Roach Motel\" for insect traps.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Roach Motel\" for insect traps.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Roach Motel\" for insect traps.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Roach Motel\" for insect traps.?\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0077",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Daisy\" for a sports car.\nA) generic\nB) descriptive\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Daisy\" for a sports car.\nA) generic\nB) descriptive\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Daisy\" for a sports car.\nA) generic\nB) descriptive\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Daisy\" for a sports car.?\nA) generic\nB) descriptive\nC) suggestive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0078",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "fanciful",
+      "B": "descriptive",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Kerosene\" for packages of flammable liquids used to start fires.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kerosene\" for packages of flammable liquids used to start fires.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Kerosene\" for packages of flammable liquids used to start fires.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Kerosene\" for packages of flammable liquids used to start fires.?\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0079",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "suggestive",
+      "C": "generic",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"KitchenAid\" for baking appliances.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"KitchenAid\" for baking appliances.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"KitchenAid\" for baking appliances.\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"KitchenAid\" for baking appliances.?\nA) fanciful\nB) suggestive\nC) generic\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0080",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "suggestive",
+      "C": "descriptive",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Seventeen\" for magazines targeted at teenagers.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Seventeen\" for magazines targeted at teenagers.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Seventeen\" for magazines targeted at teenagers.\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Seventeen\" for magazines targeted at teenagers.?\nA) arbitrary\nB) suggestive\nC) descriptive\nD) generic",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0081",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "descriptive",
+      "B": "fanciful",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Cold and Creamy\" for ice cream desserts.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cold and Creamy\" for ice cream desserts.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Cold and Creamy\" for ice cream desserts.\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Cold and Creamy\" for ice cream desserts.?\nA) descriptive\nB) fanciful\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0082",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "fanciful",
+      "B": "descriptive",
+      "C": "generic",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Sharp\" for televisions.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sharp\" for televisions.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sharp\" for televisions.\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Sharp\" for televisions.?\nA) fanciful\nB) descriptive\nC) generic\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0083",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "fanciful",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Smooth\" for keyboards.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Smooth\" for keyboards.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Smooth\" for keyboards.\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Smooth\" for keyboards.?\nA) fanciful\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0084",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "descriptive",
+      "B": "suggestive",
+      "C": "generic",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"7-Eleven\" for a convenience store that opens at 7am and closes at 11pm.\nA) descriptive\nB) suggestive\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"7-Eleven\" for a convenience store that opens at 7am and closes at 11pm.\nA) descriptive\nB) suggestive\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"7-Eleven\" for a convenience store that opens at 7am and closes at 11pm.\nA) descriptive\nB) suggestive\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"7-Eleven\" for a convenience store that opens at 7am and closes at 11pm.?\nA) descriptive\nB) suggestive\nC) generic\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0085",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "fanciful",
+      "B": "suggestive",
+      "C": "arbitrary",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Best Washing\" for a laundromat.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Best Washing\" for a laundromat.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Best Washing\" for a laundromat.\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Best Washing\" for a laundromat.?\nA) fanciful\nB) suggestive\nC) arbitrary\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0086",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "suggestive",
+      "B": "generic",
+      "C": "arbitrary",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Public Eye\" for a weekly tabloid publication.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Public Eye\" for a weekly tabloid publication.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Public Eye\" for a weekly tabloid publication.\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Public Eye\" for a weekly tabloid publication.?\nA) suggestive\nB) generic\nC) arbitrary\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0087",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "arbitrary",
+      "C": "suggestive",
+      "D": "descriptive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"GreenBull\" for formal wear.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"GreenBull\" for formal wear.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"GreenBull\" for formal wear.\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"GreenBull\" for formal wear.?\nA) generic\nB) arbitrary\nC) suggestive\nD) descriptive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0088",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"American Airlines\" for an air based transporation service.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"American Airlines\" for an air based transporation service.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"American Airlines\" for an air based transporation service.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"American Airlines\" for an air based transporation service.?\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0089",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "arbitrary",
+      "B": "generic",
+      "C": "descriptive",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Pen\" for writing implements which use ink.\nA) arbitrary\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Pen\" for writing implements which use ink.\nA) arbitrary\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Pen\" for writing implements which use ink.\nA) arbitrary\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Pen\" for writing implements which use ink.?\nA) arbitrary\nB) generic\nC) descriptive\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0090",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Sast\" for salad dressing.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sast\" for salad dressing.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Sast\" for salad dressing.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Sast\" for salad dressing.?\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0091",
+    "domain": "legal",
+    "correct_answer": "C",
+    "options": {
+      "A": "suggestive",
+      "B": "fanciful",
+      "C": "descriptive",
+      "D": "arbitrary"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Unique Haircuts\" for a hair salon.\nA) suggestive\nB) fanciful\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Unique Haircuts\" for a hair salon.\nA) suggestive\nB) fanciful\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Unique Haircuts\" for a hair salon.\nA) suggestive\nB) fanciful\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "C"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Unique Haircuts\" for a hair salon.?\nA) suggestive\nB) fanciful\nC) descriptive\nD) arbitrary",
+        "valid_answers": [
+          "A",
+          "B",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0092",
+    "domain": "legal",
+    "correct_answer": "D",
+    "options": {
+      "A": "descriptive",
+      "B": "arbitrary",
+      "C": "fanciful",
+      "D": "generic"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Tape\" for adhesive materials.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Tape\" for adhesive materials.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Tape\" for adhesive materials.\nA) descriptive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "D"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Tape\" for adhesive materials.?\nA) descriptive\nB) arbitrary\nC) fanciful\nD) generic",
+        "valid_answers": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0093",
+    "domain": "legal",
+    "correct_answer": "A",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "suggestive",
+      "D": "fanciful"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Watch\" for an Apple smartwatch.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Watch\" for an Apple smartwatch.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Watch\" for an Apple smartwatch.\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "A"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Watch\" for an Apple smartwatch.?\nA) generic\nB) descriptive\nC) suggestive\nD) fanciful",
+        "valid_answers": [
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leg_0094",
+    "domain": "legal",
+    "correct_answer": "B",
+    "options": {
+      "A": "generic",
+      "B": "descriptive",
+      "C": "fanciful",
+      "D": "suggestive"
+    },
+    "variants": {
+      "bare": {
+        "prompt": "Classify the mark described below.\n\nThe mark \"Coastal Winery\" for varietal wines.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "instructed": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coastal Winery\" for varietal wines.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "roleplay": {
+        "prompt": "You are an expert in this subject. A student asks you the following question. Respond with only the letter of the correct option.\n\nClassify the mark described below.\n\nThe mark \"Coastal Winery\" for varietal wines.\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "B"
+        ]
+      },
+      "negation": {
+        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Classify the mark described below.\n\nThe mark \"Coastal Winery\" for varietal wines.?\nA) generic\nB) descriptive\nC) fanciful\nD) suggestive",
+        "valid_answers": [
+          "A",
+          "C",
+          "D"
+        ]
+      }
+    }
+  }
+]
