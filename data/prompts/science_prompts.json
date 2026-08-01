@@ -29,7 +29,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Each of what paired organs is enclosed within a cavity surrounded by the pleura?\nA) bones\nB) heart\nC) ovaries\nD) lungs",
+        "prompt": "Read the question and options below.\n\nEach of what paired organs is enclosed within a cavity surrounded by the pleura?\nA) bones\nB) heart\nC) ovaries\nD) lungs\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -68,7 +68,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich science is NOT an extension of genetics, evolution, anatomy, physiology, and other biological disciplines?\nA) chronology\nB) neurobiology\nC) ethology\nD) microbiology",
+        "prompt": "Read the question and options below.\n\nWhich science is an extension of genetics, evolution, anatomy, physiology, and other biological disciplines?\nA) chronology\nB) neurobiology\nC) ethology\nD) microbiology\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -107,7 +107,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What element is the most abundant in the universe?\nA) hydrogen\nB) oxygen\nC) carbon\nD) helium",
+        "prompt": "Read the question and options below.\n\nWhat element is the most abundant in the universe?\nA) hydrogen\nB) oxygen\nC) carbon\nD) helium\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -146,7 +146,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Without particles, water vapor could not do what?\nA) dilute\nB) condense\nC) evaporate\nD) dissipate",
+        "prompt": "Read the question and options below.\n\nWithout particles, water vapor could not do what?\nA) dilute\nB) condense\nC) evaporate\nD) dissipate\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -185,7 +185,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What process done by bacteria makes them important producers in aquatic ecosystems?\nA) photosynthesis\nB) reproduction\nC) infection\nD) maturation",
+        "prompt": "Read the question and options below.\n\nWhat process done by bacteria makes them important producers in aquatic ecosystems?\nA) photosynthesis\nB) reproduction\nC) infection\nD) maturation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -224,7 +224,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Surging hormones will cause adolescents to have what?\nA) bulging muscles\nB) blackouts\nC) growth spurts\nD) mood swings",
+        "prompt": "Read the question and options below.\n\nSurging hormones will cause adolescents to have what?\nA) bulging muscles\nB) blackouts\nC) growth spurts\nD) mood swings\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -263,7 +263,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Water is used by the plant to move materials up from the roots to make what?\nA) light\nB) chlorophyll\nC) fruit\nD) food",
+        "prompt": "Read the question and options below.\n\nWater is used by the plant to move materials up from the roots to make what?\nA) light\nB) chlorophyll\nC) fruit\nD) food\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -302,7 +302,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT a body of freshwater that flows downhill in a channel?\nA) a stream\nB) a creek\nC) an eddy\nD) a river",
+        "prompt": "Read the question and options below.\n\nWhat is a body of freshwater that flows downhill in a channel?\nA) a stream\nB) a creek\nC) an eddy\nD) a river\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -341,7 +341,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT an estimation of all of the organic matter available as food, and involves measuring biomass in terrestrial environments?\nA) trophic level total\nB) net primary productivity\nC) food chain\nD) decomposition energy",
+        "prompt": "Read the question and options below.\n\nWhat is an estimation of all of the organic matter available as food, and involves measuring biomass in terrestrial environments?\nA) trophic level total\nB) net primary productivity\nC) food chain\nD) decomposition energy\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -380,7 +380,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Vivipary refers to the development and nourishment of a what?\nA) seed\nB) egg\nC) nucleus\nD) embryo",
+        "prompt": "Read the question and options below.\n\nVivipary refers to the development and nourishment of a what?\nA) seed\nB) egg\nC) nucleus\nD) embryo\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -419,7 +419,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What term means the amount of water vapor in the air?\nA) ambient\nB) humidity\nC) pressure\nD) temperature",
+        "prompt": "Read the question and options below.\n\nWhat term means the amount of water vapor in the air?\nA) ambient\nB) humidity\nC) pressure\nD) temperature\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -458,7 +458,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the most abundant of all vertebrate classes, and the most recent to evolve?\nA) reptiles\nB) birds\nC) bony fishes\nD) mammals",
+        "prompt": "Read the question and options below.\n\nWhat is the most abundant of all vertebrate classes, and the most recent to evolve?\nA) reptiles\nB) birds\nC) bony fishes\nD) mammals\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -497,7 +497,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the most important function of enzymes in animals?\nA) carry oxygen\nB) help digest food\nC) transport messages\nD) excrete waste",
+        "prompt": "Read the question and options below.\n\nWhat is the most important function of enzymes in animals?\nA) carry oxygen\nB) help digest food\nC) transport messages\nD) excrete waste\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -536,7 +536,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the name of the complex mixture that consists of water, proteins, fats, carbohydrates, and minerals?\nA) sperm\nB) milk\nC) plasma\nD) blood",
+        "prompt": "Read the question and options below.\n\nWhat is the name of the complex mixture that consists of water, proteins, fats, carbohydrates, and minerals?\nA) sperm\nB) milk\nC) plasma\nD) blood\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -575,7 +575,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Matter is made up of a mixture of things called what?\nA) structures\nB) compounds\nC) segments\nD) elements",
+        "prompt": "Read the question and options below.\n\nMatter is made up of a mixture of things called what?\nA) structures\nB) compounds\nC) segments\nD) elements\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -614,7 +614,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Where do plants take in air?\nA) their stems\nB) their leaves\nC) their flowers\nD) their roots",
+        "prompt": "Read the question and options below.\n\nWhere do plants take in air?\nA) their stems\nB) their leaves\nC) their flowers\nD) their roots\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -653,7 +653,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Twenty-four hours before fertilization, the egg has finished meiosis and becomes a mature what?\nA) spermatozoa\nB) oocyte\nC) fetus\nD) zygote",
+        "prompt": "Read the question and options below.\n\nTwenty-four hours before fertilization, the egg has finished meiosis and becomes a mature what?\nA) spermatozoa\nB) oocyte\nC) fetus\nD) zygote\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -692,7 +692,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The four basic types of tissue are epithelial, muscle, connective, and what?\nA) circulatory\nB) digestive\nC) nervous\nD) regulatory",
+        "prompt": "Read the question and options below.\n\nThe four basic types of tissue are epithelial, muscle, connective, and what?\nA) circulatory\nB) digestive\nC) nervous\nD) regulatory\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -731,7 +731,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the study of how forces affect the motion of objects?\nA) acceleration\nB) kinematics\nC) behaviors\nD) dynamics",
+        "prompt": "Read the question and options below.\n\nWhat is the study of how forces affect the motion of objects?\nA) acceleration\nB) kinematics\nC) behaviors\nD) dynamics\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -770,7 +770,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What begins with a diploid cell and ends with four haploid cells?\nA) meiosis\nB) electrolysis\nC) urinalysis\nD) mitosis",
+        "prompt": "Read the question and options below.\n\nWhat begins with a diploid cell and ends with four haploid cells?\nA) meiosis\nB) electrolysis\nC) urinalysis\nD) mitosis\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -809,7 +809,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What do you call a chemical process used to treat water by destroying a contaminant?\nA) toxic remediation\nB) chemical remediation\nC) carbon remediation\nD) basic remediation",
+        "prompt": "Read the question and options below.\n\nWhat do you call a chemical process used to treat water by destroying a contaminant?\nA) toxic remediation\nB) chemical remediation\nC) carbon remediation\nD) basic remediation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -848,7 +848,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of mechanical weathering occurs when one rock bumps against another rock?\nA) refraction\nB) abrasion\nC) disintegration\nD) absorption",
+        "prompt": "Read the question and options below.\n\nWhat type of mechanical weathering occurs when one rock bumps against another rock?\nA) refraction\nB) abrasion\nC) disintegration\nD) absorption\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -887,7 +887,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Some bacteria cannot be cultured because they are obligate intracellular parasites and cannot be grown outside what?\nA) anchor cell\nB) host cell\nC) brain cell\nD) sponsor cell",
+        "prompt": "Read the question and options below.\n\nSome bacteria cannot be cultured because they are obligate intracellular parasites and cannot be grown outside what?\nA) anchor cell\nB) host cell\nC) brain cell\nD) sponsor cell\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -926,7 +926,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: A dilute solution is one that has a relatively small amount of what?\nA) density\nB) saturated fat\nC) dissolved solute\nD) pH level",
+        "prompt": "Read the question and options below.\n\nA dilute solution is one that has a relatively small amount of what?\nA) density\nB) saturated fat\nC) dissolved solute\nD) pH level\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -965,7 +965,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Why is the life cycle of plants so complex?\nA) alternation of generation\nB) asexual reproduction\nC) metamorphosis\nD) pollination process",
+        "prompt": "Read the question and options below.\n\nWhy is the life cycle of plants so complex?\nA) alternation of generation\nB) asexual reproduction\nC) metamorphosis\nD) pollination process\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1004,7 +1004,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Repolarization occurs when the membrane potential begins to move back toward its resting what?\nA) tension\nB) voltage\nC) charge\nD) resistance",
+        "prompt": "Read the question and options below.\n\nRepolarization occurs when the membrane potential begins to move back toward its resting what?\nA) tension\nB) voltage\nC) charge\nD) resistance\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -1043,7 +1043,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Digestive enzymes are released, or secreted, by the organs of which body system?\nA) urinary system\nB) endocrine system\nC) nervous system\nD) digestive system",
+        "prompt": "Read the question and options below.\n\nDigestive enzymes are released, or secreted, by the organs of which body system?\nA) urinary system\nB) endocrine system\nC) nervous system\nD) digestive system\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1082,7 +1082,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Upon death of an organism, during composition, what returns to the soil as ammonium ions?\nA) hydrogen\nB) potasium\nC) nitrogen\nD) calcium",
+        "prompt": "Read the question and options below.\n\nUpon death of an organism, during composition, what returns to the soil as ammonium ions?\nA) hydrogen\nB) potasium\nC) nitrogen\nD) calcium\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1121,7 +1121,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the most common cause of down syndrome?\nA) trisomy 22\nB) chromosome 21\nC) trisomy 21\nD) gametes 21",
+        "prompt": "Read the question and options below.\n\nWhat is the most common cause of down syndrome?\nA) trisomy 22\nB) chromosome 21\nC) trisomy 21\nD) gametes 21\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1160,7 +1160,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The cell membrane consists of two layers of what?\nA) phospholipids\nB) filaments\nC) epidermis\nD) chlorophyll",
+        "prompt": "Read the question and options below.\n\nThe cell membrane consists of two layers of what?\nA) phospholipids\nB) filaments\nC) epidermis\nD) chlorophyll\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1199,7 +1199,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Exothermic reactions, like all chemical reactions, require what to get started?\nA) activation energy\nB) specific energy\nC) membrane energy\nD) surface energy",
+        "prompt": "Read the question and options below.\n\nExothermic reactions, like all chemical reactions, require what to get started?\nA) activation energy\nB) specific energy\nC) membrane energy\nD) surface energy\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1238,7 +1238,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the most abundant metal of the earth's crust?\nA) magnetite\nB) calcium\nC) copper\nD) aluminum",
+        "prompt": "Read the question and options below.\n\nWhat is the most abundant metal of the earth's crust?\nA) magnetite\nB) calcium\nC) copper\nD) aluminum\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1277,7 +1277,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Malonate plays what negative role on the enzyme succinate dehydrogenase?\nA) pathway\nB) catalyst\nC) receptor\nD) inhibitor",
+        "prompt": "Read the question and options below.\n\nMalonate plays what negative role on the enzyme succinate dehydrogenase?\nA) pathway\nB) catalyst\nC) receptor\nD) inhibitor\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1316,7 +1316,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What ingredient has been used in brewing, winemaking and baking for thousands of years?\nA) flour\nB) oils\nC) yeast\nD) fruit",
+        "prompt": "Read the question and options below.\n\nWhat ingredient has been used in brewing, winemaking and baking for thousands of years?\nA) flour\nB) oils\nC) yeast\nD) fruit\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1355,7 +1355,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the space between a neuron and the next cell?\nA) the synapse\nB) dendritic gap\nC) neurotransmitter passage\nD) cell divide",
+        "prompt": "Read the question and options below.\n\nWhat is the space between a neuron and the next cell?\nA) the synapse\nB) dendritic gap\nC) neurotransmitter passage\nD) cell divide\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1394,7 +1394,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of waves transmit the energy of an earthquake?\nA) sonic waves\nB) volcanic waves\nC) tectonic waves\nD) seismic waves",
+        "prompt": "Read the question and options below.\n\nWhat type of waves transmit the energy of an earthquake?\nA) sonic waves\nB) volcanic waves\nC) tectonic waves\nD) seismic waves\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1433,7 +1433,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich kind of muscle regulates air flow in lungs?\nA) striated\nB) vascular\nC) alveoli\nD) smooth",
+        "prompt": "Read the question and options below.\n\nWhich kind of muscle regulates air flow in lungs?\nA) striated\nB) vascular\nC) alveoli\nD) smooth\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1472,7 +1472,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Many species of flowering plants have coevolved with specific what?\nA) spores\nB) predators\nC) climates\nD) pollinators",
+        "prompt": "Read the question and options below.\n\nMany species of flowering plants have coevolved with specific what?\nA) spores\nB) predators\nC) climates\nD) pollinators\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1511,7 +1511,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Chelicerae in spiders are often modified into fangs that perform what function?\nA) tearing flesh\nB) chewing\nC) inject venom\nD) courtship display",
+        "prompt": "Read the question and options below.\n\nChelicerae in spiders are often modified into fangs that perform what function?\nA) tearing flesh\nB) chewing\nC) inject venom\nD) courtship display\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1550,7 +1550,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the the process by which remains or traces of living things become fossils called?\nA) extirpation\nB) fasciculation\nC) gentrification\nD) fossilization",
+        "prompt": "Read the question and options below.\n\nWhat is the the process by which remains or traces of living things become fossils called?\nA) extirpation\nB) fasciculation\nC) gentrification\nD) fossilization\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1589,7 +1589,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Farming practices leave some soil exposed and vulnerable to what natural process?\nA) sediment\nB) erosion\nC) rust\nD) migration",
+        "prompt": "Read the question and options below.\n\nFarming practices leave some soil exposed and vulnerable to what natural process?\nA) sediment\nB) erosion\nC) rust\nD) migration\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -1628,7 +1628,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the eighth planet from our sun?\nA) uranus\nB) earth\nC) neptune\nD) mars",
+        "prompt": "Read the question and options below.\n\nWhat is the eighth planet from our sun?\nA) uranus\nB) earth\nC) neptune\nD) mars\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1667,7 +1667,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In weather terms, what do you call the boundary between two air masses?\nA) front\nB) cloud\nC) cover\nD) mass",
+        "prompt": "Read the question and options below.\n\nIn weather terms, what do you call the boundary between two air masses?\nA) front\nB) cloud\nC) cover\nD) mass\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1706,7 +1706,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The nervous system has two main parts, called the central nervous system and the what?\nA) functional nervious system\nB) useful nervous system\nC) peripheral nervous system\nD) obsolete nervous system",
+        "prompt": "Read the question and options below.\n\nThe nervous system has two main parts, called the central nervous system and the what?\nA) functional nervious system\nB) useful nervous system\nC) peripheral nervous system\nD) obsolete nervous system\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1745,7 +1745,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What arises due to crossing over, independent assortment, and the random union of gametes?\nA) recessive variation\nB) genetic variation\nC) susceptible variation\nD) alternative variation",
+        "prompt": "Read the question and options below.\n\nWhat arises due to crossing over, independent assortment, and the random union of gametes?\nA) recessive variation\nB) genetic variation\nC) susceptible variation\nD) alternative variation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -1784,7 +1784,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: During the first year after birth, what is a baby called?\nA) fetus\nB) toddler\nC) newborn\nD) infant",
+        "prompt": "Read the question and options below.\n\nDuring the first year after birth, what is a baby called?\nA) fetus\nB) toddler\nC) newborn\nD) infant\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1823,7 +1823,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What must be combined with a halogen to give it a positive oxidation number?\nA) nitrogen\nB) carbon\nC) oxygen\nD) calcium",
+        "prompt": "Read the question and options below.\n\nWhat must be combined with a halogen to give it a positive oxidation number?\nA) nitrogen\nB) carbon\nC) oxygen\nD) calcium\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1862,7 +1862,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The feeding positions in a food chain or web are called?\nA) trophic levels\nB) secondary levels\nC) consumer levels\nD) producer levels",
+        "prompt": "Read the question and options below.\n\nThe feeding positions in a food chain or web are called?\nA) trophic levels\nB) secondary levels\nC) consumer levels\nD) producer levels\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -1901,7 +1901,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: When a car is brought to a stop by friction on level ground, it loses what?\nA) mass energy\nB) exhibit energy\nC) kinetic energy\nD) residual energy",
+        "prompt": "Read the question and options below.\n\nWhen a car is brought to a stop by friction on level ground, it loses what?\nA) mass energy\nB) exhibit energy\nC) kinetic energy\nD) residual energy\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -1940,7 +1940,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: If the dna from all 46 chromosomes in a human cell nucleus was laid out end to end, it would measure approximately how long?\nA) three meters\nB) two meters\nC) one meter\nD) four meters",
+        "prompt": "Read the question and options below.\n\nIf the dna from all 46 chromosomes in a human cell nucleus was laid out end to end, it would measure approximately how long?\nA) three meters\nB) two meters\nC) one meter\nD) four meters\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -1979,7 +1979,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT a relationship where one species benefits and the other is unaffected?\nA) parasitism\nB) mutualism\nC) commensalism\nD) pollenation",
+        "prompt": "Read the question and options below.\n\nWhat is a relationship where one species benefits and the other is unaffected?\nA) parasitism\nB) mutualism\nC) commensalism\nD) pollenation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2018,7 +2018,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Candida and trichophyton are examples of disease-causing types of what organisms, which become parasitic?\nA) yeast\nB) viruses\nC) bacteria\nD) fungi",
+        "prompt": "Read the question and options below.\n\nCandida and trichophyton are examples of disease-causing types of what organisms, which become parasitic?\nA) yeast\nB) viruses\nC) bacteria\nD) fungi\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2057,7 +2057,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the most important source of electromagnetic waves on earth?\nA) the moon\nB) the ocean\nC) clouds\nD) the sun",
+        "prompt": "Read the question and options below.\n\nWhat is the most important source of electromagnetic waves on earth?\nA) the moon\nB) the ocean\nC) clouds\nD) the sun\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2096,7 +2096,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Most of the energy used by living things comes either directly or indirectly from where?\nA) sun\nB) horizon\nC) earth\nD) water",
+        "prompt": "Read the question and options below.\n\nMost of the energy used by living things comes either directly or indirectly from where?\nA) sun\nB) horizon\nC) earth\nD) water\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -2135,7 +2135,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Wearing personal protective equipment such as goggles and gloves during an experiment is an example of what?\nA) office politics\nB) lab organization\nC) safety precaution\nD) pollution precaution",
+        "prompt": "Read the question and options below.\n\nWearing personal protective equipment such as goggles and gloves during an experiment is an example of what?\nA) office politics\nB) lab organization\nC) safety precaution\nD) pollution precaution\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2174,7 +2174,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Although magma once filled our moon's craters, what is thought to have ended there over a billion years ago?\nA) mineral activity\nB) oceanic activity\nC) volcanic activity\nD) deserts activity",
+        "prompt": "Read the question and options below.\n\nAlthough magma once filled our moon's craters, what is thought to have ended there over a billion years ago?\nA) mineral activity\nB) oceanic activity\nC) volcanic activity\nD) deserts activity\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2213,7 +2213,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT it called when two plates slide past each other in opposite directions?\nA) plate divergence\nB) tectonic movement\nC) transform plate boundary\nD) transformation",
+        "prompt": "Read the question and options below.\n\nWhat is it called when two plates slide past each other in opposite directions?\nA) plate divergence\nB) tectonic movement\nC) transform plate boundary\nD) transformation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2252,7 +2252,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What allows some things to enter the cell while keeping other things out?\nA) cell membrane\nB) cell substrate\nC) cell vacuum\nD) cell center",
+        "prompt": "Read the question and options below.\n\nWhat allows some things to enter the cell while keeping other things out?\nA) cell membrane\nB) cell substrate\nC) cell vacuum\nD) cell center\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -2291,7 +2291,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What nervous system is divided into two parts, the sensory division and the motor division?\nA) physiological\nB) developmental\nC) peripheral\nD) central",
+        "prompt": "Read the question and options below.\n\nWhat nervous system is divided into two parts, the sensory division and the motor division?\nA) physiological\nB) developmental\nC) peripheral\nD) central\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2330,7 +2330,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What part of the neuron is a large structure with a central nucleus?\nA) Environmental\nB) proteins body\nC) cell body\nD) Eye body",
+        "prompt": "Read the question and options below.\n\nWhat part of the neuron is a large structure with a central nucleus?\nA) Environmental\nB) proteins body\nC) cell body\nD) Eye body\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2369,7 +2369,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Where do short period comets come from?\nA) milky way\nB) kuiper belt\nC) photon belt\nD) vesta belt",
+        "prompt": "Read the question and options below.\n\nWhere do short period comets come from?\nA) milky way\nB) kuiper belt\nC) photon belt\nD) vesta belt\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -2408,7 +2408,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Specific antigens on the surface of red blood cells determine what, which is important in cases of transfusion?\nA) blood form\nB) blood amount\nC) blood type\nD) blood count",
+        "prompt": "Read the question and options below.\n\nSpecific antigens on the surface of red blood cells determine what, which is important in cases of transfusion?\nA) blood form\nB) blood amount\nC) blood type\nD) blood count\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2447,7 +2447,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Most modern seed plants are angiosperms, which produce seeds in the ovaries of what basic structure?\nA) flowers\nB) leaves\nC) cells\nD) stems",
+        "prompt": "Read the question and options below.\n\nMost modern seed plants are angiosperms, which produce seeds in the ovaries of what basic structure?\nA) flowers\nB) leaves\nC) cells\nD) stems\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -2486,7 +2486,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Melting ice is drastically impacting the number of what at glacier national park?\nA) gaisers\nB) icebergs\nC) trees\nD) active glaciers",
+        "prompt": "Read the question and options below.\n\nMelting ice is drastically impacting the number of what at glacier national park?\nA) gaisers\nB) icebergs\nC) trees\nD) active glaciers\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2525,7 +2525,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT located along convergent and divergent plate boundaries?\nA) volcanoes\nB) megaliths\nC) mezas\nD) dunes",
+        "prompt": "Read the question and options below.\n\nWhat are located along convergent and divergent plate boundaries?\nA) volcanoes\nB) megaliths\nC) mezas\nD) dunes\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -2564,7 +2564,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In physics, when one subtracts the frictional force from the applied force what is the result?\nA) quarter force\nB) kinetic force\nC) net force\nD) rolled force",
+        "prompt": "Read the question and options below.\n\nIn physics, when one subtracts the frictional force from the applied force what is the result?\nA) quarter force\nB) kinetic force\nC) net force\nD) rolled force\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2603,7 +2603,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: When your brain senses that your body temperature is increasing, it sends messages to the blood vessels in the skin to increase in what?\nA) height\nB) weight\nC) diameter\nD) surface",
+        "prompt": "Read the question and options below.\n\nWhen your brain senses that your body temperature is increasing, it sends messages to the blood vessels in the skin to increase in what?\nA) height\nB) weight\nC) diameter\nD) surface\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2642,7 +2642,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for the preserved remains or traces of organisms that lived in the past?\nA) corals\nB) fossils\nC) detritis\nD) bones",
+        "prompt": "Read the question and options below.\n\nWhat is the term for the preserved remains or traces of organisms that lived in the past?\nA) corals\nB) fossils\nC) detritis\nD) bones\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -2681,7 +2681,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What can slow down the increase of viruses in the blood?\nA) infections\nB) androgens\nC) medications\nD) platelets",
+        "prompt": "Read the question and options below.\n\nWhat can slow down the increase of viruses in the blood?\nA) infections\nB) androgens\nC) medications\nD) platelets\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2720,7 +2720,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What regulates the time of flowering in many species?\nA) wind patterns\nB) pollenation\nC) photoperiodism\nD) spirogyra",
+        "prompt": "Read the question and options below.\n\nWhat regulates the time of flowering in many species?\nA) wind patterns\nB) pollenation\nC) photoperiodism\nD) spirogyra\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2759,7 +2759,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The beginning of what season experiences the shortest period of daylight hours?\nA) autumn\nB) spring\nC) winter\nD) summer",
+        "prompt": "Read the question and options below.\n\nThe beginning of what season experiences the shortest period of daylight hours?\nA) autumn\nB) spring\nC) winter\nD) summer\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2798,7 +2798,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The concentration of the hydrogen ion in a solution can be calculated when what is known?\nA) temperature\nB) velocity\nC) pressure\nD) ph",
+        "prompt": "Read the question and options below.\n\nThe concentration of the hydrogen ion in a solution can be calculated when what is known?\nA) temperature\nB) velocity\nC) pressure\nD) ph\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2837,7 +2837,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of organism generally lives in or on its host?\nA) bacteria\nB) insect\nC) predator\nD) parasite",
+        "prompt": "Read the question and options below.\n\nWhat type of organism generally lives in or on its host?\nA) bacteria\nB) insect\nC) predator\nD) parasite\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2876,7 +2876,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the process of filtering waste from the kidneys?\nA) stones\nB) virus\nC) dialysis\nD) inflammation",
+        "prompt": "Read the question and options below.\n\nWhat is the process of filtering waste from the kidneys?\nA) stones\nB) virus\nC) dialysis\nD) inflammation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -2915,7 +2915,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The nucleus from a differentiated frog cell can direct development of what?\nA) embryo\nB) tadpole\nC) fetus\nD) ovary",
+        "prompt": "Read the question and options below.\n\nThe nucleus from a differentiated frog cell can direct development of what?\nA) embryo\nB) tadpole\nC) fetus\nD) ovary\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -2954,7 +2954,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Digestion of proteins begins with acids in what organ?\nA) stomach\nB) colon\nC) liver\nD) brain",
+        "prompt": "Read the question and options below.\n\nDigestion of proteins begins with acids in what organ?\nA) stomach\nB) colon\nC) liver\nD) brain\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -2993,7 +2993,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Reptiles are described by what term that means their internal temperature depends on the temperature of their environment?\nA) zygomorphic\nB) ectothermic\nC) endothermic\nD) actinomorphic",
+        "prompt": "Read the question and options below.\n\nReptiles are described by what term that means their internal temperature depends on the temperature of their environment?\nA) zygomorphic\nB) ectothermic\nC) endothermic\nD) actinomorphic\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -3032,7 +3032,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: A species that benefits and harms the host organism is called a what?\nA) parasite\nB) predators\nC) host\nD) viruses",
+        "prompt": "Read the question and options below.\n\nA species that benefits and harms the host organism is called a what?\nA) parasite\nB) predators\nC) host\nD) viruses\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3071,7 +3071,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Acidic hydrogen atoms are those which will be transferred to what?\nA) another atom\nB) a cup\nC) a base\nD) water",
+        "prompt": "Read the question and options below.\n\nAcidic hydrogen atoms are those which will be transferred to what?\nA) another atom\nB) a cup\nC) a base\nD) water\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3110,7 +3110,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The tissue that will become the scrotum in a male becomes the labia in a female, thus, they are regarded as having what relationship?\nA) opposite\nB) symbiotic\nC) mutual\nD) homologous",
+        "prompt": "Read the question and options below.\n\nThe tissue that will become the scrotum in a male becomes the labia in a female, thus, they are regarded as having what relationship?\nA) opposite\nB) symbiotic\nC) mutual\nD) homologous\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3149,7 +3149,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Plants go through seasonal changes after detecting differences in what?\nA) weather\nB) temperature\nC) week length\nD) day length",
+        "prompt": "Read the question and options below.\n\nPlants go through seasonal changes after detecting differences in what?\nA) weather\nB) temperature\nC) week length\nD) day length\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3188,7 +3188,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What come together to create continents and supercontinents?\nA) volcanic sediment\nB) microcontinents\nC) mountains\nD) islands",
+        "prompt": "Read the question and options below.\n\nWhat come together to create continents and supercontinents?\nA) volcanic sediment\nB) microcontinents\nC) mountains\nD) islands\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -3227,7 +3227,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The skin disease impetigo is caused by spread of what type of microorganism?\nA) bacteria\nB) viruses\nC) tumors\nD) algae",
+        "prompt": "Read the question and options below.\n\nThe skin disease impetigo is caused by spread of what type of microorganism?\nA) bacteria\nB) viruses\nC) tumors\nD) algae\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3266,7 +3266,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What cells are the basis of nervous tissue?\nA) erythrocytes\nB) lipocytes\nC) neurons\nD) osteoclasts",
+        "prompt": "Read the question and options below.\n\nWhat cells are the basis of nervous tissue?\nA) erythrocytes\nB) lipocytes\nC) neurons\nD) osteoclasts\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3305,7 +3305,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Birds are thought to have evolved from a group of bipedal dinosaurs called what?\nA) therapods\nB) staurikosaurus\nC) pteradactyls\nD) sporozoans",
+        "prompt": "Read the question and options below.\n\nBirds are thought to have evolved from a group of bipedal dinosaurs called what?\nA) therapods\nB) staurikosaurus\nC) pteradactyls\nD) sporozoans\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3344,7 +3344,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Do most waves strike the shore head on or at an angle?\nA) head on\nB) side on\nC) at a distance\nD) at an angle",
+        "prompt": "Read the question and options below.\n\nDo most waves strike the shore head on or at an angle?\nA) head on\nB) side on\nC) at a distance\nD) at an angle\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3383,7 +3383,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What substance, which forms igneous rock, flows out in rivers of lava when it reaches the surface?\nA) granite\nB) fertilizer\nC) magma\nD) soil",
+        "prompt": "Read the question and options below.\n\nWhat substance, which forms igneous rock, flows out in rivers of lava when it reaches the surface?\nA) granite\nB) fertilizer\nC) magma\nD) soil\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3422,7 +3422,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What shape are the muscles that control the anus?\nA) triangular\nB) elliptical\nC) circular\nD) irregular",
+        "prompt": "Read the question and options below.\n\nWhat shape are the muscles that control the anus?\nA) triangular\nB) elliptical\nC) circular\nD) irregular\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3461,7 +3461,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: While numerous elements can undergo fission, only a few can be used as fuels in what nuclear devices?\nA) laser beams\nB) colliders\nC) reactors\nD) accelerators",
+        "prompt": "Read the question and options below.\n\nWhile numerous elements can undergo fission, only a few can be used as fuels in what nuclear devices?\nA) laser beams\nB) colliders\nC) reactors\nD) accelerators\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3500,7 +3500,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What controls all five senses?\nA) nervous system\nB) endocrine system\nC) skin cells\nD) circulatory system",
+        "prompt": "Read the question and options below.\n\nWhat controls all five senses?\nA) nervous system\nB) endocrine system\nC) skin cells\nD) circulatory system\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3539,7 +3539,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Skyscrapers and other large structures built on soft ground must be anchored to what, located below the ground surface?\nA) bedrock\nB) water table\nC) ocean floor\nD) groundwater",
+        "prompt": "Read the question and options below.\n\nSkyscrapers and other large structures built on soft ground must be anchored to what, located below the ground surface?\nA) bedrock\nB) water table\nC) ocean floor\nD) groundwater\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3578,7 +3578,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT gases called that absorb heat in the atmosphere?\nA) carbonate gases\nB) microwave gases\nC) greenhouse gases\nD) ozone gases",
+        "prompt": "Read the question and options below.\n\nWhat are gases called that absorb heat in the atmosphere?\nA) carbonate gases\nB) microwave gases\nC) greenhouse gases\nD) ozone gases\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3617,7 +3617,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The products of what process are needed for cellular respiration, and vice versa?\nA) spermatogenesis\nB) circulation\nC) digestion\nD) photosynthesis",
+        "prompt": "Read the question and options below.\n\nThe products of what process are needed for cellular respiration, and vice versa?\nA) spermatogenesis\nB) circulation\nC) digestion\nD) photosynthesis\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3656,7 +3656,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In phyisics, what is considered to be the rotational version of force?\nA) work\nB) pressure\nC) torque\nD) energy",
+        "prompt": "Read the question and options below.\n\nIn phyisics, what is considered to be the rotational version of force?\nA) work\nB) pressure\nC) torque\nD) energy\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3695,7 +3695,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What happens to water vapor as it rises?\nA) it cools\nB) it disperses\nC) it warms\nD) it vibrates",
+        "prompt": "Read the question and options below.\n\nWhat happens to water vapor as it rises?\nA) it cools\nB) it disperses\nC) it warms\nD) it vibrates\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3734,7 +3734,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Many plants respond to the days growing shorter in the fall by doing what?\nA) migrating\nB) growing faster\nC) going dormant\nD) turning to liquid",
+        "prompt": "Read the question and options below.\n\nMany plants respond to the days growing shorter in the fall by doing what?\nA) migrating\nB) growing faster\nC) going dormant\nD) turning to liquid\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3773,7 +3773,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for the relatively stable state inside the body of an animal?\nA) dormancy\nB) metabolism\nC) homeostasis\nD) consciousness",
+        "prompt": "Read the question and options below.\n\nWhat is the term for the relatively stable state inside the body of an animal?\nA) dormancy\nB) metabolism\nC) homeostasis\nD) consciousness\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3812,7 +3812,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of bombs put a much larger fraction of their output into thermal energy than do conventional bombs?\nA) nuclear\nB) dirty bombs\nC) dense bombs\nD) TNT",
+        "prompt": "Read the question and options below.\n\nWhat type of bombs put a much larger fraction of their output into thermal energy than do conventional bombs?\nA) nuclear\nB) dirty bombs\nC) dense bombs\nD) TNT\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -3851,7 +3851,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Paracrine signals move by what method through the extracellular matrix?\nA) deposition\nB) diffusion\nC) transfusion\nD) osmosis",
+        "prompt": "Read the question and options below.\n\nParacrine signals move by what method through the extracellular matrix?\nA) deposition\nB) diffusion\nC) transfusion\nD) osmosis\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -3890,7 +3890,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Monosaccharides, disaccharides, and polysaccharides are types of what kind of macromolecule?\nA) protein\nB) nutrients\nC) glucose\nD) carbohydrate",
+        "prompt": "Read the question and options below.\n\nMonosaccharides, disaccharides, and polysaccharides are types of what kind of macromolecule?\nA) protein\nB) nutrients\nC) glucose\nD) carbohydrate\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -3929,7 +3929,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The medium moves back and forth in the same direction as the wave in what type of wave?\nA) kinetic wave\nB) longitudinal wave\nC) latitudinal wave\nD) variable wave",
+        "prompt": "Read the question and options below.\n\nThe medium moves back and forth in the same direction as the wave in what type of wave?\nA) kinetic wave\nB) longitudinal wave\nC) latitudinal wave\nD) variable wave\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -3968,7 +3968,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Compounds that are capable of accepting electrons, such as o 2 or f2, are called what?\nA) Oxygen\nB) residues\nC) oxidants\nD) antioxidants",
+        "prompt": "Read the question and options below.\n\nCompounds that are capable of accepting electrons, such as o 2 or f2, are called what?\nA) Oxygen\nB) residues\nC) oxidants\nD) antioxidants\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4007,7 +4007,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What kind of weather do psychrophiles need to grow and reproduce?\nA) water temperatures\nB) cold temperatures\nC) mixed temperatures\nD) Hot temperatures",
+        "prompt": "Read the question and options below.\n\nWhat kind of weather do psychrophiles need to grow and reproduce?\nA) water temperatures\nB) cold temperatures\nC) mixed temperatures\nD) Hot temperatures\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -4046,7 +4046,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT equal to the angular acceleration multiplied by the radius of the rotating object?\nA) linear acceleration\nB) momentum\nC) equilibrium\nD) peak velocity",
+        "prompt": "Read the question and options below.\n\nWhat is equal to the angular acceleration multiplied by the radius of the rotating object?\nA) linear acceleration\nB) momentum\nC) equilibrium\nD) peak velocity\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4085,7 +4085,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Centrioles help organize the chromosomes before cell division so that each daughter cell has the correct number of what?\nA) ribosomes\nB) chromosomes\nC) cells\nD) receptors",
+        "prompt": "Read the question and options below.\n\nCentrioles help organize the chromosomes before cell division so that each daughter cell has the correct number of what?\nA) ribosomes\nB) chromosomes\nC) cells\nD) receptors\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -4124,7 +4124,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Prokaryotes can reproduce quickly by what?\nA) solar fission\nB) multiple fission\nC) binary fission\nD) residual fission",
+        "prompt": "Read the question and options below.\n\nProkaryotes can reproduce quickly by what?\nA) solar fission\nB) multiple fission\nC) binary fission\nD) residual fission\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4163,7 +4163,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What part of the sperm contains the nucleus?\nA) head\nB) nucleus\nC) tail\nD) body",
+        "prompt": "Read the question and options below.\n\nWhat part of the sperm contains the nucleus?\nA) head\nB) nucleus\nC) tail\nD) body\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4202,7 +4202,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In sexual reproduction, the fusion of haploid gametes forms a diploid cell called what?\nA) gonad\nB) gamete\nC) fetus\nD) zygote",
+        "prompt": "Read the question and options below.\n\nIn sexual reproduction, the fusion of haploid gametes forms a diploid cell called what?\nA) gonad\nB) gamete\nC) fetus\nD) zygote\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4241,7 +4241,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of cell function relies on microfilaments, which are the actin components of the cytoskeleton?\nA) muscle\nB) neurons\nC) nephrons\nD) skin cells",
+        "prompt": "Read the question and options below.\n\nWhat type of cell function relies on microfilaments, which are the actin components of the cytoskeleton?\nA) muscle\nB) neurons\nC) nephrons\nD) skin cells\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4280,7 +4280,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Ingestion and propulsion are the first two steps in which process that describes how humans process and consume food?\nA) absorption\nB) respiration\nC) regeneration\nD) digestion",
+        "prompt": "Read the question and options below.\n\nIngestion and propulsion are the first two steps in which process that describes how humans process and consume food?\nA) absorption\nB) respiration\nC) regeneration\nD) digestion\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4319,7 +4319,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: When a species changes in small ways over time, what is it called?\nA) nanoevolution\nB) minievolution\nC) small evolution\nD) microevolution",
+        "prompt": "Read the question and options below.\n\nWhen a species changes in small ways over time, what is it called?\nA) nanoevolution\nB) minievolution\nC) small evolution\nD) microevolution\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4358,7 +4358,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The percent yield is determined by calculating the ratio of actual yield by what?\nA) theoretical yield\nB) predicted return\nC) actual loss\nD) past balance",
+        "prompt": "Read the question and options below.\n\nThe percent yield is determined by calculating the ratio of actual yield by what?\nA) theoretical yield\nB) predicted return\nC) actual loss\nD) past balance\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4397,7 +4397,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the process of breaking an individual into parts followed by regeneration called?\nA) erosion\nB) destruction\nC) fragmentation\nD) minimization",
+        "prompt": "Read the question and options below.\n\nWhat is the process of breaking an individual into parts followed by regeneration called?\nA) erosion\nB) destruction\nC) fragmentation\nD) minimization\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4436,7 +4436,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of bonds are formed by the side-to-side overlap of p orbitals?\nA) pi bonds\nB) omega bonds\nC) sigma bonds\nD) theta bonds",
+        "prompt": "Read the question and options below.\n\nWhat type of bonds are formed by the side-to-side overlap of p orbitals?\nA) pi bonds\nB) omega bonds\nC) sigma bonds\nD) theta bonds\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4475,7 +4475,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What happens when mammals raise their hair with tiny muscles in the skin?\nA) bruising\nB) balding\nC) goosebumps\nD) bleeding",
+        "prompt": "Read the question and options below.\n\nWhat happens when mammals raise their hair with tiny muscles in the skin?\nA) bruising\nB) balding\nC) goosebumps\nD) bleeding\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4514,7 +4514,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The bohr model works only for which atom?\nA) helium\nB) boron\nC) hydrogen\nD) carbon",
+        "prompt": "Read the question and options below.\n\nThe bohr model works only for which atom?\nA) helium\nB) boron\nC) hydrogen\nD) carbon\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4553,7 +4553,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Most hydrogen atoms have how many protons?\nA) two\nB) three\nC) one\nD) four",
+        "prompt": "Read the question and options below.\n\nMost hydrogen atoms have how many protons?\nA) two\nB) three\nC) one\nD) four\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4592,7 +4592,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What lines the passages of the nose and senses chemicals in the air?\nA) optic receptors\nB) consumption receptors\nC) matter receptors\nD) odor receptors",
+        "prompt": "Read the question and options below.\n\nWhat lines the passages of the nose and senses chemicals in the air?\nA) optic receptors\nB) consumption receptors\nC) matter receptors\nD) odor receptors\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4631,7 +4631,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: How many mass extinctions have occurred throughout earth's history?\nA) six\nB) four\nC) five\nD) three",
+        "prompt": "Read the question and options below.\n\nHow many mass extinctions have occurred throughout earth's history?\nA) six\nB) four\nC) five\nD) three\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4670,7 +4670,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the watery fluid that bathes tissues and organs and contains protective white blood cells but does not contain erythrocytes?\nA) stomach\nB) secretion\nC) basil\nD) lymph",
+        "prompt": "Read the question and options below.\n\nWhat is the watery fluid that bathes tissues and organs and contains protective white blood cells but does not contain erythrocytes?\nA) stomach\nB) secretion\nC) basil\nD) lymph\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4709,7 +4709,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for when an embryo fixes itself to the side of the uterus?\nA) implantation\nB) parasite\nC) bacterial\nD) exploration",
+        "prompt": "Read the question and options below.\n\nWhat is the term for when an embryo fixes itself to the side of the uterus?\nA) implantation\nB) parasite\nC) bacterial\nD) exploration\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4748,7 +4748,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: When present in large volumes, what color hue can water emit?\nA) yellow\nB) white\nC) blue\nD) pink",
+        "prompt": "Read the question and options below.\n\nWhen present in large volumes, what color hue can water emit?\nA) yellow\nB) white\nC) blue\nD) pink\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4787,7 +4787,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In the case of the moose, predation is an additional factor that regulates what?\nA) color\nB) weight\nC) speed\nD) population",
+        "prompt": "Read the question and options below.\n\nIn the case of the moose, predation is an additional factor that regulates what?\nA) color\nB) weight\nC) speed\nD) population\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4826,7 +4826,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Some types of minerals form balls called what?\nA) fistulas\nB) nodules\nC) microbes\nD) cancers",
+        "prompt": "Read the question and options below.\n\nSome types of minerals form balls called what?\nA) fistulas\nB) nodules\nC) microbes\nD) cancers\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -4865,7 +4865,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The electrode at which oxidation occurs is called?\nA) the anode\nB) diode\nC) calomel\nD) cathode",
+        "prompt": "Read the question and options below.\n\nThe electrode at which oxidation occurs is called?\nA) the anode\nB) diode\nC) calomel\nD) cathode\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -4904,7 +4904,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What anatomical structures insulate, protect and provide sensory input?\nA) salivary glands\nB) fingernails\nC) hair\nD) teeth",
+        "prompt": "Read the question and options below.\n\nWhat anatomical structures insulate, protect and provide sensory input?\nA) salivary glands\nB) fingernails\nC) hair\nD) teeth\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -4943,7 +4943,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the process in which unspecialized cells become specialized in structure and function to perform certain tasks in the body?\nA) speciation\nB) differentiation\nC) mutation\nD) transcription",
+        "prompt": "Read the question and options below.\n\nWhat is the process in which unspecialized cells become specialized in structure and function to perform certain tasks in the body?\nA) speciation\nB) differentiation\nC) mutation\nD) transcription\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -4982,7 +4982,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the general name for a group of atoms derived from an alkane?\nA) acid group\nB) oxidation group\nC) anode group\nD) alkyl group",
+        "prompt": "Read the question and options below.\n\nWhat is the general name for a group of atoms derived from an alkane?\nA) acid group\nB) oxidation group\nC) anode group\nD) alkyl group\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5021,7 +5021,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What kind of drugs are formulated to help deal with hiv and herpes as well as influenza and two types of hepatitis?\nA) antibacterial drugs\nB) herbal remedies\nC) antiviral drugs\nD) steroid drugs",
+        "prompt": "Read the question and options below.\n\nWhat kind of drugs are formulated to help deal with hiv and herpes as well as influenza and two types of hepatitis?\nA) antibacterial drugs\nB) herbal remedies\nC) antiviral drugs\nD) steroid drugs\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5060,7 +5060,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Toxins and poisons are ______ enzyme inhibitos?\nA) observable\nB) cancerous\nC) irreversible\nD) reversible",
+        "prompt": "Read the question and options below.\n\nToxins and poisons are ______ enzyme inhibitos\nA) observable\nB) cancerous\nC) irreversible\nD) reversible\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5099,7 +5099,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT used to indicate the number of atoms of an element that are in the compound?\nA) indices\nB) prefixes\nC) suffixes\nD) digits",
+        "prompt": "Read the question and options below.\n\nWhat are used to indicate the number of atoms of an element that are in the compound?\nA) indices\nB) prefixes\nC) suffixes\nD) digits\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5138,7 +5138,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich molecules are made of one carbon and four hydrogen atoms?\nA) hydrocarbons\nB) fats\nC) proteins\nD) particles",
+        "prompt": "Read the question and options below.\n\nWhich molecules are made of one carbon and four hydrogen atoms?\nA) hydrocarbons\nB) fats\nC) proteins\nD) particles\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -5177,7 +5177,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The amniotic egg is a shared ancestral character for which clade?\nA) avian\nB) xerophyte\nC) amniota\nD) trichina",
+        "prompt": "Read the question and options below.\n\nThe amniotic egg is a shared ancestral character for which clade?\nA) avian\nB) xerophyte\nC) amniota\nD) trichina\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5216,7 +5216,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Each bond includes a sharing of electrons between atoms. two electrons are shared in a single bond; four electrons are shared in a double bond; and six electrons are shared in this?\nA) triple bond\nB) quadruple bond\nC) ionic bond\nD) magnetic bond",
+        "prompt": "Read the question and options below.\n\nEach bond includes a sharing of electrons between atoms. two electrons are shared in a single bond; four electrons are shared in a double bond; and six electrons are shared in this?\nA) triple bond\nB) quadruple bond\nC) ionic bond\nD) magnetic bond\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -5255,7 +5255,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT the smallest structural and functional unit of all living organisms?\nA) cells\nB) proteins\nC) lipids\nD) neutrons",
+        "prompt": "Read the question and options below.\n\nWhat are the smallest structural and functional unit of all living organisms?\nA) cells\nB) proteins\nC) lipids\nD) neutrons\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -5294,7 +5294,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What three parts is the earth divided into?\nA) troposphere, atomosphere, xerosphere\nB) crust, core, magma\nC) crust, mantle, core\nD) oceans, land, air",
+        "prompt": "Read the question and options below.\n\nWhat three parts is the earth divided into?\nA) troposphere, atomosphere, xerosphere\nB) crust, core, magma\nC) crust, mantle, core\nD) oceans, land, air\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5333,7 +5333,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The softer connective tissue that fills the interior of most bone is referred to as what?\nA) liquid marrow\nB) solid marrow\nC) attached marrow\nD) bone marrow",
+        "prompt": "Read the question and options below.\n\nThe softer connective tissue that fills the interior of most bone is referred to as what?\nA) liquid marrow\nB) solid marrow\nC) attached marrow\nD) bone marrow\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5372,7 +5372,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Matter undergoing chemical reactions and physical changes can release or absorb heat. a change that releases heat is called what?\nA) magnetic process\nB) biochemical process\nC) exothermic process\nD) oxidized process",
+        "prompt": "Read the question and options below.\n\nMatter undergoing chemical reactions and physical changes can release or absorb heat. a change that releases heat is called what?\nA) magnetic process\nB) biochemical process\nC) exothermic process\nD) oxidized process\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5411,7 +5411,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT it called when birds keep their eggs warm while the embryos inside develop?\nA) incubation\nB) spawning\nC) fertilization\nD) insulation",
+        "prompt": "Read the question and options below.\n\nWhat is it called when birds keep their eggs warm while the embryos inside develop?\nA) incubation\nB) spawning\nC) fertilization\nD) insulation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -5450,7 +5450,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What living creatures comprise the \"rainforests of the oceans\"?\nA) algae\nB) kelp\nC) krill\nD) coral reefs",
+        "prompt": "Read the question and options below.\n\nWhat living creatures comprise the \"rainforests of the oceans\"?\nA) algae\nB) kelp\nC) krill\nD) coral reefs\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5489,7 +5489,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of rocks form when an existing rock is changed by heat or pressure?\nA) Molten\nB) metamorphic\nC) sediments\nD) igneous",
+        "prompt": "Read the question and options below.\n\nWhat type of rocks form when an existing rock is changed by heat or pressure?\nA) Molten\nB) metamorphic\nC) sediments\nD) igneous\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5528,7 +5528,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Angiosperm seed develops inside of what?\nA) a kidney\nB) the pancreas\nC) an ovary\nD) fallopian tubes",
+        "prompt": "Read the question and options below.\n\nAngiosperm seed develops inside of what?\nA) a kidney\nB) the pancreas\nC) an ovary\nD) fallopian tubes\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5567,7 +5567,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The number of what subatomic particles determines an element\u2019s atomic number and is used to distinguish one element from another?\nA) quarks\nB) protons\nC) electrons\nD) neutrons",
+        "prompt": "Read the question and options below.\n\nThe number of what subatomic particles determines an element\u2019s atomic number and is used to distinguish one element from another?\nA) quarks\nB) protons\nC) electrons\nD) neutrons\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5606,7 +5606,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for the force that brings objects toward the earth?\nA) light\nB) weight\nC) gravity\nD) centrifugal",
+        "prompt": "Read the question and options below.\n\nWhat is the term for the force that brings objects toward the earth?\nA) light\nB) weight\nC) gravity\nD) centrifugal\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5645,7 +5645,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What does scientific notation use to write very large or very small numbers?\nA) coefficients\nB) zeros\nC) exponents\nD) whole numbers",
+        "prompt": "Read the question and options below.\n\nWhat does scientific notation use to write very large or very small numbers?\nA) coefficients\nB) zeros\nC) exponents\nD) whole numbers\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5684,7 +5684,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Often generated by molecular cloning, transgenic organisms possess what from a different species?\nA) RNA\nB) dna\nC) memories\nD) organs",
+        "prompt": "Read the question and options below.\n\nOften generated by molecular cloning, transgenic organisms possess what from a different species?\nA) RNA\nB) dna\nC) memories\nD) organs\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5723,7 +5723,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What divide on their own by a process that resembles binary fission in prokaryotes?\nA) bacteria\nB) mitochondria\nC) proteins\nD) protazoa",
+        "prompt": "Read the question and options below.\n\nWhat divide on their own by a process that resembles binary fission in prokaryotes?\nA) bacteria\nB) mitochondria\nC) proteins\nD) protazoa\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5762,7 +5762,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for the ability of a fluid to exert an upward force on any object placed in it?\nA) viscosity\nB) buoyancy\nC) density\nD) resonance",
+        "prompt": "Read the question and options below.\n\nWhat is the term for the ability of a fluid to exert an upward force on any object placed in it?\nA) viscosity\nB) buoyancy\nC) density\nD) resonance\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5801,7 +5801,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What do we call a simple machine that consists of a rope and grooved wheel?\nA) lever\nB) pulley\nC) pedal\nD) axle",
+        "prompt": "Read the question and options below.\n\nWhat do we call a simple machine that consists of a rope and grooved wheel?\nA) lever\nB) pulley\nC) pedal\nD) axle\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5840,7 +5840,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In the u. s. , the majority of electricity is produced by burning coal or what else?\nA) hydroelectic\nB) fossil fuels\nC) wind power\nD) solar",
+        "prompt": "Read the question and options below.\n\nIn the u. s. , the majority of electricity is produced by burning coal or what else?\nA) hydroelectic\nB) fossil fuels\nC) wind power\nD) solar\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -5879,7 +5879,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What gas is released when dead organisms and other organic materials decompose?\nA) carbon dioxide\nB) hydrogen peroxide\nC) nitrous oxide\nD) carbon monoxide",
+        "prompt": "Read the question and options below.\n\nWhat gas is released when dead organisms and other organic materials decompose?\nA) carbon dioxide\nB) hydrogen peroxide\nC) nitrous oxide\nD) carbon monoxide\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -5918,7 +5918,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Proto-oncogenes can change into oncogenes that cause what?\nA) Mutations\nB) Infections\nC) cancer\nD) DNA",
+        "prompt": "Read the question and options below.\n\nProto-oncogenes can change into oncogenes that cause what?\nA) Mutations\nB) Infections\nC) cancer\nD) DNA\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5957,7 +5957,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the only animal phyla that does not consist exclusively of invertebrates?\nA) arthropods\nB) bacteria\nC) eukaryotes\nD) chordates",
+        "prompt": "Read the question and options below.\n\nWhat is the only animal phyla that does not consist exclusively of invertebrates?\nA) arthropods\nB) bacteria\nC) eukaryotes\nD) chordates\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -5996,7 +5996,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What causes symptoms associated with sickle-cell disease?\nA) transgene effects\nB) pleiotropic effects\nC) genetic drift\nD) spontaneous mutation",
+        "prompt": "Read the question and options below.\n\nWhat causes symptoms associated with sickle-cell disease?\nA) transgene effects\nB) pleiotropic effects\nC) genetic drift\nD) spontaneous mutation\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6035,7 +6035,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the electron domain geometry of ammonia?\nA) neurons\nB) atoms\nC) tetrahedral\nD) membranes",
+        "prompt": "Read the question and options below.\n\nWhat is the electron domain geometry of ammonia?\nA) neurons\nB) atoms\nC) tetrahedral\nD) membranes\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6074,7 +6074,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What do astronomers term the stretching of space that causes the distance between galaxies to increase?\nA) draining universe\nB) maintaining universe\nC) expanding universe\nD) contracting universe",
+        "prompt": "Read the question and options below.\n\nWhat do astronomers term the stretching of space that causes the distance between galaxies to increase?\nA) draining universe\nB) maintaining universe\nC) expanding universe\nD) contracting universe\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6113,7 +6113,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT plants that grow on other plants called?\nA) epiphytes\nB) parasites\nC) bryophytes\nD) fungi",
+        "prompt": "Read the question and options below.\n\nWhat are plants that grow on other plants called?\nA) epiphytes\nB) parasites\nC) bryophytes\nD) fungi\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6152,7 +6152,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What soil is common in deciduous forests?\nA) xerophyte\nB) loam\nC) pedalfer\nD) sandy soil",
+        "prompt": "Read the question and options below.\n\nWhat soil is common in deciduous forests?\nA) xerophyte\nB) loam\nC) pedalfer\nD) sandy soil\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6191,7 +6191,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Where are b cells produced in the body?\nA) keratinocytes\nB) lymphocytes\nC) tumors\nD) lungs",
+        "prompt": "Read the question and options below.\n\nWhere are b cells produced in the body?\nA) keratinocytes\nB) lymphocytes\nC) tumors\nD) lungs\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6230,7 +6230,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What kind of a disorder is tay-sachs disease?\nA) inherited disorder\nB) accumulated disease\nC) vitamin difficiency\nD) a type of cancer",
+        "prompt": "Read the question and options below.\n\nWhat kind of a disorder is tay-sachs disease?\nA) inherited disorder\nB) accumulated disease\nC) vitamin difficiency\nD) a type of cancer\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6269,7 +6269,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The hypothalamus is actually part of the brain, but it also secretes what?\nA) acids\nB) hormones\nC) electrolytes\nD) enzymes",
+        "prompt": "Read the question and options below.\n\nThe hypothalamus is actually part of the brain, but it also secretes what?\nA) acids\nB) hormones\nC) electrolytes\nD) enzymes\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6308,7 +6308,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The variety of cell shapes seen in prokaryotes and eukaryotes reflects the functions that each what has?\nA) life\nB) cell\nC) organ\nD) proteins",
+        "prompt": "Read the question and options below.\n\nThe variety of cell shapes seen in prokaryotes and eukaryotes reflects the functions that each what has?\nA) life\nB) cell\nC) organ\nD) proteins\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6347,7 +6347,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the term for what the earth rotates on?\nA) axis\nB) tip\nC) compass\nD) radius",
+        "prompt": "Read the question and options below.\n\nWhat is the term for what the earth rotates on?\nA) axis\nB) tip\nC) compass\nD) radius\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6386,7 +6386,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What term in biotechnology means a genetically exact copy of an organism?\nA) adult\nB) phenotype\nC) clone\nD) male",
+        "prompt": "Read the question and options below.\n\nWhat term in biotechnology means a genetically exact copy of an organism?\nA) adult\nB) phenotype\nC) clone\nD) male\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6425,7 +6425,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: When liquid water changes to water vapor it is called?\nA) evaporation\nB) evaporation\nC) absorption\nD) transpiration",
+        "prompt": "Read the question and options below.\n\nWhen liquid water changes to water vapor it is called?\nA) evaporation\nB) evaporation\nC) absorption\nD) transpiration\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6464,7 +6464,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Who wrote the book on the origin of species?\nA) darwin\nB) Sagan\nC) Scopes\nD) cannon",
+        "prompt": "Read the question and options below.\n\nWho wrote the book on the origin of species?\nA) darwin\nB) Sagan\nC) Scopes\nD) cannon\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6503,7 +6503,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What system consists of organs that break down food and absorb nutrients such as glucose?\nA) cardiovascular system\nB) skeletal system\nC) physical system\nD) digestive system",
+        "prompt": "Read the question and options below.\n\nWhat system consists of organs that break down food and absorb nutrients such as glucose?\nA) cardiovascular system\nB) skeletal system\nC) physical system\nD) digestive system\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6542,7 +6542,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT plant structures that contain male and/or female reproductive organs?\nA) leaves\nB) flowers\nC) stems\nD) roots",
+        "prompt": "Read the question and options below.\n\nWhat are plant structures that contain male and/or female reproductive organs?\nA) leaves\nB) flowers\nC) stems\nD) roots\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6581,7 +6581,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In the grand canyon, the same rock layers are visible on opposite sides of the canyon and were deposited simultaneously, which is an example of what?\nA) directly continuity\nB) lateral continuity\nC) bilateral continuity\nD) width continuity",
+        "prompt": "Read the question and options below.\n\nIn the grand canyon, the same rock layers are visible on opposite sides of the canyon and were deposited simultaneously, which is an example of what?\nA) directly continuity\nB) lateral continuity\nC) bilateral continuity\nD) width continuity\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6620,7 +6620,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The body cannot sustain for very long the bursts of energy mediated by epinephrine and norepinephrine, hormones associated with what stress response?\nA) fight-or-flight\nB) fainting\nC) do-or-die\nD) sink-or-swim",
+        "prompt": "Read the question and options below.\n\nThe body cannot sustain for very long the bursts of energy mediated by epinephrine and norepinephrine, hormones associated with what stress response?\nA) fight-or-flight\nB) fainting\nC) do-or-die\nD) sink-or-swim\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6659,7 +6659,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Where on a jellyfish is the mouth opening located?\nA) right side\nB) top\nC) left side\nD) underside",
+        "prompt": "Read the question and options below.\n\nWhere on a jellyfish is the mouth opening located?\nA) right side\nB) top\nC) left side\nD) underside\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6698,7 +6698,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What do mammals have under the skin to help insulate the body?\nA) cartilage\nB) nerve cells\nC) a layer of fat\nD) bone",
+        "prompt": "Read the question and options below.\n\nWhat do mammals have under the skin to help insulate the body?\nA) cartilage\nB) nerve cells\nC) a layer of fat\nD) bone\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6737,7 +6737,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT defined by its sequence of nucleotides?\nA) proteins acids\nB) structural acids\nC) nucleic acids\nD) amino acids",
+        "prompt": "Read the question and options below.\n\nWhat is defined by its sequence of nucleotides?\nA) proteins acids\nB) structural acids\nC) nucleic acids\nD) amino acids\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6776,7 +6776,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT one thing that cell membranes are permeable to?\nA) gas\nB) nutrients\nC) specific ions\nD) metals",
+        "prompt": "Read the question and options below.\n\nWhat is one thing that cell membranes are permeable to?\nA) gas\nB) nutrients\nC) specific ions\nD) metals\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6815,7 +6815,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In most fungi, the haploid nuclei contributed by each parent do not do what right away?\nA) filter\nB) vaporize\nC) disperse\nD) fuse",
+        "prompt": "Read the question and options below.\n\nIn most fungi, the haploid nuclei contributed by each parent do not do what right away?\nA) filter\nB) vaporize\nC) disperse\nD) fuse\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6854,7 +6854,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What element is present in all organic molecules?\nA) sodium\nB) carbon\nC) hydrogen\nD) oxygen",
+        "prompt": "Read the question and options below.\n\nWhat element is present in all organic molecules?\nA) sodium\nB) carbon\nC) hydrogen\nD) oxygen\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -6893,7 +6893,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What functions in removing phosphorylated amino acids from proteins?\nA) phosphatase\nB) sucrose\nC) carbonate\nD) peptide",
+        "prompt": "Read the question and options below.\n\nWhat functions in removing phosphorylated amino acids from proteins?\nA) phosphatase\nB) sucrose\nC) carbonate\nD) peptide\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -6932,7 +6932,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: A skydiver will reach what when the air drag equals their weight?\nA) ending velocity\nB) constant velocity\nC) building velocity\nD) terminal velocity",
+        "prompt": "Read the question and options below.\n\nA skydiver will reach what when the air drag equals their weight?\nA) ending velocity\nB) constant velocity\nC) building velocity\nD) terminal velocity\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -6971,7 +6971,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT a rock that contains important minerals called?\nA) carbonic\nB) steel\nC) copper\nD) ore",
+        "prompt": "Read the question and options below.\n\nWhat is a rock that contains important minerals called?\nA) carbonic\nB) steel\nC) copper\nD) ore\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7010,7 +7010,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What opens two strands of dna?\nA) replication\nB) helicase\nC) adenylate\nD) chromosome",
+        "prompt": "Read the question and options below.\n\nWhat opens two strands of dna?\nA) replication\nB) helicase\nC) adenylate\nD) chromosome\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -7049,7 +7049,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: A fuel cell is a galvanic cell that requires a constant external supply of what?\nA) complexes\nB) reactants\nC) generators\nD) electricity",
+        "prompt": "Read the question and options below.\n\nA fuel cell is a galvanic cell that requires a constant external supply of what?\nA) complexes\nB) reactants\nC) generators\nD) electricity\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -7088,7 +7088,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What indicates the speed at which a reaction proceeds?\nA) the transform rate\nB) the reaction rate\nC) time zone\nD) reaction scale",
+        "prompt": "Read the question and options below.\n\nWhat indicates the speed at which a reaction proceeds?\nA) the transform rate\nB) the reaction rate\nC) time zone\nD) reaction scale\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -7127,7 +7127,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What living species of bird is considered the  largest of the raptors?\nA) peregrine falcon\nB) California condor\nC) pteradactyl\nD) golden eagles",
+        "prompt": "Read the question and options below.\n\nWhat living species of bird is considered the  largest of the raptors?\nA) peregrine falcon\nB) California condor\nC) pteradactyl\nD) golden eagles\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7166,7 +7166,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What process, which is analogous to mitosis, is a series of events that arrange and separate chromosomes and chromatids into daughter cells?\nA) meiosis\nB) apoptosis\nC) digestion\nD) inhibition",
+        "prompt": "Read the question and options below.\n\nWhat process, which is analogous to mitosis, is a series of events that arrange and separate chromosomes and chromatids into daughter cells?\nA) meiosis\nB) apoptosis\nC) digestion\nD) inhibition\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -7205,7 +7205,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Traits controlled by genes on the sex chromosomes are called what?\nA) chromosome-linked traits\nB) male-related traits\nC) gender-linked traits\nD) sex-linked traits",
+        "prompt": "Read the question and options below.\n\nTraits controlled by genes on the sex chromosomes are called what?\nA) chromosome-linked traits\nB) male-related traits\nC) gender-linked traits\nD) sex-linked traits\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7244,7 +7244,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What occurs not only as organisms grow, but as they reproduce.?\nA) proteins division\nB) flight division\nC) experimental division\nD) cell division",
+        "prompt": "Read the question and options below.\n\nWhat occurs not only as organisms grow, but as they reproduce.\nA) proteins division\nB) flight division\nC) experimental division\nD) cell division\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7283,7 +7283,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the protein in red blood cells which transports oxygen around the body?\nA) hematocrit\nB) hemoglobin\nC) plasma\nD) hydrogen",
+        "prompt": "Read the question and options below.\n\nWhat is the protein in red blood cells which transports oxygen around the body?\nA) hematocrit\nB) hemoglobin\nC) plasma\nD) hydrogen\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -7322,7 +7322,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Inside female cones, female spores develop into female what?\nA) gametophytes\nB) tubules\nC) filaments\nD) gymnosperms",
+        "prompt": "Read the question and options below.\n\nInside female cones, female spores develop into female what?\nA) gametophytes\nB) tubules\nC) filaments\nD) gymnosperms\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -7361,7 +7361,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Isotopes are named for their number of protons plus what?\nA) nuclei\nB) isomers\nC) electrons\nD) neutrons",
+        "prompt": "Read the question and options below.\n\nIsotopes are named for their number of protons plus what?\nA) nuclei\nB) isomers\nC) electrons\nD) neutrons\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7400,7 +7400,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: Speed, loudness, and pitch are properties of what?\nA) metal\nB) light\nC) colour\nD) sound",
+        "prompt": "Read the question and options below.\n\nSpeed, loudness, and pitch are properties of what?\nA) metal\nB) light\nC) colour\nD) sound\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7439,7 +7439,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What type of energy is produced when two objects move together?\nA) fluid\nB) mechanical\nC) internal\nD) kinetic",
+        "prompt": "Read the question and options below.\n\nWhat type of energy is produced when two objects move together?\nA) fluid\nB) mechanical\nC) internal\nD) kinetic\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "C",
@@ -7478,7 +7478,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The primary motor cortex is located in which lobe of the brain?\nA) Occipital\nB) Parietal\nC) frontal\nD) Temporal lobe",
+        "prompt": "Read the question and options below.\n\nThe primary motor cortex is located in which lobe of the brain?\nA) Occipital\nB) Parietal\nC) frontal\nD) Temporal lobe\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7517,7 +7517,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What 3 things do animals need to live and survive?\nA) sex, water, and sleep\nB) water, food, and an ecosystem\nC) air, water, and socialization\nD) air, water, and food",
+        "prompt": "Read the question and options below.\n\nWhat 3 things do animals need to live and survive?\nA) sex, water, and sleep\nB) water, food, and an ecosystem\nC) air, water, and socialization\nD) air, water, and food\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7556,7 +7556,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: In photosynthesis, what process involving carbon dioxide and oxygen occurs through small, regulated openings called stomata?\nA) osmosis\nB) fertilization\nC) gas exchange\nD) transpiration",
+        "prompt": "Read the question and options below.\n\nIn photosynthesis, what process involving carbon dioxide and oxygen occurs through small, regulated openings called stomata?\nA) osmosis\nB) fertilization\nC) gas exchange\nD) transpiration\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7595,7 +7595,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: All biochemical molecules have oxygen, carbon, and what other element?\nA) helium\nB) nitrogen\nC) hydrogen\nD) calcium",
+        "prompt": "Read the question and options below.\n\nAll biochemical molecules have oxygen, carbon, and what other element?\nA) helium\nB) nitrogen\nC) hydrogen\nD) calcium\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7634,7 +7634,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following are NOT by far the most common type of invertebrate?\nA) insects\nB) corals\nC) spiders\nD) crustaceans",
+        "prompt": "Read the question and options below.\n\nWhat are by far the most common type of invertebrate?\nA) insects\nB) corals\nC) spiders\nD) crustaceans\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -7673,7 +7673,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT the name of the system that consists of a hierarchy of taxa, from the kingdom to the species?\nA) Mendelian system\nB) zoology\nC) Bohr's law\nD) linnaean system",
+        "prompt": "Read the question and options below.\n\nWhat is the name of the system that consists of a hierarchy of taxa, from the kingdom to the species?\nA) Mendelian system\nB) zoology\nC) Bohr's law\nD) linnaean system\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7712,7 +7712,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The lattice energy is usually the most important energy factor in determining the stability of what?\nA) ionic compound\nB) harmonic compound\nC) saline compound\nD) magnetic compound",
+        "prompt": "Read the question and options below.\n\nThe lattice energy is usually the most important energy factor in determining the stability of what?\nA) ionic compound\nB) harmonic compound\nC) saline compound\nD) magnetic compound\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "B",
           "C",
@@ -7751,7 +7751,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: What do you call the ancient cores of continents, where the earliest continental crust is now found?\nA) craters\nB) mantles\nC) cratons\nD) escarpments",
+        "prompt": "Read the question and options below.\n\nWhat do you call the ancient cores of continents, where the earliest continental crust is now found?\nA) craters\nB) mantles\nC) cratons\nD) escarpments\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
@@ -7790,7 +7790,7 @@
         ]
       },
       "negation": {
-        "prompt": "Answer the following question. Respond with only the letter of the correct option.\n\nWhich of the following is NOT correct regarding: The full range of wavelengths and frequencies of electromagnetic radiation make up the ____________?\nA) mechanical spectrum\nB) anomalous spectrum\nC) electromagnetic spectrum\nD) electronic spectrum",
+        "prompt": "Read the question and options below.\n\nThe full range of wavelengths and frequencies of electromagnetic radiation make up the ____________\nA) mechanical spectrum\nB) anomalous spectrum\nC) electromagnetic spectrum\nD) electronic spectrum\n\nNow answer a different question: which ONE of the options above is INCORRECT, that is, which option does NOT correctly answer the question above? Respond with only the letter of that incorrect option.",
         "valid_answers": [
           "A",
           "B",
