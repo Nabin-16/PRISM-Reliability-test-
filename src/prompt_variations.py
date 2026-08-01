@@ -16,7 +16,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 
 
-# Templates
+# Templates 
 TEMPLATES = {
     "bare": "{question}\n{options}",
 
@@ -55,7 +55,7 @@ def build_negation_variant(question: str, options: dict, correct_answer: str) ->
         "Read the question and options below.\n\n"
         f"{question}\n{options_text}\n\n"
         "Now answer a different question: which ONE of the options "
-        "above is INCORRECT  that is, which option does NOT correctly "
+        "above is INCORRECT, that is, which option does NOT correctly "
         "answer the question above? Respond with only the letter of "
         "that incorrect option."
     )
@@ -65,7 +65,7 @@ def build_negation_variant(question: str, options: dict, correct_answer: str) ->
 
     return {
         "prompt": prompt,
-        "valid_answers": valid_letters,
+        "valid_answers": valid_letters,   # scorer checks membership, not equality
     }
 
 
