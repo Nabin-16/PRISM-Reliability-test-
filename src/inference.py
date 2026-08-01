@@ -1,7 +1,6 @@
 """
 Runs every prompt variant through a locally-loaded Ollama model and
 logs raw, parsed responses.
-
 Usage:
     python src/inference.py --model <model_name> --domain <domain>
     python src/inference.py --model <model_name> --domain all
@@ -39,6 +38,18 @@ def call_ollama(prompt: str, model: str) -> tuple[str, float]:
     return response.json()["response"], latency
 
 
+def format_eta(seconds: float) -> str:
+    if seconds < 0 or seconds != seconds:  # NaN guard
+        return "unknown"
+    m, s = divmod(int(seconds), 60)
+    h, m = divmod(m, 60)
+    if h:
+        return f"{h}h {m}m"
+    if m:
+        return f"{m}m {s}s"
+    return f"{s}s"
+
+
 def run_domain(model: str, domain: str):
     prompts_path = os.path.join(config.DATA_PROMPTS_DIR, f"{domain}_prompts.json")
     if not os.path.exists(prompts_path):
@@ -55,6 +66,7 @@ def run_domain(model: str, domain: str):
     )
     os.makedirs(config.RESULTS_RAW_DIR, exist_ok=True)
 
+    # skip questions already logged
     already_done = set()
     results = []
     if os.path.exists(out_path):
@@ -64,6 +76,15 @@ def run_domain(model: str, domain: str):
         print(f"  resuming: {len(already_done)} questions already done")
 
     total = len(questions)
+    remaining_ids = [q["id"] for q in questions if q["id"] not in already_done]
+    n_remaining = len(remaining_ids)
+    n_styles = len(config.PROMPT_STYLES)
+    total_calls_remaining = n_remaining * n_styles
+
+    calls_done = 0
+    run_start = time.time()
+    latency_window = []   # rolling average over the last 20 calls, adapts if a bigger/slower model kicks in mid-run
+
     for i, q in enumerate(questions):
         if q["id"] in already_done:
             continue
@@ -95,21 +116,37 @@ def run_domain(model: str, domain: str):
                 "valid_answers": variant["valid_answers"],
             }
 
+            calls_done += 1
+            if latency > 0:
+                latency_window.append(latency)
+                latency_window = latency_window[-20:]  # keep last 20 only
+
         results.append(question_result)
 
+        # progress line after every question
+        pct = 100 * calls_done / total_calls_remaining if total_calls_remaining else 100
+        avg_latency = sum(latency_window) / len(latency_window) if latency_window else 0
+        calls_left = total_calls_remaining - calls_done
+        eta_sec = avg_latency * calls_left
+        elapsed = time.time() - run_start
+        print(f"  [{model}/{domain}] {calls_done}/{total_calls_remaining} calls "
+              f"({pct:.1f}%) | elapsed {format_eta(elapsed)} "
+              f"| avg {avg_latency:.1f}s/call")
+
         if (i + 1) % 10 == 0 or (i + 1) == total:
-            print(f"  [{model}/{domain}] {i + 1}/{total} questions done")
             with open(out_path, "w") as f:
                 json.dump(results, f, indent=2)
 
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
-    print(f"  [ok] {model} / {domain}: {len(results)} questions -> {out_path}")
+    total_time = time.time() - run_start
+    print(f"  [ok] {model} / {domain}: {len(results)} questions "
+          f"in {format_eta(total_time)} -> {out_path}")
 
 
 def check_ollama_running():
     try:
-        requests.get("http://localhost:11434", timeout=3) # Watchout.......
+        requests.get("http://localhost:11434", timeout=3)
         return True
     except requests.exceptions.RequestException:
         return False
