@@ -35,7 +35,7 @@ except ImportError as e:
     print(f"\nActual error: {e}")
     sys.exit(1)
 
-random.seed(42)  # reproducibility — same 200 questions every run
+random.seed(42)  # reproducibility, same 200 questions every run
 
 
 def load_education():
@@ -83,28 +83,6 @@ def load_science():
 
 
 def load_legal():
-    """
-    LegalBench consumer_contracts_qa — 400 Yes/No questions on rights
-    and obligations in consumer terms-of-service contracts.
-
-    Replaces an earlier choice, abercrombie (5-way trademark
-    distinctiveness classification), for two concrete reasons:
-      1. Abercrombie's test set is only ~95 items — never enough for
-         a 200-question sample. Consumer Contracts QA has 400.
-      2. Abercrombie is a narrow IP-law taxonomy task, not
-         representative "legal reasoning" to a general audience, and
-         its 5-way structure forced into a 4-option MCQ made negation
-         ("which is NOT the answer") inherently fuzzy — 3 valid "not X"
-         answers out of 4. A binary Yes/No task makes negation
-         trivially well-defined: NOT Yes = No, exactly one right
-         answer, no ambiguity. This is a real methodological
-         improvement to the negation prompt style, not just a
-         data-volume workaround.
-
-    Kept as a 2-option "MCQ" (A=Yes, B=No) rather than padded to 4
-    options — the task is natively binary, and forcing in two
-    meaningless extra options would be worse than just using two.
-    """
     ds = load_dataset("nguha/legalbench", "consumer_contracts_qa", split="test")
     items = []
     for row in ds:

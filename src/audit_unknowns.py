@@ -1,10 +1,6 @@
 """
 Run this after a small pilot batch (10-15 questions) with a new model,
-before committing to the full run. It surfaces every response the
-parser couldn't extract an answer from, so you can quickly tell
-whether that model needs a new phrasing added to conclusion_pattern
-in response_parser.py — or whether it's a genuine instruction-
-following failure worth logging as-is.
+before committing to the full run.
 
 Usage:
     python src/audit_unknowns.py results/raw_responses/gemma2_2b_education.json

@@ -1,14 +1,10 @@
 """
 Re-runs the CURRENT response_parser.py logic against already-saved
-raw response text — no Ollama calls, no new inference, just fresh
-parsing. Essential after any parser fix: raw_responses/*.json files
-otherwise keep whatever "parsed" value was computed by whichever
-parser version was active back when inference.py originally ran.
-Every fix made since then silently does nothing until this is run.
+raw response text.
 
 Pulls the real options dict from data/prompts/{domain}_prompts.json
-(matched by question_id) so the fallback text-matching layer works
-correctly too, not just the regex layer — the raw_responses files
+(matched by question_id) so the fallback text matching layer works
+correctly too, not just the regex layer, the raw_responses files
 don't store options themselves.
 
 Usage:

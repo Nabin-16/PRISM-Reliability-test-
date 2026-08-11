@@ -103,9 +103,6 @@ def run_domain(model: str, domain: str):
                 print(f"    [error] {model} on {q['id']}/{style}: {e}")
                 raw, latency = "", -1
 
-            # need options dict for the fallback parser, reconstruct
-            # from valid_answers isn't enough, so we also stash the
-            # raw options text captured at prompt-gen time if present
             options = q.get("options", {})
             parsed = extract_answer(raw, options) if raw else "UNKNOWN"
 

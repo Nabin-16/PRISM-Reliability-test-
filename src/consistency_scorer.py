@@ -23,13 +23,6 @@ import config
 
 
 def majority_vote_with_tiebreak(responses: dict) -> tuple[str, float]:
-    """
-    responses = {style: {"parsed": "B", ...}, ...}
-    Returns (majority_answer, agreement_score).
-    Ties are broken using the 'bare' style's answer.
-    UNKNOWN responses are excluded from voting but still count
-    toward the denominator via the caller if needed for UNKNOWN rate.
-    """
     valid = {style: r["parsed"] for style, r in responses.items()
              if r["parsed"] != "UNKNOWN"}
 
@@ -50,13 +43,6 @@ def majority_vote_with_tiebreak(responses: dict) -> tuple[str, float]:
 
 
 def is_correct(majority_answer: str, valid_answers_by_style: dict) -> bool:
-    """
-    A majority answer counts as correct if it appears in ANY style's
-    valid_answers set that it was actually drawn from. In practice we
-    just check membership against the union — for non-negation styles
-    valid_answers is a single correct letter; for negation it's a set
-    of "any letter but the original correct one".
-    """
     all_valid = set()
     for style_data in valid_answers_by_style.values():
         all_valid.update(style_data)
@@ -94,12 +80,6 @@ def score_file(raw_path: str) -> list[dict]:
 
 
 def build_reliability_matrix():
-    """
-    Reads every results/raw_responses/{model}_{domain}.json file and
-    produces one row per (model, domain) in the summary CSV, plus a
-    finer-grained (model, domain, style) breakdown CSV that the
-    Prompt Normalizer reads to pick its "best style" at deploy time.
-    """
     raw_files = glob.glob(os.path.join(config.RESULTS_RAW_DIR, "*.json"))
     if not raw_files:
         print("No raw response files found yet. Run inference.py first.")
@@ -117,7 +97,7 @@ def build_reliability_matrix():
         # in place of colons, and domain is one of education/science/legal
         domain = fname.split("_")[-1]
         model_safe = fname[: -(len(domain) + 1)]
-        model = model_safe.replace("_", ":", 1)  # only first underscore was a colon
+        model = model_safe.replace("_", ":", 1) 
 
         scored = score_file(raw_path)
 
@@ -144,7 +124,6 @@ def build_reliability_matrix():
             "unknown_rate": round(unknown_rate, 4),
         })
 
-        # per-style accuracy — this is what the Prompt Normalizer needs
         with open(raw_path) as f:
             raw_questions = json.load(f)
 
@@ -167,7 +146,6 @@ def build_reliability_matrix():
                 "n": style_total[style],
             })
 
-    # write the two summary CSVs
     matrix_path = os.path.join(config.RESULTS_SUMMARY_DIR, "reliability_matrix.csv")
     with open(matrix_path, "w", newline="") as f:
         writer = csv.DictWriter(
@@ -189,8 +167,6 @@ def build_reliability_matrix():
     print(f"Reliability matrix -> {matrix_path}")
     print(f"Style breakdown     -> {style_path}")
 
-    # also print the "best global style per model" — what the
-    # Prompt Normalizer will actually use at deploy time
     print("\nBest overall prompt style per model (for the Normalizer):")
     by_model_style = {}
     for row in model_domain_style_rows:

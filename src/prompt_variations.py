@@ -31,7 +31,7 @@ TEMPLATES = {
         "correct option.\n\n{question}\n{options}"
     ),
 
-    # Negation is kept separately, see build_negation_variant() because it must also flag which option becomes "correct" under the inverted framing.
+    # Negation is kept separately, see build_negation_variant().
 }
 
 
