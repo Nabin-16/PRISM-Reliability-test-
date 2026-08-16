@@ -1,49 +1,50 @@
-"""
-Central configuration for the prompt reliability study.
-Edit this file to change models, sample sizes, or thresholds —
-every other script reads from here so you only change one place.
-"""
+from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+DATA_DIR = PROJECT_ROOT / "data"
+DATA_PROCESSED_DIR = DATA_DIR / "processed"
+DATA_TEMPLATES_DIR = DATA_DIR / "templates"
+DATA_PROMPTS_DIR = DATA_DIR / "prompts"
+DATA_AUDIT_DIR = DATA_DIR / "audit"
+
+RESULTS_DIR = PROJECT_ROOT / "results"
+RESULTS_RAW_DIR = RESULTS_DIR / "raw_responses"
+RESULTS_PARSED_DIR = RESULTS_DIR / "parsed"
+RESULTS_SCORED_DIR = RESULTS_DIR / "scored"
+RESULTS_SUMMARY_DIR = RESULTS_DIR / "summary"
+AUDIT_DIR = PROJECT_ROOT / "data" / "audit"
+
+RANDOM_SEED = 2026
+SAMPLE_SIZE_PER_DATASET = 200
+
+DATASETS = {
+    "arc_challenge": {
+        "huggingface_dataset": "allenai/ai2_arc",
+        "config": "ARC-Challenge",
+        "split": "test",
+    },
+    "sciq": {
+        "huggingface_dataset": "allenai/sciq",
+        "config": None,
+        "split": "test",
+    },
+}
+
+PROMPT_CONDITIONS = ("P0", "P1", "P2", "P3", "P4")
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-TEMPERATURE = 0          # greedy decoding — removes sampling randomness
-MAX_TOKENS = 450   
-REQUEST_TIMEOUT = 120     
+TEMPERATURE = 0.0
+NUM_PREDICT = 128
+REQUEST_TIMEOUT = 180
 
 MODELS = {
-    "llama3.2:3b":  {"label": "Llama-3.2 (3B)",     "ram_gb": 2.0},
-    "gemma3:4b":    {"label": "Gemma-3 (4B)",       "ram_gb": 3.3},
-    "phi4-mini":    {"label": "Phi-4-mini (3.8B)",  "ram_gb": 3.0},
-    "mistral:7b":   {"label": "Mistral-7B",         "ram_gb": 5.5},
+    "llama3.2:3b": {"label": "Llama-3.2 (3B)"},
+    "gemma3:4b": {"label": "Gemma-3 (4B)"},
+    "phi4-mini:latest": {"label": "Phi-4-mini (3.8B)"},
+    "mistral:7b": {"label": "Mistral-7B"},
 }
 
-DOMAINS = {
-    "education": {
-        "hf_dataset": "allenai/ai2_arc",
-        "hf_config": "ARC-Challenge",
-        "split": "test",
-    },
-    "science": {
-        "hf_dataset": "allenai/sciq",
-        "hf_config": None,
-        "split": "test",
-    },
-    "legal": {
-        "hf_dataset": "nguha/legalbench",
-        "hf_config": "consumer_contracts_qa",
-  
-        "split": "test",
-    },
-}
-
-SAMPLE_SIZE_PER_DOMAIN = 200 
-PROMPT_STYLES = ["bare", "instructed", "roleplay", "negation"]
-
-SIMILARITY_THRESHOLD = 0.85     
-CONFIDENCE_THRESHOLD = 0.75    
-DATA_RAW_DIR = "data/raw"
-DATA_PROCESSED_DIR = "data/processed"
-DATA_PROMPTS_DIR = "data/prompts"
-RESULTS_RAW_DIR = "results/raw_responses"
-RESULTS_SCORED_DIR = "results/scored"
-RESULTS_SUMMARY_DIR = "results/summary"
+EXPERIMENT_ID = "PRISM-EXP1-v1"
+TEMPLATE_VERSION = "1.0"
+PROTOCOL_VERSION = "1.0"
