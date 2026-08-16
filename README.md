@@ -680,21 +680,3 @@ The full 8,000-request experiment should begin only after the benchmark audit an
 5. Characterize meaningful failure patterns.
 6. Design a separate mitigation experiment if justified by the results.
 7. Build the final reliability-aware PRISM application around validated findings.
-
----
-
-## Reference Work
-
-PRISM is informed by prior work on prompt sensitivity and response consistency in small language models, including:
-
-**Clinical LLM Evaluation — Saravani/Hariprasad reference**
-
-https://github.com/shravani-01/clinical-llm-eval
-
-The reference work provides methodological context for evaluating prompt-related consistency. PRISM's first study focuses specifically on educational multiple-choice QA and controlled prompt formulations designed around the PRISM research questions.
-
----
-
-## License
-
-License information will be added when the project licensing decision is finalized.
