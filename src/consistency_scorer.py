@@ -1,187 +1,357 @@
 """
-Reads raw inference results and computes, per question:
-  - majority-vote answer (with bare-prompt tiebreak)
-  - agreement score (proportion of styles matching the majority)
-  - correctness (does the majority answer satisfy valid_answers?)
+PRISM
 
-Then aggregates to the model x domain x style level to build the
-reliability matrix that the Prompt Normalizer will read from later.
+Input:
+    results/parsed/*.jsonl
 
-Usage:
-    python src/consistency_scorer.py
+Outputs:
+    results/scored/<same filename>
+    results/summary/<same stem>_question_metrics.jsonl
+
+This module is the first stage that uses the dataset ground-truth answer.
+
+Definitions
+-----------
+For each prompt-level response:
+    correct = parsed_answer == expected_answer
+
+UNKNOWN responses are not treated as answer choices.
+
+For each question/model combination:
+    valid_response_count = number of parsed A/B/C/D responses
+    usable_response_rate = valid_response_count / number of prompt conditions
+
+    majority_answer = most frequent valid answer
+    agreement = majority_count / valid_response_count
+
+    prompt_sensitivity = 1 - agreement
+
+    unanimous = True when all five prompt responses are the same valid answer
+
+    majority_correct = majority_answer == expected_answer
 """
 
-import csv
-import glob
+from __future__ import annotations
+
+import argparse
 import json
-import os
-import sys
 from collections import Counter
+from pathlib import Path
+from typing import Any
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
+import sys
 
-def majority_vote_with_tiebreak(responses: dict) -> tuple[str, float]:
-    valid = {style: r["parsed"] for style, r in responses.items()
-             if r["parsed"] != "UNKNOWN"}
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-    if not valid:
-        return "UNKNOWN", 0.0
-
-    counts = Counter(valid.values())
-    max_count = max(counts.values())
-    top_answers = [a for a, c in counts.items() if c == max_count]
-
-    if len(top_answers) == 1:
-        majority = top_answers[0]
-    else:
-        majority = valid.get("bare", top_answers[0])
-
-    agreement = max_count / len(valid)
-    return majority, agreement
+import config  # noqa: E402
 
 
-def is_correct(majority_answer: str, valid_answers_by_style: dict) -> bool:
-    all_valid = set()
-    for style_data in valid_answers_by_style.values():
-        all_valid.update(style_data)
-    return majority_answer in all_valid
+VALID_ANSWERS = frozenset({"A", "B", "C", "D"})
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
+    """Load all valid JSON objects from a JSONL file."""
+    if not path.exists():
+        raise FileNotFoundError(f"Input file not found: {path}")
+
+    records: list[dict[str, Any]] = []
+
+    with path.open("r", encoding="utf-8") as handle:
+        for line_number, line in enumerate(handle, start=1):
+            line = line.strip()
+
+            if not line:
+                continue
+
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise ValueError(
+                    f"Malformed JSON on line {line_number} in {path}"
+                ) from exc
+
+    return records
 
 
-def score_file(raw_path: str) -> list[dict]:
-    with open(raw_path) as f:
-        questions = json.load(f)
+def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
+    """Write records as UTF-8 JSONL."""
+    path.parent.mkdir(parents=True, exist_ok=True)
 
-    scored = []
-    for q in questions:
-        responses = q["responses"]
-        majority, agreement = majority_vote_with_tiebreak(responses)
+    with path.open("w", encoding="utf-8") as handle:
+        for record in records:
+            handle.write(
+                json.dumps(record, ensure_ascii=False) + "\n"
+            )
 
-        valid_answers_by_style = {
-            style: r["valid_answers"] for style, r in responses.items()
+def score_record(record: dict[str, Any]) -> dict[str, Any]:
+    """
+    Add correctness to one parsed record.
+
+    Ground truth is used here for the first time.
+    """
+    expected = str(record.get("expected_answer", "")).upper()
+    parsed = str(record.get("parsed_answer", "")).upper()
+    if expected not in VALID_ANSWERS:
+        raise ValueError(
+            f"Invalid expected answer {expected!r} for "
+            f"{record.get('question_id')!r}"
+        )
+
+    usable = parsed in VALID_ANSWERS
+
+    result = dict(record)
+    result["usable"] = usable
+    result["correct"] = bool(usable and parsed == expected)
+
+    return result
+
+def join_raw_and_parsed(
+    raw_records: list[dict[str, Any]],
+    parsed_records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    Join each compact parsed record with the matching raw record to recover
+    the expected answer for scoring.
+
+    The join key is:
+        dataset + question_id + model + prompt_id
+    """
+    raw_index: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+
+    for raw in raw_records:
+        key = (
+            str(raw.get("dataset")),
+            str(raw.get("question_id")),
+            str(raw.get("model")),
+            str(raw.get("prompt_id")),
+        )
+
+        if key in raw_index:
+            raise ValueError(f"Duplicate raw-response key: {key}")
+
+        raw_index[key] = raw
+
+    scored: list[dict[str, Any]] = []
+
+    for parsed in parsed_records:
+        key = (
+            str(parsed.get("dataset")),
+            str(parsed.get("question_id")),
+            str(parsed.get("model")),
+            str(parsed.get("prompt_id")),
+        )
+
+        raw = raw_index.get(key)
+
+        if raw is None:
+            raise ValueError(
+                f"No raw response found for parsed record: {key}"
+            )
+
+        combined = {
+            **parsed,
+            "expected_answer": str(raw["expected_answer"]).upper(),
         }
-        correct = is_correct(majority, valid_answers_by_style)
 
-        unknown_count = sum(1 for r in responses.values() if r["parsed"] == "UNKNOWN")
-
-        scored.append({
-            "question_id": q["question_id"],
-            "domain": q["domain"],
-            "majority_answer": majority,
-            "agreement_score": round(agreement, 3),
-            "correct": correct,
-            "unknown_count": unknown_count,
-            "total_styles": len(responses),
-            "per_style_answers": {s: r["parsed"] for s, r in responses.items()},
-        })
+        scored.append(score_record(combined))
 
     return scored
 
+def calculate_question_metrics(
+    records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    Aggregate five prompt-level records into one question/model record.
 
-def build_reliability_matrix():
-    raw_files = glob.glob(os.path.join(config.RESULTS_RAW_DIR, "*.json"))
-    if not raw_files:
-        print("No raw response files found yet. Run inference.py first.")
-        return
+    UNKNOWN responses are excluded from the answer-vote denominator, but their
+    presence is reflected through usable_response_rate and unknown_count.
+    """
+    groups: dict[
+        tuple[str, str, str],
+        list[dict[str, Any]],
+    ] = {}
 
-    os.makedirs(config.RESULTS_SCORED_DIR, exist_ok=True)
-    os.makedirs(config.RESULTS_SUMMARY_DIR, exist_ok=True)
+    for record in records:
+        key = (
+            str(record["dataset"]),
+            str(record["question_id"]),
+            str(record["model"]),
+        )
+        groups.setdefault(key, []).append(record)
 
-    model_domain_rows = []
-    model_domain_style_rows = []
+    metrics: list[dict[str, Any]] = []
 
-    for raw_path in raw_files:
-        fname = os.path.basename(raw_path).replace(".json", "")
-        # filenames are {model_safe}_{domain} — model_safe has underscores
-        # in place of colons, and domain is one of education/science/legal
-        domain = fname.split("_")[-1]
-        model_safe = fname[: -(len(domain) + 1)]
-        model = model_safe.replace("_", ":", 1) 
+    for (dataset, question_id, model), group in sorted(groups.items()):
+        # Keep a deterministic prompt ordering.
+        group.sort(
+            key=lambda item: (
+                list(config.PROMPT_CONDITIONS).index(
+                    item["prompt_id"]
+                )
+                if item["prompt_id"] in config.PROMPT_CONDITIONS
+                else 999
+            )
+        )
 
-        scored = score_file(raw_path)
+        expected_answers = {
+            str(record["expected_answer"]).upper()
+            for record in group
+        }
 
-        scored_out = os.path.join(config.RESULTS_SCORED_DIR, f"{fname}_scored.json")
-        with open(scored_out, "w") as f:
-            json.dump(scored, f, indent=2)
+        if len(expected_answers) != 1:
+            raise ValueError(
+                f"Inconsistent ground truth for "
+                f"{dataset}/{question_id}/{model}: {expected_answers}"
+            )
 
-        n = len(scored)
-        if n == 0:
-            continue
+        expected_answer = next(iter(expected_answers))
 
-        accuracy = sum(s["correct"] for s in scored) / n
-        mean_consistency = sum(s["agreement_score"] for s in scored) / n
-        total_calls = sum(s["total_styles"] for s in scored)
-        total_unknown = sum(s["unknown_count"] for s in scored)
-        unknown_rate = total_unknown / total_calls if total_calls else 0.0
+        responses: dict[str, str] = {}
+        prompt_correctness: dict[str, bool] = {}
+        prompt_compliance: dict[str, bool] = {}
 
-        model_domain_rows.append({
-            "model": model,
-            "domain": domain,
-            "n_questions": n,
-            "accuracy": round(accuracy, 4),
-            "mean_consistency": round(mean_consistency, 4),
-            "unknown_rate": round(unknown_rate, 4),
-        })
+        valid_answers: list[str] = []
 
-        with open(raw_path) as f:
-            raw_questions = json.load(f)
+        for record in group:
+            prompt_id = str(record["prompt_id"])
+            parsed = str(record["parsed_answer"]).upper()
 
-        style_correct = {s: 0 for s in config.PROMPT_STYLES}
-        style_total = {s: 0 for s in config.PROMPT_STYLES}
-        for q in raw_questions:
-            for style, r in q["responses"].items():
-                style_total[style] += 1
-                if r["parsed"] in r["valid_answers"]:
-                    style_correct[style] += 1
+            responses[prompt_id] = parsed
+            prompt_correctness[prompt_id] = bool(record["correct"])
+            prompt_compliance[prompt_id] = bool(
+                record["instruction_compliant"]
+            )
 
-        for style in config.PROMPT_STYLES:
-            if style_total[style] == 0:
-                continue
-            model_domain_style_rows.append({
+            if parsed in VALID_ANSWERS:
+                valid_answers.append(parsed)
+
+        total_prompts = len(config.PROMPT_CONDITIONS)
+        valid_count = len(valid_answers)
+        unknown_count = total_prompts - valid_count
+
+        if valid_count == 0:
+            majority_answer = "UNKNOWN"
+            majority_count = 0
+            agreement = 0.0
+            prompt_sensitivity = 1.0
+            unanimous = False
+            majority_correct = False
+        else:
+            counts = Counter(valid_answers)
+            # Deterministic tie-break: alphabetical order.
+            majority_count = max(
+                counts.values()
+            )
+            tied = sorted(
+                answer
+                for answer, count in counts.items()
+                if count == majority_count
+            )
+            majority_answer = tied[0]
+
+            agreement = majority_count / valid_count
+            prompt_sensitivity = 1.0 - agreement
+
+            unanimous = (
+                valid_count == total_prompts
+                and len(counts) == 1
+            )
+
+            majority_correct = (
+                majority_answer == expected_answer
+            )
+
+        metrics.append(
+            {
+                "experiment_id": group[0].get("experiment_id"),
+                "protocol_version": group[0].get("protocol_version"),
+                "dataset": dataset,
+                "question_id": question_id,
                 "model": model,
-                "domain": domain,
-                "style": style,
-                "accuracy": round(style_correct[style] / style_total[style], 4),
-                "n": style_total[style],
-            })
-
-    matrix_path = os.path.join(config.RESULTS_SUMMARY_DIR, "reliability_matrix.csv")
-    with open(matrix_path, "w", newline="") as f:
-        writer = csv.DictWriter(
-            f, fieldnames=["model", "domain", "n_questions", "accuracy",
-                           "mean_consistency", "unknown_rate"]
+                "expected_answer": expected_answer,
+                "responses": responses,
+                "prompt_correctness": prompt_correctness,
+                "prompt_compliance": prompt_compliance,
+                "valid_response_count": valid_count,
+                "unknown_count": unknown_count,
+                "usable_response_rate": (
+                    valid_count / total_prompts
+                    if total_prompts
+                    else 0.0
+                ),
+                "majority_answer": majority_answer,
+                "majority_count": majority_count,
+                "agreement": round(agreement, 6),
+                "prompt_sensitivity": round(
+                    prompt_sensitivity,
+                    6,
+                ),
+                "unanimous": unanimous,
+                "majority_correct": majority_correct,
+            }
         )
-        writer.writeheader()
-        writer.writerows(sorted(model_domain_rows, key=lambda r: (r["model"], r["domain"])))
 
-    style_path = os.path.join(config.RESULTS_SUMMARY_DIR, "style_breakdown.csv")
-    with open(style_path, "w", newline="") as f:
-        writer = csv.DictWriter(
-            f, fieldnames=["model", "domain", "style", "accuracy", "n"]
-        )
-        writer.writeheader()
-        writer.writerows(sorted(model_domain_style_rows,
-                                 key=lambda r: (r["model"], r["domain"], r["style"])))
+    return metrics
 
-    print(f"Reliability matrix -> {matrix_path}")
-    print(f"Style breakdown     -> {style_path}")
 
-    print("\nBest overall prompt style per model (for the Normalizer):")
-    by_model_style = {}
-    for row in model_domain_style_rows:
-        key = (row["model"], row["style"])
-        by_model_style.setdefault(key, []).append(row["accuracy"])
+def score_parsed_file(parsed_path: Path) -> tuple[Path, Path]:
+    """
+    Score one parsed file.
 
-    best_per_model = {}
-    for (model, style), accs in by_model_style.items():
-        mean_acc = sum(accs) / len(accs)
-        if model not in best_per_model or mean_acc > best_per_model[model][1]:
-            best_per_model[model] = (style, mean_acc)
+    The corresponding raw file must exist under results/raw_responses/.
+    """
+    parsed_records = load_jsonl(parsed_path)
 
-    for model, (style, acc) in sorted(best_per_model.items()):
-        print(f"  {model:20s} -> {style:12s} (mean accuracy across domains: {acc:.3f})")
+    raw_path = config.RESULTS_RAW_DIR / parsed_path.name
+    raw_records = load_jsonl(raw_path)
+
+    scored_records = join_raw_and_parsed(
+        raw_records,
+        parsed_records,
+    )
+
+    scored_path = config.RESULTS_SCORED_DIR / parsed_path.name
+    write_jsonl(scored_path, scored_records)
+
+    question_metrics = calculate_question_metrics(
+        scored_records
+    )
+
+    summary_name = (
+        f"{parsed_path.stem}_question_metrics.jsonl"
+    )
+    summary_path = config.RESULTS_SUMMARY_DIR / summary_name
+
+    write_jsonl(
+        summary_path,
+        question_metrics,
+    )
+
+    return scored_path, summary_path
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Score PRISM parsed responses and calculate question metrics."
+    )
+
+    parser.add_argument(
+        "input",
+        type=Path,
+        help="Parsed JSONL file under results/parsed/.",
+    )
+
+    args = parser.parse_args()
+
+    parsed_path = args.input.resolve()
+
+    scored_path, summary_path = score_parsed_file(
+        parsed_path
+    )
+
+    print(f"Scored output:    {scored_path}")
+    print(f"Question metrics: {summary_path}")
 
 
 if __name__ == "__main__":
-    build_reliability_matrix()
+    main()
