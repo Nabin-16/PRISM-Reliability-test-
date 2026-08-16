@@ -1,150 +1,167 @@
-"""
-Answer extraction, deliberately kept close to how real evaluation
-frameworks actually do this — not an ever-growing pile of edge cases.
+from __future__ import annotations
 
-Reference point: lm-evaluation-harness (the framework behind
-HuggingFace's Open LLM Leaderboard) uses exactly ONE regex for
-ARC-Challenge: "The best answer is [^A-D]*([A-D])", last match wins.
-Nothing more elaborate than that in their primary filter.
-
-Also worth knowing, from the xFinder paper (ICLR 2025), which exists
-specifically because this problem is hard: even the BEST regex-based
-evaluation frameworks in the field top out around 74% extraction
-accuracy. A parser that can't extract an answer from every possible
-response format is not broken — it's normal. UNKNOWN is not a parsing
-failure to be engineered away; it's a real measurement of whether the
-model followed the instruction to answer concisely. A model that
-rambles for 500 words instead of stating a letter has a genuine
-instruction-following problem, and that should show up in the data,
-not get silently reverse-engineered into a clean answer.
-"""
-
+import argparse
+import json
 import re
+from pathlib import Path
 
+# don't change anything it took about 6hrs to build this plsssss
 
-def parse_response(text: str) -> str | None:
-    """Layer 1 — regex pattern matching. Returns 'A'-'D' or None."""
-    text = text.strip()
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+import sys
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-    if re.fullmatch(r"[A-Da-d]", text):
-        return text.upper()
-    m = re.match(r"^\(?([A-Da-d])\)?[.:]?(?:\s|$)", text)
-    if m:
-        return m.group(1).upper()
+import config
 
-    standalone = re.findall(r"(?m)^\s*([A-Da-d])\s*$", text)
-    if standalone:
-        return standalone[-1].upper()
+LETTERS = frozenset({"A", "B", "C", "D"})
 
-    positioned_matches = []
-    for m in re.finditer(
-        r"(?i:best|correct|final)\s+(?i:answer|option)[^A-D]*([A-D])",
-        text
-    ):
-        positioned_matches.append((m.start(), m.group(1)))
-    for m in re.finditer(
-        r"(?i:option|answer)\s+([A-D])\s+(?i:is\s+(?:incorrect|wrong|"
-        r"not\s+correct))",
-        text
-    ):
-        positioned_matches.append((m.start(), m.group(1)))
-    for m in re.finditer(r"\\boxed\{\s*([A-Da-d])\s*\}", text):
-        positioned_matches.append((m.start(), m.group(1)))
+CLEAN = re.compile(r"^\s*[\(\[]?\s*([ABCD])\s*[\)\].,:;]?\s*$", re.I)
 
-    if positioned_matches:
-        positioned_matches.sort(key=lambda pair: pair[0])
-        return positioned_matches[-1][1].upper()
+# black bird
+FINAL_PATTERNS = (
+    re.compile(r"\b(?:therefore|thus|hence|so)[,\s]+(?:the\s+)?(?:final\s+)?answer\s+(?:is|would\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
+    re.compile(r"\bfinal\s+answer\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
+)
 
-    return None
+EXPLICIT_PATTERNS = (
+    re.compile(r"\b(?:the\s+)?(?:correct|selected|chosen)\s+(?:answer|option)\s+(?:is|would\s+be|should\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
+    re.compile(r"\banswer\s*[:\-]\s*[\(\[]?\s*([ABCD])\b", re.I),
+)
 
+# goomi's trend
+REFUSAL_PATTERNS = (
+    re.compile(r"\bi\s+don't\s+know\b", re.I),
+    re.compile(r"\bi\s+(?:cannot|can't)\s+(?:determine|answer)\b", re.I),
+    re.compile(r"\b(?:insufficient|not\s+enough)\s+information\b", re.I),
+    re.compile(r"\bunable\s+to\s+(?:determine|answer)\b", re.I),
+)
+#...
+AMBIGUITY_PATTERNS = (
+    re.compile(r"\b(?:A|B|C|D)\s+or\s+(?:A|B|C|D)\b", re.I),
+    re.compile(r"\b(?:A|B|C|D)\s+and\s+(?:A|B|C|D)\b", re.I),
+)
 
-def fallback_parse(text: str, options: dict) -> str:
-    """Layer 2 — does the option's own text appear in the response."""
-    text_lower = text.lower()
-    for letter, option_text in options.items():
-        if option_text.lower() in text_lower:
-            return letter
-    return "UNKNOWN"
+def normalize_response(text: str | None) -> str:
+    if text is None:
+        return ""
+    return str(text).replace("\r\n", "\n").replace("\r", "\n").strip()
 
-REFUSAL_PATTERNS = [
-    r"impossible to (?:accurately )?(?:choose|determine|answer|say)",
-    r"(?:cannot|can't|unable to) (?:accurately )?(?:choose|determine|answer)",
-    r"(?:insufficient|not enough) information",
-    r"please provide more (?:details|information|context)",
-]
+def unique_letters(values):
+    seen = set()
+    result = []
+    for value in values:
+        letter = value.upper()
+        if letter in LETTERS and letter not in seen:
+            seen.add(letter)
+            result.append(letter)
+    return result
 
+def result(parsed_answer, parse_status, instruction_compliant):
+    return {
+        "parsed_answer": parsed_answer,
+        "parse_status": parse_status,
+        "instruction_compliant": instruction_compliant,
+    }
 
-def is_refusal(text: str) -> bool:
-    text_lower = text.lower()
-    return any(re.search(p, text_lower) for p in REFUSAL_PATTERNS)
+def parse_response(raw_response: str | None):
+    text = normalize_response(raw_response)
 
+    if not text:
+        return result("UNKNOWN", "empty", False)
 
-def extract_answer(raw_response: str, options: dict) -> str:
-    """Full pipeline. Always returns 'A'-'D' or 'UNKNOWN'."""
-    result = parse_response(raw_response)
-    if result:
-        return result
-    if is_refusal(raw_response):
-        return "UNKNOWN"
-    return fallback_parse(raw_response, options)
+    match = CLEAN.fullmatch(text)
+    if match:
+        return result(match.group(1).upper(), "clean_letter", True)
 
+    final_letters = []
+    for pattern in FINAL_PATTERNS:
+        final_letters.extend(m.group(1) for m in pattern.finditer(text))
+    final_letters = unique_letters(final_letters)
+
+    if len(final_letters) == 1:
+        return result(final_letters[0], "explicit_final_answer", False)
+    if len(final_letters) > 1:
+        return result("UNKNOWN", "ambiguous_final_answer", False)
+
+    explicit_letters = []
+    for pattern in EXPLICIT_PATTERNS:
+        explicit_letters.extend(m.group(1) for m in pattern.finditer(text))
+    explicit_letters = unique_letters(explicit_letters)
+
+    if len(explicit_letters) == 1:
+        return result(explicit_letters[0], "explicit_answer", False)
+    if len(explicit_letters) > 1:
+        return result("UNKNOWN", "ambiguous_answer", False)
+
+    if any(pattern.search(text) for pattern in REFUSAL_PATTERNS):
+        return result("UNKNOWN", "refusal_or_uncertainty", False)
+
+    if any(pattern.search(text) for pattern in AMBIGUITY_PATTERNS):
+        return result("UNKNOWN", "ambiguous_response", False)
+
+    return result("UNKNOWN", "unparseable", False)
+
+def build_parsed_record(record):
+    parsed = parse_response(record.get("raw_response"))
+    return {
+        "experiment_id": record.get("experiment_id"),
+        "protocol_version": record.get("protocol_version"),
+        "dataset": record.get("dataset"),
+        "question_id": record.get("question_id"),
+        "model": record.get("model"),
+        "prompt_id": record.get("prompt_id"),
+        **parsed,
+    }
+
+def parse_jsonl_file(input_path: Path, output_path: Path):
+    input_path = input_path.resolve()
+    output_path = output_path.resolve()
+
+    if not input_path.exists():
+        raise FileNotFoundError(input_path)
+    if input_path == output_path:
+        raise ValueError("Parsed output cannot overwrite raw responses.")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    processed = 0
+    malformed = 0
+
+    with input_path.open("r", encoding="utf-8") as source, output_path.open("w", encoding="utf-8") as target:
+        for line_number, line in enumerate(source, 1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                malformed += 1
+                print(f"Warning: skipping malformed line {line_number}")
+                continue
+
+            target.write(json.dumps(build_parsed_record(record), ensure_ascii=False) + "\n")
+            processed += 1
+
+    return processed, malformed
+
+def main():
+    parser = argparse.ArgumentParser(description="Parse PRISM raw responses.")
+    parser.add_argument("input", type=Path)
+    parser.add_argument("--output", type=Path, default=None)
+    args = parser.parse_args()
+
+    output = (
+        args.output.resolve()
+        if args.output is not None
+        else (config.RESULTS_PARSED_DIR / args.input.name).resolve()
+    )
+
+    processed, malformed = parse_jsonl_file(args.input, output)
+    print(f"Processed records: {processed}")
+    print(f"Malformed lines:    {malformed}")
+    print(f"Input:              {args.input.resolve()}")
+    print(f"Output:             {output}")
 
 if __name__ == "__main__":
-    opts = {"A": "Nucleus", "B": "Mitochondria", "C": "Ribosome", "D": "Vacuole"}
-
-    test_cases = [
-        ("B", "B"),
-        ("The answer is B", "UNKNOWN"),   
-        ("The best answer is B", "B"),
-        ("B) Mitochondria", "B"),
-        ("(B)", "B"),                    
-        ("B)", "B"),
-        ("Mitochondria", "B"),           
-        ("", "UNKNOWN"),
-        ("This is a completely unrelated response.", "UNKNOWN"),
-        ("Let's think: B Shelves allow the user to make use of what "
-         "otherwise would be deadspace above an appliance.\nThe best "
-         "answer is B.", "B"),
-        ("The correct answer to the original question would be C) blow "
-         "up a beach ball or balloon.\n\nSo, the correct answer to the "
-         "second question is D).", "D"),
-        ("## Step 1: Understanding\nThe question asks how plants and "
-         "animals process nutrients similarly.\n\n"
-         "## Step 6: Identifying the best option\nGiven the analysis, "
-         "cells breaking down nutrients into usable forms.\n\n"
-         "The final answer is: $\\boxed{C}$", "C"),
-        ("To solve this problem, we need to consider the concept of "
-         "work and power.\n\nWork (W) is defined as the product of "
-         "force and distance.\n\nSince Roberta takes longer than Mary, "
-         "she has a lower power output than Mary.\n\n"
-         "Therefore, option A is incorrect.", "A"),
-        ("The correct answers to the original question are B and D.\n\n"
-         "However, since I must choose one:\n\nD", "D"),
-    ]
-
-    passed = 0
-    for raw, expected in test_cases:
-        got = extract_answer(raw, opts)
-        ok = got == expected
-        passed += ok
-        status = "PASS" if ok else "FAIL"
-        print(f"  [{status}] expected={expected} got={got} | {raw[:70]!r}")
-
-    refusal_opts = {"A": "unhappy", "B": "confused", "C": "confident", "D": "generous"}
-    refusal_text = (
-        "The answer depends on the specific song or context in which "
-        '"Leopard" refers to a character. Assuming you might be '
-        "referring to a specific album, without specific information "
-        "about which particular \"Leopard\" you're asking about, it's "
-        "impossible to accurately choose among A) unhappy B) confused "
-        "C) confident D) generous.\n\nPlease provide more details so I "
-        "can give you a precise answer!"
-    )
-    got = extract_answer(refusal_text, refusal_opts)
-    ok = got == "UNKNOWN"
-    passed += ok
-    status = "PASS" if ok else "FAIL"
-    print(f"  [{status}] expected=UNKNOWN got={got} | refusal case (custom options)")
-    total_cases = len(test_cases) + 1
-
-    print(f"\n{passed}/{total_cases} test cases passed")
+    main()
