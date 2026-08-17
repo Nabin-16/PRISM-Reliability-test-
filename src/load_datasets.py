@@ -45,28 +45,72 @@ def _save_json(path: Path, payload: dict[str, Any]) -> None:
 def load_arc_challenge() -> list[dict[str, Any]]:
     """Load and normalize ARC-Challenge test questions."""
     dataset = load_dataset(
-    "allenai/ai2_arc",
-    "ARC-Challenge",
-    split="test",
-)
+        "allenai/ai2_arc",
+        "ARC-Challenge",
+        split="test",
+    )
 
     records: list[dict[str, Any]] = []
+    label_map = {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D",
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D",
+    }
 
     for row in dataset:
-        labels = list(row["choices"]["label"])
-        texts = list(row["choices"]["text"])
-        answer_key = str(row["answerKey"]).strip()
+        raw_labels = [
+            str(label).strip().upper()
+            for label in row["choices"]["label"]
+        ]
+        texts = [
+            str(text).strip()
+            for text in row["choices"]["text"]
+        ]
+        raw_answer_key = str(row["answerKey"]).strip().upper()
 
-        if len(labels) != 4 or len(texts) != 4:
+        if len(raw_labels) != 4 or len(texts) != 4:
             continue
-
         try:
-            correct_index = labels.index(answer_key)
-        except ValueError as exc:
+            normalized_labels = [
+                label_map[label]
+                for label in raw_labels
+            ]
+        except KeyError as exc:
             raise ValueError(
-                f"Unknown ARC answer key {answer_key!r} "
-                f"for question {row.get('id')!r}"
+                f"Unsupported ARC choice label {exc.args[0]!r} "
+                f"for question {row.get('id')!r}. "
+                f"Raw labels: {raw_labels!r}"
             ) from exc
+        if set(normalized_labels) != set(LETTERS):
+            raise ValueError(
+                f"Invalid ARC choice labels {raw_labels!r} "
+                f"for question {row.get('id')!r}. "
+                f"Normalized labels: {normalized_labels!r}"
+            )
+        if raw_answer_key not in label_map:
+            raise ValueError(
+                f"Unsupported ARC answer key {raw_answer_key!r} "
+                f"for question {row.get('id')!r}"
+            )
+
+        correct_answer = label_map[raw_answer_key]
+        options = {
+            normalized_label: text
+            for normalized_label, text in zip(
+                normalized_labels,
+                texts,
+            )
+        }
+        if correct_answer not in options:
+            raise ValueError(
+                f"Correct answer {correct_answer!r} is not present in "
+                f"options for question {row.get('id')!r}."
+            )
 
         records.append(
             {
@@ -74,10 +118,10 @@ def load_arc_challenge() -> list[dict[str, Any]]:
                 "question_id": str(row["id"]),
                 "question": str(row["question"]).strip(),
                 "options": {
-                    letter: str(text).strip()
-                    for letter, text in zip(LETTERS, texts)
+                    letter: options[letter]
+                    for letter in LETTERS
                 },
-                "correct_answer": LETTERS[correct_index],
+                "correct_answer": correct_answer,
             }
         )
 
