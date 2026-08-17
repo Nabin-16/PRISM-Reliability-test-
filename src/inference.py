@@ -34,7 +34,6 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 import config
-
 def utc_timestamp() -> str:
     """Return the current UTC timestamp in ISO-8601 format."""
     return datetime.now(timezone.utc).isoformat()
@@ -115,8 +114,6 @@ def load_completed_keys(path: Path) -> set[tuple[str, str]]:
             try:
                 record = json.loads(line)
             except json.JSONDecodeError:
-                # A truncated final line should not invalidate all previous
-                # completed results. The next run will safely skip it.(if anyone's laptop crashes tralalalalalala)
                 print(
                     f"Warning: ignoring malformed JSONL line "
                     f"{line_number} in {path}"
@@ -141,7 +138,7 @@ def append_record(path: Path, record: dict[str, Any]) -> None:
         handle.write(
             json.dumps(record, ensure_ascii=False) + "\n"
         )
-        handle.flush() 
+        handle.flush()
 
 def generate_with_ollama(
     *,
@@ -305,6 +302,16 @@ def run_dataset_model(
     print(f"Already completed: {completed_count}")
 
     request_number = completed_count
+    remaining = total - completed_count
+    latency_window: list[float] = []
+    run_start = time.monotonic()
+
+    def format_eta(seconds: float) -> str:
+        if seconds < 0 or seconds != seconds:  # NaN guard
+            return "unknown"
+        m, s = divmod(int(seconds), 60)
+        h, m = divmod(m, 60)
+        return f"{h}h {m}m" if h else (f"{m}m {s}s" if m else f"{s}s")
 
     for question in questions:
         question_id = str(question["question_id"])
@@ -342,7 +349,16 @@ def run_dataset_model(
 
                 append_record(raw_path, record)
 
-                print(f"OK ({latency:.2f}s)")
+                latency_window.append(latency)
+                latency_window = latency_window[-20:]  # rolling avg over last 20
+                avg_latency = sum(latency_window) / len(latency_window)
+                calls_left = total - request_number
+                eta = format_eta(avg_latency * calls_left)
+                elapsed = format_eta(time.monotonic() - run_start)
+                pct = 100 * request_number / total if total else 100
+
+                print(f"OK ({latency:.2f}s) | {pct:.1f}% | "
+                      f"elapsed {elapsed} | avg {avg_latency:.1f}s/call | ETA {eta}")
 
             except Exception as exc:
                 error_record = build_error_record(
