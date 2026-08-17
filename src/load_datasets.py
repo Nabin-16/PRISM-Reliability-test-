@@ -13,7 +13,7 @@ than sampling the datasets again.
 """
 
 from __future__ import annotations
-
+import hashlib
 import json
 import random
 from pathlib import Path
@@ -142,20 +142,34 @@ def load_sciq() -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
 
     for row in dataset:
-        question_id = str(row.get("id", ""))
-
-        # The correct answer is stored separately from the distractors.
-        option_items = [
-            str(row["correct_answer"]).strip(),
+        question = str(row["question"]).strip()
+        correct_text = str(row["correct_answer"]).strip()
+        distractors = [
             str(row["distractor1"]).strip(),
             str(row["distractor2"]).strip(),
             str(row["distractor3"]).strip(),
         ]
+
+        question_id = "SCIQ_" + hashlib.sha256(
+            "\x1f".join(
+                [
+                    question,
+                    correct_text,
+                    *distractors,
+                ]
+            ).encode("utf-8")
+        ).hexdigest()[:16]
+
+        # The correct answer is stored separately from the distractors.
+        option_items = [
+            correct_text,
+            distractors[0],
+            distractors[1],
+            distractors[2],
+        ]
         rng = random.Random(f"{SEED}:sciq:{question_id}")
         shuffled = option_items.copy()
         rng.shuffle(shuffled)
-
-        correct_text = option_items[0]
 
         options = dict(zip(LETTERS, shuffled))
         correct_answer = next(
@@ -168,7 +182,7 @@ def load_sciq() -> list[dict[str, Any]]:
             {
                 "dataset": "sciq",
                 "question_id": question_id,
-                "question": str(row["question"]).strip(),
+                "question": question,
                 "options": options,
                 "correct_answer": correct_answer,
             }
