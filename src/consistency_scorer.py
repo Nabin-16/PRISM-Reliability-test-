@@ -1,48 +1,25 @@
 """
 PRISM
 
-Input:
+Pipeline:
     results/parsed/*.jsonl
+    results/scored/*.jsonl
+    results/summary/*_question_metrics.jsonl
 
-Outputs:
-    results/scored/<same filename>
-    results/summary/<same stem>_question_metrics.jsonl
+This module is the first stage that uses benchmark ground truth.
 
-This module is the first stage that uses the dataset ground-truth answer.
-
-Definitions
------------
-For each prompt-level response:
-    correct = parsed_answer == expected_answer
-
-UNKNOWN responses are not treated as answer choices.
-
-For each question/model combination:
-    valid_response_count = number of parsed A/B/C/D responses
-    usable_response_rate = valid_response_count / number of prompt conditions
-
-    majority_answer = most frequent valid answer
-    agreement = majority_count / valid_response_count
-
-    prompt_sensitivity = 1 - agreement
-
-    unanimous = True when all five prompt responses are the same valid answer
-
-    majority_correct = majority_answer == expected_answer
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-import sys
-
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -51,7 +28,7 @@ import config  # noqa: E402
 
 VALID_ANSWERS = frozenset({"A", "B", "C", "D"})
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
-    """Load all valid JSON objects from a JSONL file."""
+    """Load all non-empty JSON objects from a JSONL file."""
     if not path.exists():
         raise FileNotFoundError(f"Input file not found: {path}")
 
@@ -60,16 +37,22 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
     with path.open("r", encoding="utf-8") as handle:
         for line_number, line in enumerate(handle, start=1):
             line = line.strip()
-
             if not line:
                 continue
 
             try:
-                records.append(json.loads(line))
+                record = json.loads(line)
             except json.JSONDecodeError as exc:
                 raise ValueError(
                     f"Malformed JSON on line {line_number} in {path}"
                 ) from exc
+
+            if not isinstance(record, dict):
+                raise ValueError(
+                    f"Expected JSON object on line {line_number} in {path}"
+                )
+
+            records.append(record)
 
     return records
 
@@ -84,40 +67,43 @@ def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
                 json.dumps(record, ensure_ascii=False) + "\n"
             )
 
-def score_record(record: dict[str, Any]) -> dict[str, Any]:
-    """
-    Add correctness to one parsed record.
 
-    Ground truth is used here for the first time.
-    """
+def score_record(record: dict[str, Any]) -> dict[str, Any]:
     expected = str(record.get("expected_answer", "")).upper()
     parsed = str(record.get("parsed_answer", "")).upper()
+
     if expected not in VALID_ANSWERS:
         raise ValueError(
             f"Invalid expected answer {expected!r} for "
             f"{record.get('question_id')!r}"
         )
 
-    usable = parsed in VALID_ANSWERS
+    answer_recovered = parsed in VALID_ANSWERS
+    instruction_compliant = bool(
+        record.get("instruction_compliant", False)
+    )
 
     result = dict(record)
-    result["usable"] = usable
-    result["correct"] = bool(usable and parsed == expected)
+    result["answer_recovered"] = answer_recovered
+
+    result["usable"] = answer_recovered
+    result["correct"] = bool(
+        answer_recovered and parsed == expected
+    )
+
+    result["instruction_compliant"] = instruction_compliant
 
     return result
+
 
 def join_raw_and_parsed(
     raw_records: list[dict[str, Any]],
     parsed_records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """
-    Join each compact parsed record with the matching raw record to recover
-    the expected answer for scoring.
-
-    The join key is:
-        dataset + question_id + model + prompt_id
-    """
-    raw_index: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+    raw_index: dict[
+        tuple[str, str, str, str],
+        dict[str, Any],
+    ] = {}
 
     for raw in raw_records:
         key = (
@@ -143,29 +129,73 @@ def join_raw_and_parsed(
         )
 
         raw = raw_index.get(key)
-
         if raw is None:
             raise ValueError(
                 f"No raw response found for parsed record: {key}"
             )
 
+        if "expected_answer" not in raw:
+            raise ValueError(
+                f"Raw record has no expected_answer for {key}"
+            )
+
         combined = {
             **parsed,
-            "expected_answer": str(raw["expected_answer"]).upper(),
+            "expected_answer": str(
+                raw["expected_answer"]
+            ).upper(),
         }
 
         scored.append(score_record(combined))
 
     return scored
 
+
+def _prompt_order(prompt_id: str) -> tuple[int, str]:
+    """Deterministic ordering for prompt conditions."""
+    try:
+        index = list(config.PROMPT_CONDITIONS).index(prompt_id)
+    except ValueError:
+        index = 999
+
+    return index, prompt_id
+
+
 def calculate_question_metrics(
     records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """
-    Aggregate five prompt-level records into one question/model record.
+    Aggregate prompt-level records into one question/model record.
 
-    UNKNOWN responses are excluded from the answer-vote denominator, but their
-    presence is reflected through usable_response_rate and unknown_count.
+    Definitions:
+        expected_prompt_count:
+            Number of prompt conditions in the protocol.
+
+        observed_prompt_count:
+            Number of actual records present.
+
+        missing_prompt_count:
+            expected_prompt_count - observed_prompt_count.
+
+        answer_recovery_rate:
+            recovered answers / observed responses.
+
+        instruction_compliance_rate:
+            compliant responses / observed responses.
+
+        prompt_response_accuracy:
+            correct recovered answers / observed responses.
+
+        conditional_accuracy:
+            correct recovered answers / recovered answers.
+
+        agreement:
+            majority recovered answer count / recovered answer count.
+
+        prompt_sensitivity:
+            1 - agreement.
+
+    Missing prompt records are NOT silently counted as UNKNOWN.
     """
     groups: dict[
         tuple[str, str, str],
@@ -174,25 +204,35 @@ def calculate_question_metrics(
 
     for record in records:
         key = (
-            str(record["dataset"]),
-            str(record["question_id"]),
-            str(record["model"]),
+            str(record.get("dataset")),
+            str(record.get("question_id")),
+            str(record.get("model")),
         )
         groups.setdefault(key, []).append(record)
 
     metrics: list[dict[str, Any]] = []
 
+    expected_prompt_ids = list(config.PROMPT_CONDITIONS)
+    expected_prompt_count = len(expected_prompt_ids)
+
     for (dataset, question_id, model), group in sorted(groups.items()):
-        # Keep a deterministic prompt ordering.
-        group.sort(
-            key=lambda item: (
-                list(config.PROMPT_CONDITIONS).index(
-                    item["prompt_id"]
-                )
-                if item["prompt_id"] in config.PROMPT_CONDITIONS
-                else 999
-            )
+        group = sorted(
+            group,
+            key=lambda item: _prompt_order(
+                str(item.get("prompt_id"))
+            ),
         )
+
+        prompt_ids = [
+            str(record.get("prompt_id"))
+            for record in group
+        ]
+
+        if len(prompt_ids) != len(set(prompt_ids)):
+            raise ValueError(
+                f"Duplicate prompt IDs for "
+                f"{dataset}/{question_id}/{model}: {prompt_ids}"
+            )
 
         expected_answers = {
             str(record["expected_answer"]).upper()
@@ -202,7 +242,8 @@ def calculate_question_metrics(
         if len(expected_answers) != 1:
             raise ValueError(
                 f"Inconsistent ground truth for "
-                f"{dataset}/{question_id}/{model}: {expected_answers}"
+                f"{dataset}/{question_id}/{model}: "
+                f"{expected_answers}"
             )
 
         expected_answer = next(iter(expected_answers))
@@ -210,51 +251,71 @@ def calculate_question_metrics(
         responses: dict[str, str] = {}
         prompt_correctness: dict[str, bool] = {}
         prompt_compliance: dict[str, bool] = {}
+        prompt_recovery: dict[str, bool] = {}
 
         valid_answers: list[str] = []
 
         for record in group:
             prompt_id = str(record["prompt_id"])
             parsed = str(record["parsed_answer"]).upper()
-
-            responses[prompt_id] = parsed
-            prompt_correctness[prompt_id] = bool(record["correct"])
-            prompt_compliance[prompt_id] = bool(
-                record["instruction_compliant"]
+            recovered = parsed in VALID_ANSWERS
+            compliant = bool(
+                record.get("instruction_compliant", False)
             )
 
-            if parsed in VALID_ANSWERS:
+            responses[prompt_id] = parsed
+            prompt_correctness[prompt_id] = bool(
+                record["correct"]
+            )
+            prompt_compliance[prompt_id] = compliant
+            prompt_recovery[prompt_id] = recovered
+
+            if recovered:
                 valid_answers.append(parsed)
 
-        total_prompts = len(config.PROMPT_CONDITIONS)
+        observed_prompt_count = len(group)
+        missing_prompt_count = max(
+            expected_prompt_count - observed_prompt_count,
+            0,
+        )
+
         valid_count = len(valid_answers)
-        unknown_count = total_prompts - valid_count
+        unknown_count = observed_prompt_count - valid_count
+
+        compliant_count = sum(
+            prompt_compliance.values()
+        )
+        correct_count = sum(
+            bool(record["correct"])
+            for record in group
+        )
 
         if valid_count == 0:
             majority_answer = "UNKNOWN"
             majority_count = 0
             agreement = 0.0
             prompt_sensitivity = 1.0
-            unanimous = False
+            answer_unanimous = False
             majority_correct = False
         else:
             counts = Counter(valid_answers)
-            # Deterministic tie-break: alphabetical order.
-            majority_count = max(
-                counts.values()
-            )
+            majority_count = max(counts.values())
+
             tied = sorted(
                 answer
                 for answer, count in counts.items()
                 if count == majority_count
             )
+
+            # Deterministic tie-break.
             majority_answer = tied[0]
 
             agreement = majority_count / valid_count
             prompt_sensitivity = 1.0 - agreement
 
-            unanimous = (
-                valid_count == total_prompts
+            answer_unanimous = (
+                observed_prompt_count == expected_prompt_count
+                and valid_count == expected_prompt_count
                 and len(counts) == 1
             )
 
@@ -270,16 +331,51 @@ def calculate_question_metrics(
                 "question_id": question_id,
                 "model": model,
                 "expected_answer": expected_answer,
+
+                # Prompt-level detail.
                 "responses": responses,
                 "prompt_correctness": prompt_correctness,
                 "prompt_compliance": prompt_compliance,
+                "prompt_recovery": prompt_recovery,
+
+                # Coverage.
+                "expected_prompt_count": expected_prompt_count,
+                "observed_prompt_count": observed_prompt_count,
+                "missing_prompt_count": missing_prompt_count,
+
+                # Recovery / compliance.
                 "valid_response_count": valid_count,
                 "unknown_count": unknown_count,
-                "usable_response_rate": (
-                    valid_count / total_prompts
-                    if total_prompts
+                "answer_recovery_rate": (
+                    valid_count / observed_prompt_count
+                    if observed_prompt_count
                     else 0.0
                 ),
+                "unknown_rate": (
+                    unknown_count / observed_prompt_count
+                    if observed_prompt_count
+                    else 0.0
+                ),
+                "instruction_compliance_rate": (
+                    compliant_count / observed_prompt_count
+                    if observed_prompt_count
+                    else 0.0
+                ),
+
+                # Accuracy.
+                "correct_response_count": correct_count,
+                "prompt_response_accuracy": (
+                    correct_count / observed_prompt_count
+                    if observed_prompt_count
+                    else 0.0
+                ),
+                "conditional_accuracy": (
+                    correct_count / valid_count
+                    if valid_count
+                    else 0.0
+                ),
+
+                # Cross-prompt answer behavior.
                 "majority_answer": majority_answer,
                 "majority_count": majority_count,
                 "agreement": round(agreement, 6),
@@ -287,22 +383,26 @@ def calculate_question_metrics(
                     prompt_sensitivity,
                     6,
                 ),
-                "unanimous": unanimous,
+                "answer_unanimous": answer_unanimous,
                 "majority_correct": majority_correct,
             }
         )
 
     return metrics
 
-def score_parsed_file(parsed_path: Path) -> tuple[Path, Path]:
-    """
-    Score one parsed file.
 
-    The corresponding raw file must exist under results/raw_responses/.
-    """
+def score_parsed_file(
+    parsed_path: Path,
+) -> tuple[Path, Path]:
+    """Score one parsed file and create question-level metrics."""
+    parsed_path = parsed_path.resolve()
+
     parsed_records = load_jsonl(parsed_path)
 
-    raw_path = config.RESULTS_RAW_DIR / parsed_path.name
+    raw_path = (
+        config.RESULTS_RAW_DIR / parsed_path.name
+    ).resolve()
+
     raw_records = load_jsonl(raw_path)
 
     scored_records = join_raw_and_parsed(
@@ -310,17 +410,20 @@ def score_parsed_file(parsed_path: Path) -> tuple[Path, Path]:
         parsed_records,
     )
 
-    scored_path = config.RESULTS_SCORED_DIR / parsed_path.name
+    scored_path = (
+        config.RESULTS_SCORED_DIR / parsed_path.name
+    ).resolve()
+
     write_jsonl(scored_path, scored_records)
 
     question_metrics = calculate_question_metrics(
         scored_records
     )
 
-    summary_name = (
-        f"{parsed_path.stem}_question_metrics.jsonl"
-    )
-    summary_path = config.RESULTS_SUMMARY_DIR / summary_name
+    summary_path = (
+        config.RESULTS_SUMMARY_DIR
+        / f"{parsed_path.stem}_question_metrics.jsonl"
+    ).resolve()
 
     write_jsonl(
         summary_path,
@@ -329,9 +432,13 @@ def score_parsed_file(parsed_path: Path) -> tuple[Path, Path]:
 
     return scored_path, summary_path
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Score PRISM parsed responses and calculate question metrics."
+        description=(
+            "Score PRISM parsed responses and calculate "
+            "question-level consistency metrics."
+        )
     )
 
     parser.add_argument(
