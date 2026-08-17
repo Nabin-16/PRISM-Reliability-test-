@@ -21,8 +21,11 @@ CLEAN = re.compile(r"^\s*[\(\[]?\s*([ABCD])\s*[\)\].,:;]?\s*$", re.I)
 # black bird
 FINAL_PATTERNS = (
     re.compile(r"\b(?:therefore|thus|hence|so)[,\s]+(?:the\s+)?(?:final\s+)?answer\s+(?:is|would\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
-    re.compile(r"\bfinal\s+answer\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
+    re.compile(r"\bfinal\s+answer\s*(?:is|would\s+be)?\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
 )
+
+STANDALONE_LINE_PATTERN = re.compile(r"(?m)^\s*([ABCD])\s*$")
+BOXED_PATTERN = re.compile(r"\\boxed\{\s*([ABCD])\s*\}")
 
 EXPLICIT_PATTERNS = (
     re.compile(r"\b(?:the\s+)?(?:correct|selected|chosen)\s+(?:answer|option)\s+(?:is|would\s+be|should\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b", re.I),
@@ -77,6 +80,8 @@ def parse_response(raw_response: str | None):
     final_letters = []
     for pattern in FINAL_PATTERNS:
         final_letters.extend(m.group(1) for m in pattern.finditer(text))
+    final_letters.extend(m.group(1) for m in BOXED_PATTERN.finditer(text))
+    final_letters.extend(m.group(1) for m in STANDALONE_LINE_PATTERN.finditer(text))
     final_letters = unique_letters(final_letters)
 
     if len(final_letters) == 1:
