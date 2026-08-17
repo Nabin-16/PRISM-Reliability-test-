@@ -19,7 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.response_parser import parse_response
+from src.response_parser1 import parse_response
 
 CASES = [
     ("B", "B", True),
