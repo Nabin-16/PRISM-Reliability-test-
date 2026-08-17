@@ -18,21 +18,26 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+import config
+
+PROCESSED_DIR = config.DATA_PROCESSED_DIR
+AUDIT_DIR = config.DATA_AUDIT_DIR
 
 SAMPLE_FILES = {
     "arc_challenge": PROCESSED_DIR / "arc_challenge_sample.json",
     "sciq": PROCESSED_DIR / "sciq_sample.json",
 }
 
-JSONL_OUTPUT = PROCESSED_DIR / "benchmark_audit.jsonl"
-CSV_OUTPUT = PROCESSED_DIR / "benchmark_audit.csv"
+JSONL_OUTPUT = AUDIT_DIR / "benchmark_audit.jsonl"
+CSV_OUTPUT = AUDIT_DIR / "benchmark_audit.csv"
 
 OPTION_LETTERS = ("A", "B", "C", "D")
 
@@ -99,8 +104,6 @@ def build_audit_record(
         "option_C": str(options["C"]),
         "option_D": str(options["D"]),
         "official_answer": str(question["correct_answer"]).upper(),
-
-        # These are deliberately not inferred so pls don't change...
         "audit_status": "pending",
         "ambiguity_flag": "",
         "answer_key_issue": "",
