@@ -1,26 +1,27 @@
 """
-PRISM
+PRISM 
 
-Reads every results/summary/*_question_metrics.jsonl file (produced by
-consistency_scorer.py) and rolls question-level metrics up into two
-report-ready tables.
+Reads question-level metrics produced by consistency_scorer.py and creates
+two report-ready CSV files:
 
-Outputs
--------
-results/summary/model_dataset_summary.csv
-    One row per (model, dataset): accuracy, mean prompt sensitivity,
-    unanimous rate, usable response rate, and the rate of
-    PROMPT-INVARIANT INCORRECTNESS (unanimous=True and majority_correct=
-    False - all five prompt conditions agree, deterministically, on the
-    same wrong answer; see spec section 14).
+    results/summary/model_dataset_summary.csv
+    results/summary/model_prompt_summary.csv
 
-results/summary/model_prompt_summary.csv
-    One row per (model, dataset, prompt_condition): per-condition
-    accuracy and instruction-compliance rate, letting P0-P4 be compared
-    directly against each other.
+Important metric distinctions:
 
-Usage:
-    python src/summary_report.py
+    answer_recovery_rate
+        Fraction of observed prompt responses for which the parser recovered
+        A/B/C/D. This is NOT instruction compliance.
+
+    instruction_compliance_rate
+        Fraction of observed prompt responses that obeyed the
+        "return only the letter" instruction.
+
+    prompt_response_accuracy
+        Correct recovered answers / observed prompt responses.
+
+    conditional_accuracy
+        Correct recovered answers / recovered answers.
 """
 
 from __future__ import annotations
@@ -36,119 +37,481 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-import config
+import config  # noqa: E402
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
-    records = []
+    """Load non-empty JSON objects from a JSONL file."""
+    records: list[dict[str, Any]] = []
+
     with path.open("r", encoding="utf-8") as handle:
-        for line in handle:
+        for line_number, line in enumerate(handle, start=1):
             line = line.strip()
-            if line:
-                records.append(json.loads(line))
+            if not line:
+                continue
+
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError(
+                    f"Malformed JSON on line {line_number} in {path}"
+                ) from exc
+
+            if not isinstance(record, dict):
+                raise ValueError(
+                    f"Expected JSON object on line {line_number} in {path}"
+                )
+
+            records.append(record)
+
     return records
 
 
 def find_question_metrics_files() -> list[Path]:
-    return sorted(config.RESULTS_SUMMARY_DIR.glob("*_question_metrics.jsonl"))
+    return sorted(
+        config.RESULTS_SUMMARY_DIR.glob(
+            "*_question_metrics.jsonl"
+        )
+    )
 
 
-def build_model_dataset_summary(all_records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
-    for r in all_records:
-        groups[(r["model"], r["dataset"])].append(r)
+def _safe_mean(
+    values: list[float],
+) -> float:
+    return (
+        sum(values) / len(values)
+        if values
+        else 0.0
+    )
 
-    rows = []
+
+def build_model_dataset_summary(
+    all_records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    groups: dict[
+        tuple[str, str],
+        list[dict[str, Any]],
+    ] = defaultdict(list)
+
+    for record in all_records:
+        groups[
+            (
+                str(record["model"]),
+                str(record["dataset"]),
+            )
+        ].append(record)
+
+    rows: list[dict[str, Any]] = []
+
     for (model, dataset), records in sorted(groups.items()):
-        n = len(records)
-        accuracy = sum(r["majority_correct"] for r in records) / n
-        mean_sensitivity = sum(r["prompt_sensitivity"] for r in records) / n
-        mean_agreement = sum(r["agreement"] for r in records) / n
-        unanimous_rate = sum(r["unanimous"] for r in records) / n
-        mean_usable_rate = sum(r["usable_response_rate"] for r in records) / n
-        prompt_invariant_incorrect = sum(
-            1 for r in records if r["unanimous"] and not r["majority_correct"]
-        ) / n
+        n_questions = len(records)
 
-        rows.append({
-            "model": model,
-            "dataset": dataset,
-            "n_questions": n,
-            "accuracy": round(accuracy, 4),
-            "mean_agreement": round(mean_agreement, 4),
-            "mean_prompt_sensitivity": round(mean_sensitivity, 4),
-            "unanimous_rate": round(unanimous_rate, 4),
-            "prompt_invariant_incorrect_rate": round(prompt_invariant_incorrect, 4),
-            "mean_usable_response_rate": round(mean_usable_rate, 4),
-        })
+        expected_prompt_count = sum(
+            int(record.get("expected_prompt_count", 0))
+            for record in records
+        )
+        observed_prompt_count = sum(
+            int(record.get("observed_prompt_count", 0))
+            for record in records
+        )
+        missing_prompt_count = sum(
+            int(record.get("missing_prompt_count", 0))
+            for record in records
+        )
+        recovered_count = sum(
+            int(record.get("valid_response_count", 0))
+            for record in records
+        )
+        unknown_count = sum(
+            int(record.get("unknown_count", 0))
+            for record in records
+        )
+        compliant_count = sum(
+            sum(
+                1
+                for value in record.get(
+                    "prompt_compliance", {}
+                ).values()
+                if bool(value)
+            )
+            for record in records
+        )
+        correct_count = sum(
+            int(record.get("correct_response_count", 0))
+            for record in records
+        )
+
+        answer_recovery_rate = (
+            recovered_count / observed_prompt_count
+            if observed_prompt_count
+            else 0.0
+        )
+        unknown_rate = (
+            unknown_count / observed_prompt_count
+            if observed_prompt_count
+            else 0.0
+        )
+        instruction_compliance_rate = (
+            compliant_count / observed_prompt_count
+            if observed_prompt_count
+            else 0.0
+        )
+        prompt_response_accuracy = (
+            correct_count / observed_prompt_count
+            if observed_prompt_count
+            else 0.0
+        )
+        conditional_accuracy = (
+            correct_count / recovered_count
+            if recovered_count
+            else 0.0
+        )
+
+        mean_agreement = _safe_mean(
+            [
+                float(record.get("agreement", 0.0))
+                for record in records
+            ]
+        )
+        mean_sensitivity = _safe_mean(
+            [
+                float(
+                    record.get(
+                        "prompt_sensitivity",
+                        0.0,
+                    )
+                )
+                for record in records
+            ]
+        )
+
+        complete_questions = [
+            record
+            for record in records
+            if int(
+                record.get(
+                    "missing_prompt_count",
+                    0,
+                )
+            )
+            == 0
+        ]
+
+        unanimous_rate = (
+            sum(
+                bool(record.get("answer_unanimous", False))
+                for record in complete_questions
+            )
+            / len(complete_questions)
+            if complete_questions
+            else 0.0
+        )
+
+        prompt_invariant_incorrect_rate = (
+            sum(
+                1
+                for record in complete_questions
+                if bool(
+                    record.get(
+                        "answer_unanimous",
+                        False,
+                    )
+                )
+                and not bool(
+                    record.get(
+                        "majority_correct",
+                        False,
+                    )
+                )
+            )
+            / len(complete_questions)
+            if complete_questions
+            else 0.0
+        )
+        majority_accuracy = (
+            sum(
+                bool(
+                    record.get(
+                        "majority_correct",
+                        False,
+                    )
+                )
+                for record in records
+            )
+            / n_questions
+            if n_questions
+            else 0.0
+        )
+
+        rows.append(
+            {
+                "model": model,
+                "dataset": dataset,
+                "n_questions": n_questions,
+
+                # Coverage.
+                "expected_prompt_responses": expected_prompt_count,
+                "observed_prompt_responses": observed_prompt_count,
+                "missing_prompt_responses": missing_prompt_count,
+
+                # Core accuracy/recovery/compliance metrics.
+                "prompt_response_accuracy": round(
+                    prompt_response_accuracy,
+                    4,
+                ),
+                "conditional_accuracy": round(
+                    conditional_accuracy,
+                    4,
+                ),
+                "answer_recovery_rate": round(
+                    answer_recovery_rate,
+                    4,
+                ),
+                "unknown_rate": round(
+                    unknown_rate,
+                    4,
+                ),
+                "instruction_compliance_rate": round(
+                    instruction_compliance_rate,
+                    4,
+                ),
+
+                # Question-level accuracy.
+                "question_majority_accuracy": round(
+                    majority_accuracy,
+                    4,
+                ),
+
+                # Consistency / sensitivity.
+                "mean_agreement": round(
+                    mean_agreement,
+                    4,
+                ),
+                "mean_prompt_sensitivity": round(
+                    mean_sensitivity,
+                    4,
+                ),
+
+                # Complete-question consistency metrics.
+                "complete_questions": len(complete_questions),
+                "answer_unanimous_rate": round(
+                    unanimous_rate,
+                    4,
+                ),
+                "prompt_invariant_incorrect_rate": round(
+                    prompt_invariant_incorrect_rate,
+                    4,
+                ),
+            }
+        )
+
     return rows
 
 
-def build_model_prompt_summary(all_records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    groups: dict[tuple[str, str, str], list[bool]] = defaultdict(list)
-    compliance_groups: dict[tuple[str, str, str], list[bool]] = defaultdict(list)
+def build_model_prompt_summary(
+    all_records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    Create one row per model/dataset/prompt condition.
 
-    for r in all_records:
-        for prompt_id, correct in r["prompt_correctness"].items():
-            key = (r["model"], r["dataset"], prompt_id)
-            groups[key].append(correct)
-        for prompt_id, compliant in r["prompt_compliance"].items():
-            key = (r["model"], r["dataset"], prompt_id)
-            compliance_groups[key].append(compliant)
+    Accuracy is calculated over observed prompt responses, not only compliant
+    responses. Instruction compliance is reported independently.
+    """
+    groups: dict[
+        tuple[str, str, str],
+        list[dict[str, Any]],
+    ] = defaultdict(list)
 
-    rows = []
-    for key in sorted(groups.keys()):
+    for record in all_records:
+        model = str(record["model"])
+        dataset = str(record["dataset"])
+        for prompt_id, correct in record.get(
+            "prompt_correctness",
+            {},
+        ).items():
+            key = (
+                model,
+                dataset,
+                str(prompt_id),
+            )
+            groups[key].append(
+                {
+                    "correct": bool(correct),
+                    "compliant": bool(
+                        record.get(
+                            "prompt_compliance",
+                            {},
+                        ).get(
+                            prompt_id,
+                            False,
+                        )
+                    ),
+                    "recovered": bool(
+                        record.get(
+                            "prompt_recovery",
+                            {},
+                        ).get(
+                            prompt_id,
+                            False,
+                        )
+                    ),
+                }
+            )
+
+    rows: list[dict[str, Any]] = []
+
+    for key in sorted(groups):
         model, dataset, prompt_id = key
-        correctness = groups[key]
-        compliance = compliance_groups.get(key, [])
-        n = len(correctness)
-        rows.append({
-            "model": model,
-            "dataset": dataset,
-            "prompt_condition": prompt_id,
-            "n": n,
-            "accuracy": round(sum(correctness) / n, 4) if n else 0.0,
-            "instruction_compliant_rate": round(sum(compliance) / len(compliance), 4) if compliance else 0.0,
-        })
+        observations = groups[key]
+
+        n = len(observations)
+        recovered_count = sum(
+            obs["recovered"]
+            for obs in observations
+        )
+        correct_count = sum(
+            obs["correct"]
+            for obs in observations
+        )
+        compliant_count = sum(
+            obs["compliant"]
+            for obs in observations
+        )
+
+        rows.append(
+            {
+                "model": model,
+                "dataset": dataset,
+                "prompt_condition": prompt_id,
+                "n_observed": n,
+                "n_recovered": recovered_count,
+                "n_correct": correct_count,
+                "n_instruction_compliant": compliant_count,
+                "answer_recovery_rate": round(
+                    recovered_count / n if n else 0.0,
+                    4,
+                ),
+                "accuracy": round(
+                    correct_count / n if n else 0.0,
+                    4,
+                ),
+                "conditional_accuracy": round(
+                    correct_count / recovered_count
+                    if recovered_count
+                    else 0.0,
+                    4,
+                ),
+                "instruction_compliant_rate": round(
+                    compliant_count / n if n else 0.0,
+                    4,
+                ),
+                "unknown_rate": round(
+                    (n - recovered_count) / n
+                    if n
+                    else 0.0,
+                    4,
+                ),
+            }
+        )
+
     return rows
 
 
-def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+def write_csv(
+    path: Path,
+    rows: list[dict[str, Any]],
+) -> None:
     if not rows:
-        print(f"  [skip] no rows for {path.name}")
+        print(
+            f"  [skip] no rows for {path.name}"
+        )
         return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    with path.open(
+        "w",
+        newline="",
+        encoding="utf-8",
+    ) as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(rows[0].keys()),
+        )
         writer.writeheader()
         writer.writerows(rows)
-    print(f"  wrote {len(rows)} rows -> {path}")
+
+    print(
+        f"  wrote {len(rows)} rows -> {path}"
+    )
 
 
 def main() -> None:
     files = find_question_metrics_files()
+
     if not files:
-        print("No *_question_metrics.jsonl files found in "
-              f"{config.RESULTS_SUMMARY_DIR} — run consistency_scorer.py first.")
+        print(
+            "No *_question_metrics.jsonl files found in "
+            f"{config.RESULTS_SUMMARY_DIR} — "
+            "run consistency_scorer.py first."
+        )
         return
 
     all_records: list[dict[str, Any]] = []
-    for f in files:
-        all_records.extend(load_jsonl(f))
-    print(f"Loaded {len(all_records)} question-level records from {len(files)} file(s).")
 
-    model_dataset_rows = build_model_dataset_summary(all_records)
-    model_prompt_rows = build_model_prompt_summary(all_records)
+    for file_path in files:
+        all_records.extend(
+            load_jsonl(file_path)
+        )
 
-    write_csv(config.RESULTS_SUMMARY_DIR / "model_dataset_summary.csv", model_dataset_rows)
-    write_csv(config.RESULTS_SUMMARY_DIR / "model_prompt_summary.csv", model_prompt_rows)
+    print(
+        f"Loaded {len(all_records)} question-level "
+        f"records from {len(files)} file(s)."
+    )
+
+    model_dataset_rows = (
+        build_model_dataset_summary(all_records)
+    )
+    model_prompt_rows = (
+        build_model_prompt_summary(all_records)
+    )
+
+    write_csv(
+        config.RESULTS_SUMMARY_DIR
+        / "model_dataset_summary.csv",
+        model_dataset_rows,
+    )
+    write_csv(
+        config.RESULTS_SUMMARY_DIR
+        / "model_prompt_summary.csv",
+        model_prompt_rows,
+    )
 
     if model_dataset_rows:
-        print("\nPrompt-invariant incorrectness rate (unanimous but wrong), by model/dataset:")
+        print(
+            "\nPrompt-invariant incorrectness rate "
+            "(all prompts agree on the same wrong "
+            "recovered answer), by model/dataset:"
+        )
+
         for row in model_dataset_rows:
-            flag = "  <-- non-zero" if row["prompt_invariant_incorrect_rate"] > 0 else ""
-            print(f"  {row['model']:15s} {row['dataset']:15s} "
-                  f"{row['prompt_invariant_incorrect_rate']:.4f}{flag}")
+            flag = (
+                "  <-- non-zero"
+                if row[
+                    "prompt_invariant_incorrect_rate"
+                ] > 0
+                else ""
+            )
+
+            print(
+                f"  {row['model']:18s} "
+                f"{row['dataset']:15s} "
+                f"{row['prompt_invariant_incorrect_rate']:.4f}"
+                f"{flag}"
+            )
 
 
 if __name__ == "__main__":
