@@ -1,0 +1,5 @@
+model,dataset,n_questions,expected_prompt_responses,observed_prompt_responses,missing_prompt_responses,prompt_response_accuracy,conditional_accuracy,answer_recovery_rate,unknown_rate,instruction_compliance_rate,question_majority_accuracy,mean_agreement,mean_prompt_sensitivity,complete_questions,answer_unanimous_rate,prompt_invariant_incorrect_rate
+gemma3:4b,arc_challenge,9,45,45,0,0.6,0.6,1.0,0.0,1.0,0.5556,0.9111,0.0889,9,0.6667,0.1111
+llama3.2:3b,arc_challenge,8,40,40,0,0.4,0.4,1.0,0.0,0.825,0.375,0.925,0.075,8,0.625,0.375
+mistral:7b,arc_challenge,9,45,45,0,0.5333,0.5333,1.0,0.0,0.2444,0.5556,0.8889,0.1111,9,0.6667,0.2222
+phi4-mini:latest,arc_challenge,9,45,45,0,0.5111,0.5227,0.9778,0.0222,0.0889,0.5556,0.9,0.1,9,0.7778,0.3333
