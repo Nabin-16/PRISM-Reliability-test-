@@ -20,12 +20,17 @@ from pathlib import Path
 from typing import Any
 
 from datasets import load_dataset
-SEED = 2026
-SAMPLE_SIZE = 200
 
-# src/load_datasets.py -> reliability_study/
+import sys
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+import config
+
+SEED = config.RANDOM_SEED
+SAMPLE_SIZE = config.SAMPLE_SIZE_PER_DATASET
+PROCESSED_DIR = config.DATA_PROCESSED_DIR
 
 LETTERS = ("A", "B", "C", "D")
 
@@ -126,7 +131,6 @@ def load_sciq() -> list[dict[str, Any]]:
         )
 
     return records
-
 
 def fixed_sample(
     records: list[dict[str, Any]],
