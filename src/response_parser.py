@@ -1,80 +1,217 @@
+
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import sys
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
-import sys
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-import config
+import config  # noqa: E402
+
 
 LETTERS = frozenset({"A", "B", "C", "D"})
 
 # one letter
 _CLEAN_LETTER_RE = re.compile(
-    r"^\s*[\(\[]?\s*([ABCD])\s*[\)\].,:;]?\s*$",
+    r"^\s*"
+    r"[\(\[]?\s*"
+    r"([ABCD])"
+    r"\s*[\)\]]?"
+    r"[.:,;]?"
+    r"\s*$",
     re.IGNORECASE,
+)
+
+# ula
+_LEADING_LETTER_RE = re.compile(
+    r"^\s*"
+    r"[\(\[]?\s*"
+    r"([ABCD])"
+    r"\s*[\)\]]?"
+    r"(?:[.:])?"
+    r"\s+"
+    r"\S",
+    re.IGNORECASE,
+)
+
+# black bird
+_FINAL_PATTERNS = (
+    re.compile(
+        r"\b(?:therefore|thus|hence|so)\s*,?\s*"
+        r"(?:(?:the)\s+)?"
+        r"(?:(?:final)\s+)?"
+        r"(?:answer|option|choice)?\s*"
+        r"(?:is|would\s+be|should\s+be)?\s*"
+        r"[:\-]?\s*"
+        r"[\(\[]?\s*([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bfinal\s+answer\s*"
+        r"(?:is|would\s+be|should\s+be)?\s*"
+        r"[:\-]?\s*"
+        r"[\(\[]?\s*([ABCD])\b",
+        re.IGNORECASE,
+    ),
 )
 
 # Explicit
 _EXPLICIT_PATTERNS = (
     re.compile(
-        r"\b(?:the\s+)?(?:correct|selected|chosen)\s+(?:answer|option)\s+"
-        r"(?:is|would\s+be|should\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b",
+        r"\b(?:the\s+)?"
+        r"(?:correct|selected|chosen)\s+"
+        r"(?:answer|option|choice)\s+"
+        r"(?:is|would\s+be|should\s+be)\s*"
+        r"[:\-]?\s*"
+        r"[\(\[]?\s*([ABCD])\b",
         re.IGNORECASE,
     ),
     re.compile(
-        r"\bfinal\s+answer\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b",
+        r"\b(?:my\s+)?"
+        r"(?:answer|choice|selection)\s+"
+        r"(?:is|would\s+be|should\s+be)\s*"
+        r"[:\-]?\s*"
+        r"[\(\[]?\s*([ABCD])\b",
         re.IGNORECASE,
     ),
     re.compile(
-        r"\banswer\s*[:\-]\s*[\(\[]?\s*([ABCD])\b",
+        r"\b(?:i|we)\s+"
+        r"(?:would\s+)?"
+        r"(?:choose|select|pick|go\s+with)\s+"
+        r"(?:option\s+)?"
+        r"[\(\[]?\s*([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\banswer\s*[:=\-]\s*"
+        r"[\(\[]?\s*([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\banswer\s+"
+        r"(?:is|would\s+be|should\s+be)\s*"
+        r"[:\-]?\s*"
+        r"[\(\[]?\s*([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:the\s+)?"
+        r"(?:correct\s+)?answer\s+"
+        r"[\(\[]?\s*([ABCD])\b",
         re.IGNORECASE,
     ),
 )
 
-# goomi's trend
+# FSS
+_REVISION_SIGNALS = (
+    re.compile(
+        r"\bhowever\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bon\s+reflection\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bafter\s+reconsider(?:ing|ation)?\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\breconsider(?:ing|ed)?\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bactually\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bi\s+(?:would|will)\s+revise\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bmy\s+(?:answer|choice)\s+has\s+changed\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bi\s+was\s+wrong\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\binstead\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bcorrection\b",
+        re.IGNORECASE,
+    ),
+)
+
+# FUB
+_NEGATED_PATTERNS = (
+    re.compile(
+        r"\b(?:option|answer)\s+([ABCD])\s+"
+        r"(?:is|was)\s+"
+        r"(?:incorrect|wrong|false|not\s+correct|not\s+right)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\banswer\b[^.\n]{0,40}?\bnot\s+([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:would\s+not|wouldn'?t|will\s+not|won'?t)\s+"
+        r"(?:choose|select|pick)\s+([ABCD])\b",
+        re.IGNORECASE,
+    ),
+)
+
+#goomi's trend
 _REFUSAL_PATTERNS = (
     re.compile(r"\bi\s+don't\s+know\b", re.IGNORECASE),
-    re.compile(r"\bi\s+cannot\s+(?:determine|answer)\b", re.IGNORECASE),
-    re.compile(r"\bi\s+can't\s+(?:determine|answer)\b", re.IGNORECASE),
-    re.compile(r"\b(?:insufficient|not\s+enough)\s+information\b", re.IGNORECASE),
-    re.compile(r"\bunable\s+to\s+(?:determine|answer)\b", re.IGNORECASE),
+    re.compile(
+        r"\bi\s+(?:cannot|can't)\s+(?:determine|answer)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:insufficient|not\s+enough)\s+information\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bunable\s+to\s+(?:determine|answer)\b",
+        re.IGNORECASE,
+    ),
 )
-
-# ...
+#...
 _AMBIGUITY_PATTERNS = (
-    re.compile(r"\b(?:A|B|C|D)\s+or\s+(?:A|B|C|D)\b", re.IGNORECASE),
-    re.compile(r"\b(?:A|B|C|D)\s+and\s+(?:A|B|C|D)\b", re.IGNORECASE),
+    re.compile(
+        r"\b([ABCD])\s+or\s+([ABCD])\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b([ABCD])\s+and\s+([ABCD])\b",
+        re.IGNORECASE,
+    ),
     re.compile(
         r"\b(?:answers?|options?)\s+(?:are|could\s+be)\s*"
-        r"[\:\-]?\s*(?:[ABCD](?:\s*[,/&]\s*[ABCD])+)",
+        r"[\:\-]?\s*"
+        r"(?:[ABCD](?:\s*[,/&]\s*[ABCD])+)",
         re.IGNORECASE,
     ),
 )
 
-# black bird
-_FINAL_ANSWER_PATTERNS = (
-    re.compile(
-        r"\b(?:therefore|thus|hence|so)[,\s]+"
-        r"(?:the\s+)?(?:final\s+)?answer\s+"
-        r"(?:is|would\s+be)\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b",
-        re.IGNORECASE,
-    ),
-    re.compile(
-        r"\bfinal\s+answer\s*[:\-]?\s*[\(\[]?\s*([ABCD])\b",
-        re.IGNORECASE,
-    ),
-)
-# horaa
-_COMPLIANCE_RE = re.compile(
-    r"^\s*[\(\[]?\s*[ABCD]\s*[\)\].,:;]?\s*$",
-    re.IGNORECASE,
-)
+@dataclass(frozen=True)
+class Candidate:
+    letter: str
+    position: int
+    kind: str
+
 
 def _result(
     *,
@@ -82,24 +219,27 @@ def _result(
     parse_status: str,
     instruction_compliant: bool,
 ) -> dict[str, Any]:
-    """Build a uniform parser result."""
     return {
         "parsed_answer": parsed_answer,
         "parse_status": parse_status,
         "instruction_compliant": instruction_compliant,
     }
 
+
 def normalize_response(text: str | None) -> str:
-    """Normalize whitespace without changing substantive response content."""
+    """Normalize line endings and outer whitespace only."""
     if text is None:
         return ""
 
-    text = str(text).replace("\r\n", "\n").replace("\r", "\n")
-    return text.strip()
+    return (
+        str(text)
+        .replace("\r\n", "\n")
+        .replace("\r", "\n")
+        .strip()
+    )
 
 
 def _unique_letters(values: Iterable[str]) -> list[str]:
-    """Return unique uppercase option letters preserving first-seen order."""
     seen: set[str] = set()
     result: list[str] = []
 
@@ -108,9 +248,270 @@ def _unique_letters(values: Iterable[str]) -> list[str]:
         if letter in LETTERS and letter not in seen:
             seen.add(letter)
             result.append(letter)
+
     return result
 
-def parse_response(raw_response: str | None) -> dict[str, Any]:
+
+def _negated_letters(text: str) -> set[str]:
+    negated: set[str] = set()
+
+    for pattern in _NEGATED_PATTERNS:
+        for match in pattern.finditer(text):
+            negated.add(match.group(1).upper())
+
+    return negated
+
+
+def _collect_candidates(
+    patterns: Iterable[re.Pattern[str]],
+    text: str,
+    *,
+    kind: str,
+    negated: set[str],
+) -> list[Candidate]:
+    candidates: list[Candidate] = []
+
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            letter = match.group(1).upper()
+            if letter not in negated:
+                candidates.append(
+                    Candidate(
+                        letter=letter,
+                        position=match.start(),
+                        kind=kind,
+                    )
+                )
+
+    candidates.sort(key=lambda candidate: candidate.position)
+    return candidates
+
+
+def _revision_after(
+    text: str,
+    position: int,
+) -> bool:
+    """
+    Whether a clear revision/reconsideration signal appears after a candidate.
+
+    This is intentionally conservative: ordinary reasoning after a final
+    answer does not invalidate the answer unless the text explicitly signals
+    reconsideration.
+    """
+    tail = text[position:]
+
+    return any(
+        pattern.search(tail)
+        for pattern in _REVISION_SIGNALS
+    )
+
+
+def _candidate_after_revision(
+    text: str,
+    position: int,
+    negated: set[str],
+) -> Candidate | None:
+    """
+    Recover an explicit answer stated AFTER the first clear revision signal.
+
+    Crucially, the original declaration itself must not be re-matched as the
+    "later" answer.
+    """
+    tail = text[position:]
+
+    revision_positions: list[int] = []
+    for pattern in _REVISION_SIGNALS:
+        for match in pattern.finditer(tail):
+            revision_positions.append(match.start())
+
+    if not revision_positions:
+        return None
+
+    revision_start = min(revision_positions)
+    revised_tail = tail[revision_start:]
+
+    final_candidates = _collect_candidates(
+        _FINAL_PATTERNS,
+        revised_tail,
+        kind="explicit_final_answer",
+        negated=negated,
+    )
+    explicit_candidates = _collect_candidates(
+        _EXPLICIT_PATTERNS,
+        revised_tail,
+        kind="explicit_answer",
+        negated=negated,
+    )
+
+    combined = final_candidates + explicit_candidates
+    if not combined:
+        return None
+
+    combined.sort(key=lambda candidate: candidate.position)
+    latest = combined[-1]
+
+    return Candidate(
+        letter=latest.letter,
+        position=position + revision_start + latest.position,
+        kind=latest.kind,
+    )
+
+
+def _has_clear_answer_revision(
+    text: str,
+    candidate: Candidate,
+    *,
+    negated: set[str],
+) -> tuple[bool, Candidate | None]:
+    """
+    Determine whether a candidate is subsequently revised.
+
+    Returns:
+        (revision_detected, later_candidate)
+    """
+    revision_tail = text[candidate.position + 1:]
+
+    if not any(
+        pattern.search(revision_tail)
+        for pattern in _REVISION_SIGNALS
+    ):
+        return False, None
+
+    later = _candidate_after_revision(
+        text,
+        candidate.position + 1,
+        negated,
+    )
+
+    return True, later
+
+
+def _final_candidate(
+    candidates: list[Candidate],
+    text: str,
+    negated: set[str],
+) -> Candidate | None:
+    """
+    Resolve final-answer candidates.
+
+    Multiple same-kind declarations are handled by latest explicit commitment.
+    A later explicit reconsideration can replace the earlier candidate.
+    """
+    if not candidates:
+        return None
+
+    latest = candidates[-1]
+
+    revised, later_candidate = _has_clear_answer_revision(
+        text,
+        latest,
+        negated=negated,
+    )
+
+    if revised:
+        if later_candidate is not None:
+            return later_candidate
+
+        # The model explicitly reopened the decision but did not provide a
+        # new option. Do not guess.
+        return None
+
+    return latest
+
+
+def _leading_candidate(
+    text: str,
+    negated: set[str],
+) -> Candidate | None:
+    match = _LEADING_LETTER_RE.match(text)
+
+    if not match:
+        return None
+
+    letter = match.group(1).upper()
+
+    if letter in negated:
+        return None
+
+    return Candidate(
+        letter=letter,
+        position=match.start(),
+        kind="leading_letter",
+    )
+
+
+def _standalone_final_candidate(
+    text: str,
+    negated: set[str],
+) -> Candidate | None:
+    """
+    Recover a final standalone letter from a longer response.
+
+    We reject a pure option-list such as:
+        A
+        B
+        C
+        D
+    """
+    lines = [
+        line.strip()
+        for line in text.split("\n")
+        if line.strip()
+    ]
+
+    if not lines:
+        return None
+
+    last_line = lines[-1]
+    match = _CLEAN_LETTER_RE.fullmatch(last_line)
+
+    if not match:
+        return None
+
+    letter = match.group(1).upper()
+    if letter in negated:
+        return None
+
+    meaningful_preceding = any(
+        not _CLEAN_LETTER_RE.fullmatch(line)
+        for line in lines[:-1]
+    )
+
+    if not meaningful_preceding:
+        return None
+
+    # Compute the line's approximate position for audit-independent ordering.
+    position = text.rfind(last_line)
+
+    return Candidate(
+        letter=letter,
+        position=max(position, 0),
+        kind="standalone_final_letter",
+    )
+
+
+def _ambiguity_detected(text: str) -> bool:
+    return any(
+        pattern.search(text)
+        for pattern in _AMBIGUITY_PATTERNS
+    )
+
+def parse_response(
+    raw_response: str | None,
+) -> dict[str, Any]:
+    """
+    Parse one raw response.
+
+    Priority:
+        1. clean answer-only
+        2. explicit final/conclusion declaration
+        3. generic explicit answer/selection declaration
+        4. leading-letter answer, if not superseded by later explicit answer
+        5. final standalone letter
+        6. refusal
+        7. ambiguity
+        8. UNKNOWN
+    """
     text = normalize_response(raw_response)
 
     if not text:
@@ -119,9 +520,9 @@ def parse_response(raw_response: str | None) -> dict[str, Any]:
             parse_status="empty",
             instruction_compliant=False,
         )
-    
-    # Clean output
+
     clean_match = _CLEAN_LETTER_RE.fullmatch(text)
+
     if clean_match:
         return _result(
             parsed_answer=clean_match.group(1).upper(),
@@ -129,79 +530,150 @@ def parse_response(raw_response: str | None) -> dict[str, Any]:
             instruction_compliant=True,
         )
 
-    # Explicit declarations
-    final_candidates: list[str] = []
+    negated = _negated_letters(text)
 
-    for pattern in _FINAL_ANSWER_PATTERNS:
-        final_candidates.extend(match.group(1) for match in pattern.finditer(text))
+    final_candidates = _collect_candidates(
+        _FINAL_PATTERNS,
+        text,
+        kind="explicit_final_answer",
+        negated=negated,
+    )
 
-    final_letters = _unique_letters(final_candidates)
-
-    if len(final_letters) == 1:
-        return _result(
-            parsed_answer=final_letters[0],
-            parse_status="explicit_final_answer",
-            instruction_compliant=False,
+    explicit_candidates = _collect_candidates(
+        _EXPLICIT_PATTERNS,
+        text,
+        kind="explicit_answer",
+        negated=negated,
+    )
+    leading = _leading_candidate(text, negated)
+    if final_candidates:
+        latest_final = _final_candidate(
+            final_candidates,
+            text,
+            negated,
         )
 
-    if len(final_letters) > 1:
-        return _result(
-            parsed_answer="UNKNOWN",
-            parse_status="ambiguous_final_answer",
-            instruction_compliant=False,
-        )
-    # Generic explicit answer declarations
-    explicit_candidates: list[str] = []
+        if latest_final is not None:
+            return _result(
+                parsed_answer=latest_final.letter,
+                parse_status=latest_final.kind,
+                instruction_compliant=False,
+            )
 
-    for pattern in _EXPLICIT_PATTERNS:
-        explicit_candidates.extend(
-            match.group(1) for match in pattern.finditer(text)
-        )
-
-    explicit_letters = _unique_letters(explicit_candidates)
-
-    if len(explicit_letters) == 1:
-        return _result(
-            parsed_answer=explicit_letters[0],
-            parse_status="explicit_answer",
-            instruction_compliant=False,
-        )
-
-    if len(explicit_letters) > 1:
         return _result(
             parsed_answer="UNKNOWN",
-            parse_status="ambiguous_answer",
+            parse_status="revised_without_final_answer",
+            instruction_compliant=False,
+        )
+    if explicit_candidates:
+        latest_explicit = _final_candidate(
+            explicit_candidates,
+            text,
+            negated,
+        )
+
+        if latest_explicit is not None:
+            return _result(
+                parsed_answer=latest_explicit.letter,
+                parse_status="explicit_answer",
+                instruction_compliant=False,
+            )
+
+        return _result(
+            parsed_answer="UNKNOWN",
+            parse_status="revised_without_final_answer",
+            instruction_compliant=False,
+        )
+    if _ambiguity_detected(text):
+        return _result(
+            parsed_answer="UNKNOWN",
+            parse_status="ambiguous_response",
+            instruction_compliant=False,
+        )
+    nonempty_lines = [
+        line.strip()
+        for line in text.split("\n")
+        if line.strip()
+    ]
+
+    if (
+        len(nonempty_lines) > 1
+        and all(
+            _CLEAN_LETTER_RE.fullmatch(line)
+            for line in nonempty_lines
+        )
+    ):
+        return _result(
+            parsed_answer="UNKNOWN",
+            parse_status="unparseable",
+            instruction_compliant=False,
+        )
+    if leading is not None:
+        return _result(
+            parsed_answer=leading.letter,
+            parse_status="leading_letter",
+            instruction_compliant=False,
+        )
+    standalone = _standalone_final_candidate(
+        text,
+        negated,
+    )
+
+    if standalone is not None:
+        return _result(
+            parsed_answer=standalone.letter,
+            parse_status="standalone_final_letter",
             instruction_compliant=False,
         )
 
-    # Refusal
-    if any(pattern.search(text) for pattern in _REFUSAL_PATTERNS):
+    if any(
+        pattern.search(text)
+        for pattern in _REFUSAL_PATTERNS
+    ):
         return _result(
             parsed_answer="UNKNOWN",
             parse_status="refusal_or_uncertainty",
             instruction_compliant=False,
         )
 
-    # Multiple candidate / ambiguous responses
-    if any(pattern.search(text) for pattern in _AMBIGUITY_PATTERNS):
+    if _ambiguity_detected(text):
         return _result(
             parsed_answer="UNKNOWN",
             parse_status="ambiguous_response",
             instruction_compliant=False,
         )
 
-    # No safe extraction
     return _result(
         parsed_answer="UNKNOWN",
         parse_status="unparseable",
         instruction_compliant=False,
     )
 
-def parse_record(record: dict[str, Any]) -> dict[str, Any]:
-    """Parse a raw-response record while preserving its original fields."""
-    result = dict(record)
+PARSED_PASSTHROUGH_FIELDS = (
+    "experiment_id",
+    "protocol_version",
+    "dataset",
+    "question_id",
+    "model",
+    "prompt_id",
+)
 
-    parsed = parse_response(record.get("raw_response"))
+
+def parse_record(record: dict[str, Any]) -> dict[str, Any]:
+    """
+    Create a compact parsed record.
+
+    The original raw response remains in results/raw_responses/.
+    """
+    parsed = parse_response(
+        record.get("raw_response")
+    )
+
+    result = {
+        field: record[field]
+        for field in PARSED_PASSTHROUGH_FIELDS
+        if field in record
+    }
 
     result.update(parsed)
     return result
@@ -212,27 +684,48 @@ def parse_jsonl_file(
     output_path: Path,
 ) -> tuple[int, int]:
     """
-    Parse a JSONL raw-response file.
-
-    Returns:
-        (records_processed, records_failed_to_decode)
+    Parse a JSONL raw-response file into a separate parsed artifact.
     """
-    if not input_path.exists():
-        raise FileNotFoundError(f"Input file not found: {input_path}")
+    input_path = input_path.resolve()
+    output_path = output_path.resolve()
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if not input_path.exists():
+        raise FileNotFoundError(
+            f"Input file not found: {input_path}"
+        )
+
+    if input_path == output_path:
+        raise ValueError(
+            "Parsed output cannot overwrite the raw-response file."
+        )
+
+    output_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     processed = 0
     malformed = 0
 
     with (
-        input_path.open("r", encoding="utf-8") as source,
-        output_path.open("w", encoding="utf-8") as target,
+        input_path.open(
+            "r",
+            encoding="utf-8",
+        ) as source,
+        output_path.open(
+            "w",
+            encoding="utf-8",
+        ) as target,
     ):
-        for line_number, line in enumerate(source, start=1):
+        for line_number, line in enumerate(
+            source,
+            start=1,
+        ):
             line = line.strip()
+
             if not line:
                 continue
+
             try:
                 record = json.loads(line)
             except json.JSONDecodeError:
@@ -243,21 +736,19 @@ def parse_jsonl_file(
                 )
                 continue
 
-            parsed_record = parse_record(record)
-
             target.write(
-                json.dumps(parsed_record, ensure_ascii=False) + "\n"
+                json.dumps(
+                    parse_record(record),
+                    ensure_ascii=False,
+                )
+                + "\n"
             )
 
             processed += 1
 
     return processed, malformed
 
-
 def main() -> None:
-    """CLI entry point for parsing one raw-response JSONL file."""
-    import argparse
-
     parser = argparse.ArgumentParser(
         description="Parse PRISM raw Ollama responses."
     )
@@ -272,27 +763,41 @@ def main() -> None:
         "--output",
         type=Path,
         default=None,
-        help=(
-            "Scored/parsed JSONL output path. "
-            "If omitted, writes beside the input with '_parsed' suffix."
-        ),
+        help="Separate parsed JSONL output path.",
     )
 
     args = parser.parse_args()
 
+    input_path = args.input.resolve()
+
     output = (
-            args.output.resolve()
-            if args.output is not None
-            else (config.RESULTS_PARSED_DIR / args.input.name).resolve()
+        args.output.resolve()
+        if args.output is not None
+        else (
+            config.RESULTS_PARSED_DIR / input_path.name
+        ).resolve()
+    )
+
+    # Prevent accidental creation of *_parsed.jsonl beside raw responses.
+    if (
+        output.parent == input_path.parent
+        and output.name != input_path.name
+    ):
+        raise ValueError(
+            "Parsed output must not be written inside the raw-response "
+            "directory. Use results/parsed/."
         )
+
     processed, malformed = parse_jsonl_file(
-        args.input,
+        input_path,
         output,
     )
 
     print(f"Processed records: {processed}")
     print(f"Malformed lines:    {malformed}")
+    print(f"Input:              {input_path}")
     print(f"Output:             {output}")
+
 
 if __name__ == "__main__":
     main()
