@@ -32,13 +32,19 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+import sys
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-TEMPLATE_DIR = PROJECT_ROOT / "data" / "templates"
-PROMPT_DIR = PROJECT_ROOT / "data" / "prompts"
+import config
 
-TEMPLATE_VERSION = "1.0"
+PROCESSED_DIR = config.DATA_PROCESSED_DIR
+TEMPLATE_DIR = config.DATA_TEMPLATES_DIR
+PROMPT_DIR = config.DATA_PROMPTS_DIR
+
+TEMPLATE_VERSION = config.TEMPLATE_VERSION
 
 TEMPLATE_FILES: dict[str, str] = {
     "P0": "p0_minimal.txt",
@@ -55,7 +61,6 @@ REQUIRED_FIELDS = (
     "option_c",
     "option_d",
 )
-
 @dataclass(frozen=True)
 class PromptTemplate:
     """A frozen prompt template and its identifying metadata."""
