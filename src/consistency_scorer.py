@@ -294,7 +294,6 @@ def calculate_question_metrics(
 
     return metrics
 
-
 def score_parsed_file(parsed_path: Path) -> tuple[Path, Path]:
     """
     Score one parsed file.
