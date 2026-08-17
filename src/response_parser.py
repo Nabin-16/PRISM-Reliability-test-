@@ -32,6 +32,12 @@ EXPLICIT_PATTERNS = (
     re.compile(r"\banswer\s*[:\-]\s*[\(\[]?\s*([ABCD])\b", re.I),
 )
 
+# Matches a response that leads with the letter followed by punctuation and
+# more text, e.g. "B. Many infectious diseases..." or "B) <option text>".
+# Comma is deliberately excluded so "B, C are both plausible" is NOT matched
+# here and instead falls through to AMBIGUITY_PATTERNS.
+LEADING_LETTER_PATTERN = re.compile(r"^\s*[\(\[]?([ABCD])[\)\].:]\s+\S", re.I)
+
 # goomi's trend
 REFUSAL_PATTERNS = (
     re.compile(r"\bi\s+don't\s+know\b", re.I),
@@ -98,6 +104,10 @@ def parse_response(raw_response: str | None):
         return result(explicit_letters[0], "explicit_answer", False)
     if len(explicit_letters) > 1:
         return result("UNKNOWN", "ambiguous_answer", False)
+
+    leading_match = LEADING_LETTER_PATTERN.match(text)
+    if leading_match:
+        return result(leading_match.group(1).upper(), "leading_letter", False)
 
     if any(pattern.search(text) for pattern in REFUSAL_PATTERNS):
         return result("UNKNOWN", "refusal_or_uncertainty", False)
