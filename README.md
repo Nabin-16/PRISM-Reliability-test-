@@ -111,7 +111,7 @@ This prevents response-format instructions from becoming an unintended experimen
 
 ### Deferred techniques
 
-The following are not part of Experiment 1 (BB):
+The following are not part of Experiment 1 (bird):
 
 - few-shot prompting;
 - chain-of-thought prompting;
@@ -153,7 +153,7 @@ No repeated stochastic runs are used in the core experiment.
 ### Generation limit
 
 ```text
-num_predict = 128
+num_predict = 450
 ```
 
 This is a maximum generation limit, not a target response length. It leaves enough room for a model to produce a longer non-compliant answer instead of artificially truncating the response.
@@ -232,7 +232,9 @@ reliability_study/
 │   ├── inference.py
 │   ├── load_datasets.py
 │   ├── prompt_variations.py
-│   └── response_parser.py
+│   ├── response_parser.py
+│   ├── summary_report.py
+│   └── test_response_parser.py
 │
 ├── config.py
 ├── README.md
@@ -367,6 +369,34 @@ results/scored/
 results/summary/
 ```
 
+### 7. Roll question-level metrics up into model-level summaries
+
+```powershell
+python src/summary_report.py
+```
+
+Reads every `*_question_metrics.jsonl` file under `results/summary/` and
+writes two report-ready tables:
+
+```text
+results/summary/model_dataset_summary.csv     # one row per (model, dataset)
+results/summary/model_prompt_summary.csv      # one row per (model, dataset, prompt_condition)
+```
+
+`model_dataset_summary.csv` includes `prompt_invariant_incorrect_rate` —
+the proportion of questions where all five prompt conditions agreed
+unanimously on the same *wrong* answer (see [Important Interpretation](#important-interpretation) below).
+
+### Parser unit tests
+
+```powershell
+python src/test_response_parser.py
+```
+
+Checks parser behavior against known text shapes only — no test case
+references a dataset's ground-truth answer, consistent with the parser
+itself never seeing ground truth.
+
 ---
 
 ## Response Parsing
@@ -475,6 +505,19 @@ Higher agreement therefore corresponds to lower observed prompt sensitivity.
 ### Unanimous agreement
 
 A question is unanimous if all five responses are valid and identical.
+
+### Important Interpretation
+
+Unanimous agreement does **not** imply correctness. A question can have
+`unanimous = true` and `majority_correct = false` simultaneously, all five
+prompt conditions agree, deterministically, on the same wrong answer. For
+Experiment 1 (temperature = 0, one run per condition), the correct term for
+this is **prompt-invariant incorrectness**, not "reliable incorrectness",
+the latter implies stochastic reliability across repeated sampling, which
+this deterministic design does not measure. The broader concept remains
+relevant to the research discussion; this term is simply the accurate one
+for what Experiment 1 actually observes. `src/summary_report.py` computes
+this rate explicitly per model/dataset as `prompt_invariant_incorrect_rate`.
 
 ---
 
@@ -663,7 +706,30 @@ Potential mitigation strategies are tested rather than assumed to improve reliab
 - prompt-level scoring;
 - cross-prompt agreement;
 - prompt sensitivity calculation;
-- benchmark audit preparation.
+- benchmark audit preparation;
+- model-level and prompt-condition-level summary aggregation.
+
+### Implementation delta:(bliss)
+
+This revision was produced by reviewing the updated research specification
+
+**Real bugs fixed:**
+
+- `benchmark_audit.py` wrote to `data/processed/` while its own docstring and this README documented `data/audit/`. Fixed to write to `data/audit/`, per spec section 15.
+- `FINAL_PATTERNS` in `response_parser.py` matched `"final answer: B"` but not
+  `"final answer is B"`,  the verb form silently fell through to UNKNOWN. The
+  sibling `EXPLICIT_PATTERNS` group already handled both forms correctly;
+  this was an inconsistency between the two pattern groups, not a design
+  choice. Fixed, and both forms are now covered by
+  `src/test_response_parser.py`.
+- `config.py`, `load_datasets.py`, `prompt_variations.py`, and
+  `benchmark_audit.py` each independently redefined paths and constants
+  (seed, sample size, template version, audit directory) instead of
+  importing them from `config.py`. This risked silent drift if one copy was
+  changed without the others. All four now import from `config.py` as the
+  single source of truth (spec section 19A).
+
+  
 
 ### Current stage
 
@@ -680,3 +746,4 @@ The full 8,000-request experiment should begin only after the benchmark audit an
 5. Characterize meaningful failure patterns.
 6. Design a separate mitigation experiment if justified by the results.
 7. Build the final reliability-aware PRISM application around validated findings.
+
