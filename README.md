@@ -585,7 +585,7 @@ At a high level, the application implements the same pipeline described above en
 
 The application is intended as a **reliability-aware wrapper around SLM inference** — it surfaces the consistency/correctness distinction from this research, rather than claiming to make any model universally reliable.
 
-**The desktop app can be downloaded from:** https://prism-slm-neon.vercel.app/
+**The desktop app can be downloaded from:** [PRISM-WEB](https://prism-slm-neon.vercel.app/)
 
 ---
 
