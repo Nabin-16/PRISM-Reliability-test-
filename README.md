@@ -1,4 +1,4 @@
-# PRISM: Prompt Reliability Through Intelligent Semantic Multiplexing(research phase)
+# PRISM: Prompt Reliability Through Intelligent Semantic Multiplexing (Research Phase)
 
 ## Overview
 
@@ -111,7 +111,7 @@ This prevents response-format instructions from becoming an unintended experimen
 
 ### Deferred techniques
 
-The following are not part of Experiment 1 (bird):
+The following are not part of Experiment 1:
 
 - few-shot prompting;
 - chain-of-thought prompting;
@@ -385,7 +385,7 @@ results/summary/model_prompt_summary.csv      # one row per (model, dataset, pro
 
 `model_dataset_summary.csv` includes `prompt_invariant_incorrect_rate` —
 the proportion of questions where all five prompt conditions agreed
-unanimously on the same *wrong* answer (see [Important Interpretation](#important-interpretation) below).
+unanimously on the same *wrong* answer.
 
 ### Parser unit tests
 
@@ -449,75 +449,6 @@ The answer is unclear.
 ```
 
 The parser is deliberately conservative and does not use the benchmark answer to infer what the model intended.
-
----
-
-## Scoring
-
-### Prompt level correctness
-
-For question \(q\), model \(m\), and prompt condition \(p\):
-
-\[
-Correct(q,m,p)=
-egin{cases}
-1 & 	ext{if parsed answer equals the benchmark answer}\
-0 & 	ext{otherwise}
-\end{cases}
-\]
-
-`UNKNOWN` is not treated as an answer choice.
-
-### Cross-prompt agreement
-
-For a question/model pair, after excluding `UNKNOWN` responses:
-
-\[
-C(q,m)=
-rac{
-\max_{a \in \{A,B,C,D\}} n_a
-}{
-V
-}
-\]
-
-where:
-
-- \(n_a\) = count of valid responses selecting answer \(a\);
-- \(V\) = total number of valid responses.
-
-### Usable response rate
-
-\[
-UR(q,m)=rac{V}{5}
-\]
-
-### Prompt Sensitivity Index
-
-The primary operational measure is:
-
-\[
-PSI(q,m)=1-C(q,m)
-\]
-
-Higher agreement therefore corresponds to lower observed prompt sensitivity.
-
-### Unanimous agreement
-
-A question is unanimous if all five responses are valid and identical.
-
-### Important Interpretation
-
-Unanimous agreement does **not** imply correctness. A question can have
-`unanimous = true` and `majority_correct = false` simultaneously, all five
-prompt conditions agree, deterministically, on the same wrong answer. For
-Experiment 1 (temperature = 0, one run per condition), the correct term for
-this is **prompt-invariant incorrectness**, not "reliable incorrectness",
-the latter implies stochastic reliability across repeated sampling, which
-this deterministic design does not measure. The broader concept remains
-relevant to the research discussion; this term is simply the accurate one
-for what Experiment 1 actually observes. `src/summary_report.py` computes
-this rate explicitly per model/dataset as `prompt_invariant_incorrect_rate`.
 
 ---
 
@@ -640,31 +571,21 @@ The first experiment is specifically a study of:
 
 ---
 
-## Future PRISM Application
+## From Research to Application
 
-The research phase is the empirical foundation for the eventual PRISM application.
+The research phase above is the empirical foundation for the PRISM desktop application. The `prism_core` engine originated directly as the backend of this research pipeline, and was subsequently adapted and extended into a reusable desktop benchmarking tool rather than remaining a one-off study script.
 
-Conceptually:
+At a high level, the application implements the same pipeline described above end-to-end:
 
-```text
-User Query
-    ↓
-Validated Prompt Strategies
-    ↓
-Target SLM
-    ↓
-Response Comparison
-    ↓
-Reliability Assessment
-    ↓
-Evidence-based Mitigation
-    ↓
-Final Response
-```
+1. **`prism_core`** — evolved from the research pipeline's `src/` modules — loads a frozen dataset (ARC-Challenge / SciQ), renders the five prompt variants (P0–P4) for each question, and runs inference against a locally installed **Ollama** model.
+2. Raw responses are parsed into structured answers, distinguishing clean answers, recoverable-but-non-compliant answers, and `UNKNOWN` responses — exactly as defined in [Response Parsing](#response-parsing).
+3. Scoring computes correctness, cross-prompt agreement, prompt sensitivity, and prompt-invariant incorrectness, then aggregates results per model and dataset.
+4. Results are stored locally (SQLite) and surfaced through a native **PySide6** desktop dashboard — KPI cards, per-question drill-down, model comparison, and one-click PDF report export — built on top of the backend to make the research metrics above explorable interactively instead of only as CSV output.
+5. Benchmark runs can optionally sync to a shared results repository, letting verified baseline results (for `llama3.2:3b`, `gemma3:4b`, `phi4-mini:latest`, `mistral:7b`) be explored without re-running inference.
 
-The application is intended to be a **reliability-aware wrapper around SLM inference**, not a system that claims to make every model universally reliable.
+The application is intended as a **reliability-aware wrapper around SLM inference** — it surfaces the consistency/correctness distinction from this research, rather than claiming to make any model universally reliable.
 
-Advanced techniques such as few-shot prompting, critique, self-consistency, or polarity transformation will only be integrated after they are separately evaluated.
+**The desktop app can be downloaded from:** https://prism-slm-neon.vercel.app/
 
 ---
 
@@ -685,65 +606,3 @@ Every raw response is stored before parsing and scoring.
 ### Prefer evidence over assumptions
 
 Potential mitigation strategies are tested rather than assumed to improve reliability.
-
----
-
-## Current Status
-
-### Implemented
-
-- educational-only scope;
-- ARC-Challenge and SciQ;
-- 200 questions per dataset;
-- fixed seeded sampling;
-- four local SLMs;
-- five prompt formulation conditions;
-- frozen prompt templates;
-- rendered prompt artifacts;
-- deterministic Ollama inference;
-- raw response storage;
-- compact response parser;
-- prompt-level scoring;
-- cross-prompt agreement;
-- prompt sensitivity calculation;
-- benchmark audit preparation;
-- model-level and prompt-condition-level summary aggregation.
-
-### Implementation delta:(bliss)
-
-This revision was produced by reviewing the updated research specification
-
-**Real bugs fixed:**
-
-- `benchmark_audit.py` wrote to `data/processed/` while its own docstring and this README documented `data/audit/`. Fixed to write to `data/audit/`, per spec section 15.
-- `FINAL_PATTERNS` in `response_parser.py` matched `"final answer: B"` but not
-  `"final answer is B"`,  the verb form silently fell through to UNKNOWN. The
-  sibling `EXPLICIT_PATTERNS` group already handled both forms correctly;
-  this was an inconsistency between the two pattern groups, not a design
-  choice. Fixed, and both forms are now covered by
-  `src/test_response_parser.py`.
-- `config.py`, `load_datasets.py`, `prompt_variations.py`, and
-  `benchmark_audit.py` each independently redefined paths and constants
-  (seed, sample size, template version, audit directory) instead of
-  importing them from `config.py`. This risked silent drift if one copy was
-  changed without the others. All four now import from `config.py` as the
-  single source of truth (spec section 19A).
-
-  
-
-### Current stage
-
-**Pipeline validation and benchmark audit.**
-
-The full 8,000-request experiment should begin only after the benchmark audit and experimental configuration are frozen.
-
-### Planned next stages
-
-1. Complete the benchmark audit.
-2. Validate the full experiment runner.
-3. Run the complete 8,000-request experiment.
-4. Analyze correctness, instruction adherence, agreement, and prompt sensitivity.
-5. Characterize meaningful failure patterns.
-6. Design a separate mitigation experiment if justified by the results.
-7. Build the final reliability-aware PRISM application around validated findings.
-
