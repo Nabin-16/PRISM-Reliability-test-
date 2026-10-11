@@ -49,6 +49,13 @@ The same frozen questions are used for every model and prompt condition.
 | Mistral-7B | `mistral:7b` |
 
 ---
+## References
+[1] M. Sclar, Y. Choi, Y. Tsvetkov, and A. Suhr, “Quantifying language models’ sensitivity to spurious features in prompt design,” in International Conference on Learning Representations (ICLR), 2024.
+[2] A. Salinas and F. Morstatter, “The butterfly effect of altering prompts: How small changes affect llm performance,” in Findings of the Association for Computational Linguistics (ACL), 2024, pp. 4629–4651.
+[3] P. Clark et al., “Think you have solved question answering? try arc, the ai2 reasoning challenge,” arXiv preprint, 2018.
+[4] J. Welbl, N. F. Liu, and M. Gardner, “Crowdsourcing multiple choice science questions,” in EMNLP Workshop, 2017.
+[5] X. Wang et al., “Self-consistency improves chain of thought reasoning in language models,” arXiv preprint, 2022.
+[6] S. Hariprasad, “Prompt reliability in clinical small language models,” arXiv preprint, 2026.
 
 ## Research Questions
 
